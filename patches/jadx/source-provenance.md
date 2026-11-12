@@ -1,0 +1,4 @@
+This metadata bridge derives from the MIT-licensed REA source at fa87dd2aac3eaeb49875c54e93ec18c98cc92e4d, bridge/android/ReaJadxBridge.java. The adoption changes bridge/class/diagnostic names, reports the parsed method code-presence and producer short ID, removes unused app/manifest tools, and points discovery errors to the RR tool. It runs inside the same unmodified jadx-headless-mcp 0.7.1 engine JVM; it does not add a process supervisor, target store or routing owner. Original APK identity and structural DEX observations remain in the existing RR owners.
+
+The independently supplied engine is Apache-2.0, revision 5844800a486d2248fa949b74c9896285f5b54de2, SHA256 6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75. Analysis never downloads it. Source and license: https://github.com/1013503897/jadx-headless-mcp/tree/v0.7.1 .
+

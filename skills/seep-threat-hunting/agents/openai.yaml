@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seep Threat Hunting"
+  short_description: "Hypothesis-led telemetry hunting and retest"

@@ -1,0 +1,31 @@
+{
+  "id": "builtin_ocsf_normalization",
+  "title": "Normalize telemetry without replacing raw evidence",
+  "body": "Use OCSF-compatible fields as an analysis layer while preserving the original event or forensic artifact identity, parser/tool revision and source record provenance. Normalization is not proof and must remain traceable to raw Evidence.",
+  "route": "dfir-forensics",
+  "tags": [
+    "ocsf",
+    "telemetry",
+    "dfir",
+    "normalization"
+  ],
+  "origin": "builtin",
+  "domain": "dfir",
+  "architectures": [
+    "x86",
+    "x86-64",
+    "arm64"
+  ],
+  "tools": [
+    "casebook"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "standard:OCSF; project:skills/seep-dfir/references/forensics.md",
+    "license": "unspecified",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

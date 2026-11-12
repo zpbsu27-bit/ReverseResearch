@@ -1,0 +1,31 @@
+{
+  "id": "builtin_cwe_capec_mapping",
+  "title": "Keep weakness and attack-pattern taxonomies distinct",
+  "body": "Use CWE to classify the underlying weakness and CAPEC to describe an applicable attack-pattern relationship. Do not replace a concrete Finding, location, reproduction path, or evidence with taxonomy IDs. Multiple mappings are allowed when the evidence supports them.",
+  "route": "nday-research",
+  "tags": [
+    "cwe",
+    "capec",
+    "vulnerability",
+    "taxonomy"
+  ],
+  "origin": "builtin",
+  "domain": "vulnerability-research",
+  "architectures": [
+    "x86",
+    "x86-64",
+    "arm64"
+  ],
+  "tools": [
+    "casebook"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "standard:CWE/CAPEC; project:docs/p0-security-research-contracts.md",
+    "license": "unspecified",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

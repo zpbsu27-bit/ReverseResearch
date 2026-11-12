@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seep Vulnerability Research"
+  short_description: "Fuzz, crash, root-cause and regression evidence workflow."

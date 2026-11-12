@@ -1,0 +1,33 @@
+{
+  "id": "builtin_ghidra_project_currentness",
+  "title": "Ghidra project identity and currentness",
+  "body": "Treat a Ghidra database as analysis state tied to a specific binary identity. Keep target SHA-256 and version context with findings, use stable project/database identities, and revalidate the target before carrying conclusions across versions. Do not treat a candidate function migration or synchronized overlay as live runtime proof.",
+  "route": "native-static",
+  "tags": [
+    "ghidra",
+    "database",
+    "currentness",
+    "version-migration"
+  ],
+  "origin": "builtin",
+  "domain": "static-analysis",
+  "architectures": [
+    "x86",
+    "x86-64",
+    "arm",
+    "arm64"
+  ],
+  "tools": [
+    "ghidra",
+    "reverseresearch"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "builtin:reverseresearch/ghidra-currentness",
+    "license": "project-internal",
+    "upstream_revision": "2026-10-02",
+    "engine": "ghidra",
+    "version": "current",
+    "evidence_status": "reviewed"
+  }
+}

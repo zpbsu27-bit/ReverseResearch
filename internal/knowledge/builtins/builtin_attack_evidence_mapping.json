@@ -1,0 +1,31 @@
+{
+  "id": "builtin_attack_evidence_mapping",
+  "title": "Map ATT&CK only after behavior is evidenced",
+  "body": "Treat ATT&CK technique IDs as relationships to observed or otherwise supported behavior, not as proof by themselves. Keep the evidence and finding that justify the mapping, distinguish emulation intent from observed telemetry, and retest the detection or mitigation path after changes.",
+  "route": "purple-validation",
+  "tags": [
+    "attack",
+    "ttp",
+    "evidence",
+    "mapping"
+  ],
+  "origin": "builtin",
+  "domain": "purple-validation",
+  "architectures": [
+    "x86",
+    "x86-64",
+    "arm64"
+  ],
+  "tools": [
+    "casebook"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "standard:MITRE ATT&CK; project:docs/p0-security-research-contracts.md",
+    "license": "unspecified",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

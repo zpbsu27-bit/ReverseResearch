@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seep Protocol"
+  short_description: "Protocol framing inference and round-trip validation workflow."

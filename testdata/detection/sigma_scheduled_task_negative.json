@@ -1,0 +1,10 @@
+[
+  {
+    "EventID": 4688,
+    "Image": "C:\\Windows\\System32\\schtasks.exe"
+  },
+  {
+    "EventID": 4698,
+    "Image": "C:\\Windows\\System32\\notepad.exe"
+  }
+]

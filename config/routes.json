@@ -1,0 +1,1515 @@
+{
+  "version": 4,
+  "fallback": "unclassified",
+  "routes": [
+    {
+      "id": "memory-search",
+      "priority": 120,
+      "description": "Runtime value/address discovery, pointer discovery and candidate refinement.",
+      "keywords": [
+        "memory scan",
+        "value scan",
+        "scan the value",
+        "candidate address",
+        "refine",
+        "pointer chain",
+        "memory address",
+        "内存扫描",
+        "数值扫描",
+        "地址扫描",
+        "指针链",
+        "候选地址",
+        "金币地址",
+        "内存地址",
+        "内存特征"
+      ],
+      "tools": [
+        "x32dbg",
+        "x64dbg",
+        "frida"
+      ],
+      "domain": "native",
+      "effect_class": "runtime mutation",
+      "intents": [
+        "trace",
+        "investigate"
+      ],
+      "platforms": [
+        "windows"
+      ],
+      "artifacts": [
+        "memory"
+      ]
+    },
+    {
+      "id": "dynamic-debug",
+      "priority": 115,
+      "description": "Breakpoints, registers, execution flow, watchpoints, runtime tracing and hooking.",
+      "keywords": [
+        "breakpoint",
+        "register",
+        "debugger",
+        "watchpoint",
+        "who writes",
+        "who accesses",
+        "runtime trace",
+        "hook",
+        "断点",
+        "寄存器",
+        "调试",
+        "谁写入",
+        "谁访问",
+        "执行流",
+        "写入观察",
+        "动态跟踪"
+      ],
+      "tools": [
+        "x32dbg",
+        "x64dbg",
+        "windbg",
+        "frida"
+      ],
+      "domain": "native",
+      "effect_class": "runtime mutation",
+      "intents": [
+        "debug",
+        "trace"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "artifacts": [
+        "PE",
+        "ELF",
+        "Mach-O"
+      ]
+    },
+    {
+      "id": "binary-diff",
+      "priority": 110,
+      "description": "Cross-version binary/function mapping, semantic diff and migration.",
+      "keywords": [
+        "binary diff",
+        "version diff",
+        "old version",
+        "new version",
+        "function migration",
+        "cross version",
+        "semantic diff",
+        "比较两个版本",
+        "对比两个版本",
+        "变化函数",
+        "二进制差分",
+        "跨版本",
+        "旧版",
+        "新版",
+        "版本对比",
+        "函数迁移",
+        "迁移到新版",
+        "版本迁移",
+        "二进制对比"
+      ],
+      "tools": [
+        "ghidra",
+        "radiff2",
+        "diaphora"
+      ],
+      "domain": "native",
+      "effect_class": "observation",
+      "intents": [
+        "reverse",
+        "investigate"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "artifacts": [
+        "PE",
+        "ELF",
+        "Mach-O"
+      ]
+    },
+    {
+      "id": "patch",
+      "priority": 105,
+      "description": "Guarded binary patch planning, verification, copy-mode application and rollback.",
+      "keywords": [
+        "patch",
+        "nop",
+        "replace bytes",
+        "byte patch",
+        "binary patch",
+        "补丁",
+        "改字节",
+        "替换字节",
+        "字节修改",
+        "二进制补丁",
+        "打补丁"
+      ],
+      "tools": [
+        "radare2",
+        "rapatch2"
+      ],
+      "domain": "native",
+      "effect_class": "local mutation",
+      "intents": [
+        "patch",
+        "remediate",
+        "retest"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "artifacts": [
+        "PE",
+        "ELF",
+        "Mach-O"
+      ]
+    },
+    {
+      "id": "pe-static",
+      "priority": 100,
+      "description": "PE structure, imports/exports, compiler, packer, signatures and metadata triage.",
+      "keywords": [
+        "pe header",
+        "import table",
+        "export table",
+        "sections",
+        "compiler",
+        "packer",
+        "die",
+        "pe-bear",
+        "rich header",
+        "导入表",
+        "导出表",
+        "节区",
+        "编译器",
+        "壳",
+        "pe结构",
+        "pe头"
+      ],
+      "tools": [
+        "radare2",
+        "ghidra",
+        "die",
+        "pe-bear",
+        "yara"
+      ],
+      "domain": "native",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "reverse"
+      ],
+      "platforms": [
+        "windows"
+      ],
+      "artifacts": [
+        "PE"
+      ]
+    },
+    {
+      "id": "linux-native",
+      "priority": 96,
+      "description": "Linux ELF/native analysis with ELF identity, symbols/sections, core-dump context, static reverse and bounded debugger planning.",
+      "keywords": [
+        "elf binary",
+        "linux binary",
+        "linux native",
+        "elf header",
+        "gnu build id",
+        "core dump linux",
+        "gdb linux",
+        "rr debugger",
+        "bpftrace",
+        "linux reverse",
+        "ELF逆向",
+        "Linux二进制",
+        "Linux原生",
+        "Linux程序",
+        "ELF头",
+        "GNU build-id",
+        "Linux core dump"
+      ],
+      "tools": [
+        "ghidra",
+        "radare2",
+        "gdb",
+        "lldb",
+        "rr",
+        "bpftrace"
+      ],
+      "domain": "native",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "reverse",
+        "debug",
+        "investigate"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "artifacts": [
+        "ELF",
+        "core dump"
+      ]
+    },
+    {
+      "id": "native-static",
+      "priority": 95,
+      "description": "Native static analysis, decompilation, xrefs, call graphs and data-flow research.",
+      "keywords": [
+        "decompile",
+        "xref",
+        "call graph",
+        "function analysis",
+        "string reference",
+        "native binary",
+        "local binary",
+        "binary research",
+        "PE 静态分析",
+        "程序的结构和导入",
+        "本地二进制",
+        "二进制研究",
+        "反编译",
+        "交叉引用",
+        "调用图",
+        "函数分析",
+        "字符串引用",
+        "原生程序"
+      ],
+      "tools": [
+        "ghidra",
+        "radare2"
+      ],
+      "domain": "native",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "reverse"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "artifacts": [
+        "PE",
+        "ELF",
+        "Mach-O"
+      ]
+    },
+    {
+      "id": "identity-ad",
+      "priority": 93,
+      "description": "Authorized identity and Active Directory graph analysis from imported principals, groups, sessions, trusts, certificate templates and permission edges.",
+      "keywords": [
+        "active directory",
+        "identity security",
+        "bloodhound",
+        "sharphound",
+        "kerberos",
+        "certipy",
+        "domain trust",
+        "certificate template",
+        "attack path identity",
+        "ad security"
+      ],
+      "tools": [
+        "bloodhound",
+        "sharphound",
+        "impacket",
+        "netexec",
+        "certipy"
+      ],
+      "domain": "identity",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "investigate",
+        "detect"
+      ],
+      "platforms": [
+        "windows",
+        "identity"
+      ],
+      "artifacts": [
+        "identity graph",
+        "attack path"
+      ]
+    },
+    {
+      "id": "pwn-exploit",
+      "priority": 92,
+      "description": "CTF/pwn binary research: crash triage, mitigations, primitives and exploit-development workflow.",
+      "keywords": [
+        "pwn",
+        "rop",
+        "heap exploitation",
+        "stack overflow",
+        "format string",
+        "shellcode",
+        "pwntools",
+        "漏洞利用",
+        "栈溢出",
+        "堆利用",
+        "格式化字符串",
+        "rop链",
+        "ctf pwn"
+      ],
+      "tools": [
+        "gdb",
+        "pwndbg",
+        "pwntools",
+        "checksec",
+        "qemu"
+      ],
+      "domain": "native",
+      "effect_class": "runtime mutation",
+      "intents": [
+        "exploitability",
+        "debug"
+      ],
+      "platforms": [
+        "linux",
+        "windows"
+      ],
+      "artifacts": [
+        "ELF",
+        "PE",
+        "crash dump"
+      ]
+    },
+    {
+      "id": "cloud-security",
+      "priority": 92,
+      "description": "Read-only cloud identity/resource/configuration snapshot analysis for AWS, Azure and GCP; live mutation requires a separate scoped Job.",
+      "keywords": [
+        "aws security",
+        "azure security",
+        "gcp security",
+        "cloud iam",
+        "cloud security",
+        "prowler",
+        "scoutsuite",
+        "steampipe",
+        "iam graph",
+        "cloud attack path"
+      ],
+      "tools": [
+        "aws",
+        "az",
+        "gcloud",
+        "prowler",
+        "scoutsuite",
+        "steampipe"
+      ],
+      "domain": "cloud",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "investigate",
+        "detect",
+        "remediate"
+      ],
+      "platforms": [
+        "cloud"
+      ],
+      "artifacts": [
+        "cloud inventory",
+        "identity graph"
+      ]
+    },
+    {
+      "id": "vuln-research",
+      "priority": 91,
+      "description": "Evidence-first vulnerability research from harness/fuzz/crash triage through root cause, primitive classification, mitigation and regression.",
+      "keywords": [
+        "fuzz",
+        "fuzzing",
+        "libfuzzer",
+        "afl++",
+        "winafl",
+        "jazzer",
+        "crash triage",
+        "crash fingerprint",
+        "crash dedupe",
+        "sanitizer",
+        "asan",
+        "ubsan",
+        "harness",
+        "root cause vulnerability",
+        "exploitability analysis",
+        "模糊测试",
+        "崩溃分析",
+        "崩溃去重",
+        "漏洞研究",
+        "漏洞根因",
+        "fuzz harness",
+        "asan崩溃"
+      ],
+      "tools": [
+        "libfuzzer",
+        "afl++",
+        "winafl",
+        "jazzer",
+        "gdb",
+        "windbg",
+        "lldb"
+      ],
+      "domain": "vulnerability",
+      "effect_class": "runtime mutation",
+      "intents": [
+        "fuzz",
+        "exploitability",
+        "investigate",
+        "retest"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "artifacts": [
+        "PE",
+        "ELF",
+        "Mach-O",
+        "crash dump",
+        "fuzz input"
+      ]
+    },
+    {
+      "id": "container-k8s",
+      "priority": 91,
+      "description": "Container image and Kubernetes configuration/resource graph analysis from bounded snapshots and manifests.",
+      "keywords": [
+        "kubernetes security",
+        "k8s security",
+        "container security",
+        "kubescape",
+        "kube-bench",
+        "kubectl",
+        "cluster audit",
+        "pod security",
+        "container image"
+      ],
+      "tools": [
+        "kubectl",
+        "trivy",
+        "kubescape",
+        "kube-bench"
+      ],
+      "domain": "cloud",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "investigate",
+        "detect",
+        "remediate"
+      ],
+      "platforms": [
+        "kubernetes",
+        "container"
+      ],
+      "artifacts": [
+        "container image",
+        "kubernetes inventory"
+      ]
+    },
+    {
+      "id": "ctf-sandbox",
+      "priority": 90,
+      "description": "Isolated CTF challenge workspace with reproducible tools, artifacts and cleanup.",
+      "keywords": [
+        "ctf",
+        "challenge",
+        "sandbox",
+        "靶场",
+        "赛题",
+        "ctf题",
+        "隔离沙箱",
+        "ctf沙箱",
+        "沙箱"
+      ],
+      "tools": [
+        "docker",
+        "wsl",
+        "qemu",
+        "python"
+      ],
+      "domain": "lab",
+      "effect_class": "local mutation",
+      "intents": [
+        "emulate",
+        "investigate"
+      ],
+      "platforms": [
+        "linux",
+        "windows"
+      ],
+      "artifacts": [
+        "challenge"
+      ]
+    },
+    {
+      "id": "network-assessment",
+      "priority": 90,
+      "description": "Authorized network/service assessment planning and imported-result analysis with Engagement scope; active traffic is never implicit.",
+      "keywords": [
+        "network assessment",
+        "service enumeration",
+        "network inventory",
+        "nmap assessment",
+        "port inventory",
+        "authorized scan",
+        "service discovery"
+      ],
+      "tools": [
+        "nmap",
+        "masscan",
+        "curl"
+      ],
+      "domain": "network",
+      "effect_class": "active network interaction",
+      "intents": [
+        "triage",
+        "investigate"
+      ],
+      "platforms": [
+        "network"
+      ],
+      "artifacts": [
+        "service",
+        "PCAP",
+        "network inventory"
+      ]
+    },
+    {
+      "id": "pentest-network",
+      "priority": 88,
+      "description": "Authorized network/service discovery, enumeration and validation workflow.",
+      "keywords": [
+        "nmap",
+        "sqlmap",
+        "pentest",
+        "port scan",
+        "service enumeration",
+        "network scan",
+        "渗透测试",
+        "端口扫描",
+        "服务枚举",
+        "网络扫描",
+        "sql注入"
+      ],
+      "tools": [
+        "nmap",
+        "sqlmap",
+        "masscan",
+        "curl"
+      ],
+      "domain": "network",
+      "effect_class": "active network interaction",
+      "intents": [
+        "triage",
+        "investigate"
+      ],
+      "platforms": [
+        "network"
+      ],
+      "artifacts": [
+        "service",
+        "PCAP"
+      ]
+    },
+    {
+      "id": "adversary-emulation",
+      "priority": 87,
+      "description": "Purple/red-team adversary-emulation planning bound to Engagement, ATT&CK technique, target and Generic Job receipts; no implicit execution.",
+      "keywords": [
+        "adversary emulation",
+        "atomic red team",
+        "caldera",
+        "ttp emulation",
+        "attack simulation",
+        "red team emulation"
+      ],
+      "tools": [
+        "atomic-red-team",
+        "caldera"
+      ],
+      "domain": "security",
+      "effect_class": "runtime mutation",
+      "intents": [
+        "emulate",
+        "retest"
+      ],
+      "platforms": [
+        "lab",
+        "windows",
+        "linux",
+        "cloud"
+      ],
+      "artifacts": [
+        "emulation plan",
+        "telemetry",
+        "job receipt"
+      ]
+    },
+    {
+      "id": "web-security",
+      "priority": 86,
+      "description": "Authorized web/API security research, interception, replay and browser-side analysis.",
+      "keywords": [
+        "burp",
+        "burp suite",
+        "proxy intercept",
+        "repeater",
+        "web security",
+        "api security",
+        "xss",
+        "csrf",
+        "web pentest",
+        "抓包",
+        "重放",
+        "代理拦截",
+        "web安全",
+        "网站安全",
+        "接口安全"
+      ],
+      "tools": [
+        "burp",
+        "mitmproxy",
+        "curl",
+        "browser"
+      ],
+      "domain": "web",
+      "effect_class": "active network interaction",
+      "intents": [
+        "investigate",
+        "retest"
+      ],
+      "platforms": [
+        "browser",
+        "web"
+      ],
+      "artifacts": [
+        "URL",
+        "HTTP",
+        "HAR"
+      ]
+    },
+    {
+      "id": "source-code-audit",
+      "priority": 85,
+      "description": "Source-code security audit using bounded repository inventory, SAST/dataflow adapters and SARIF-backed findings.",
+      "keywords": [
+        "source code audit",
+        "source audit",
+        "code audit",
+        "secure code review",
+        "sast",
+        "semgrep",
+        "codeql",
+        "joern",
+        "sarif",
+        "源码审计",
+        "代码审计",
+        "静态代码安全",
+        "源码安全",
+        "SAST扫描",
+        "CodeQL分析",
+        "Semgrep"
+      ],
+      "tools": [
+        "semgrep",
+        "codeql",
+        "joern"
+      ],
+      "domain": "code",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "investigate",
+        "remediate"
+      ],
+      "platforms": [
+        "source"
+      ],
+      "artifacts": [
+        "source repository",
+        "SARIF"
+      ]
+    },
+    {
+      "id": "endpoint-defense-research",
+      "priority": 84,
+      "description": "Defensive endpoint/security-product compatibility and controlled bypass-resilience research.",
+      "keywords": [
+        "edr",
+        "av",
+        "endpoint defense",
+        "security product",
+        "bypass resilience",
+        "endpoint telemetry",
+        "防护软件",
+        "终端安全",
+        "杀软",
+        "edr研究",
+        "兼容性测试",
+        "绕过韧性"
+      ],
+      "tools": [
+        "windbg",
+        "procmon",
+        "process-explorer",
+        "etw"
+      ],
+      "domain": "defense",
+      "effect_class": "observation",
+      "intents": [
+        "detect",
+        "investigate",
+        "retest"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "artifacts": [
+        "telemetry"
+      ]
+    },
+    {
+      "id": "cti-analysis",
+      "priority": 84,
+      "description": "Threat-intelligence analysis using immutable STIX/TAXII-style objects, IOC/TTP relationships and Case provenance.",
+      "keywords": [
+        "stix",
+        "taxii",
+        "threat intelligence",
+        "cti",
+        "misp",
+        "opencti",
+        "intrusion set",
+        "campaign intelligence",
+        "ioc relationship"
+      ],
+      "tools": [
+        "misp",
+        "opencti",
+        "taxii"
+      ],
+      "domain": "threat-intel",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "investigate"
+      ],
+      "platforms": [
+        "intel"
+      ],
+      "artifacts": [
+        "STIX",
+        "IOC",
+        "TTP"
+      ]
+    },
+    {
+      "id": "blue-detection",
+      "priority": 83,
+      "description": "Detection engineering workflow for telemetry requirements, Sigma/YARA/Suricata/Zeek rules, fixture validation, false positives, coverage, and retest.",
+      "keywords": [
+        "detection engineering",
+        "sigma rule",
+        "yara rule",
+        "suricata rule",
+        "zeek detection",
+        "telemetry detection",
+        "检测工程",
+        "检测规则",
+        "Sigma规则",
+        "YARA规则",
+        "告警规则",
+        "检测覆盖"
+      ],
+      "tools": [
+        "sigma",
+        "yara",
+        "suricata",
+        "zeek"
+      ],
+      "domain": "defense",
+      "intents": [
+        "detect",
+        "retest"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "network",
+        "cloud"
+      ],
+      "artifacts": [
+        "telemetry",
+        "EVTX",
+        "PCAP",
+        "rule"
+      ],
+      "effect_class": "observation"
+    },
+    {
+      "id": "dfir-forensics",
+      "priority": 83,
+      "description": "Evidence-first DFIR ingest, artifact provenance, normalized timeline, process/network relations and incident findings.",
+      "keywords": [
+        "dfir",
+        "forensics",
+        "digital forensics",
+        "incident response",
+        "evtx",
+        "windows event log",
+        "mft",
+        "usn journal",
+        "prefetch",
+        "amcache",
+        "srum",
+        "memory forensics",
+        "disk image",
+        "forensic timeline",
+        "hayabusa",
+        "chainsaw",
+        "volatility",
+        "事件响应",
+        "数字取证",
+        "内存取证",
+        "磁盘取证",
+        "时间线分析",
+        "EVTX取证",
+        "MFT分析",
+        "USN分析"
+      ],
+      "tools": [
+        "volatility3",
+        "memprocfs",
+        "hayabusa",
+        "chainsaw",
+        "kape",
+        "plaso",
+        "tshark"
+      ],
+      "domain": "dfir",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "investigate",
+        "hunt"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "artifacts": [
+        "memory dump",
+        "crash dump",
+        "disk image",
+        "EVTX",
+        "MFT",
+        "USN",
+        "Registry",
+        "Prefetch",
+        "Amcache",
+        "SRUM",
+        "PCAP"
+      ]
+    },
+    {
+      "id": "threat-hunting",
+      "priority": 83,
+      "description": "Hypothesis-driven threat-hunting planning over declared telemetry sources and detection/query adapters; plan does not execute queries.",
+      "keywords": [
+        "threat hunting",
+        "hunt hypothesis",
+        "telemetry hunt",
+        "sigma hunt",
+        "eql hunt",
+        "kql hunt",
+        "osquery hunt"
+      ],
+      "tools": [
+        "sigma",
+        "osquery",
+        "zeek"
+      ],
+      "domain": "threat-intel",
+      "effect_class": "observation",
+      "intents": [
+        "hunt",
+        "investigate",
+        "detect"
+      ],
+      "platforms": [
+        "telemetry"
+      ],
+      "artifacts": [
+        "hunt plan",
+        "telemetry",
+        "detection"
+      ]
+    },
+    {
+      "id": "nday-research",
+      "priority": 82,
+      "description": "Known-vulnerability reproduction, patch diffing and controlled N-day research workflow.",
+      "keywords": [
+        "n-day",
+        "nday",
+        "cve",
+        "known vulnerability",
+        "patch diff",
+        "vulnerability reproduction",
+        "已知漏洞",
+        "漏洞复现",
+        "补丁对比",
+        "cve分析",
+        "n日漏洞"
+      ],
+      "tools": [
+        "ghidra",
+        "radiff2",
+        "gdb",
+        "windbg"
+      ],
+      "domain": "vulnerability",
+      "effect_class": "runtime mutation",
+      "intents": [
+        "exploitability",
+        "reverse",
+        "retest"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "artifacts": [
+        "PE",
+        "ELF",
+        "Mach-O",
+        "crash dump"
+      ]
+    },
+    {
+      "id": "purple-validation",
+      "priority": 81,
+      "description": "Purple-team validation that binds ATT&CK technique emulation to telemetry, detection gaps, mitigation, and evidence-backed retest.",
+      "keywords": [
+        "purple team",
+        "purple validation",
+        "adversary emulation",
+        "attack technique validation",
+        "atomic red team",
+        "detection gap",
+        "紫队",
+        "紫队验证",
+        "对抗模拟",
+        "攻击技术验证",
+        "检测缺口",
+        "攻防验证"
+      ],
+      "tools": [
+        "atomic-red-team",
+        "sigma"
+      ],
+      "domain": "defense",
+      "intents": [
+        "emulate",
+        "detect",
+        "retest"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "cloud"
+      ],
+      "artifacts": [
+        "telemetry",
+        "detection",
+        "ATT&CK technique"
+      ],
+      "effect_class": "runtime mutation"
+    },
+    {
+      "id": "supply-chain",
+      "priority": 81,
+      "description": "Software supply-chain analysis for manifests, SBOM, dependency exposure, secrets and package/container provenance.",
+      "keywords": [
+        "supply chain security",
+        "software supply chain",
+        "sbom",
+        "dependency audit",
+        "dependency vulnerability",
+        "spdx",
+        "cyclonedx",
+        "syft",
+        "grype",
+        "osv-scanner",
+        "gitleaks",
+        "secret scan",
+        "dependency scan",
+        "供应链安全",
+        "依赖审计",
+        "依赖漏洞",
+        "SBOM",
+        "密钥扫描",
+        "凭据扫描"
+      ],
+      "tools": [
+        "syft",
+        "grype",
+        "trivy",
+        "osv-scanner",
+        "gitleaks"
+      ],
+      "domain": "code",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "investigate",
+        "remediate"
+      ],
+      "platforms": [
+        "source",
+        "container"
+      ],
+      "artifacts": [
+        "source repository",
+        "SBOM",
+        "container image"
+      ]
+    },
+    {
+      "id": "malware-analysis",
+      "priority": 80,
+      "description": "Isolated static/dynamic malware-analysis workflow for defensive research.",
+      "keywords": [
+        "malware",
+        "sample analysis",
+        "suspicious binary",
+        "unpack sample",
+        "恶意软件",
+        "恶意样本",
+        "可疑恶意样本",
+        "样本分析",
+        "隔离环境",
+        "可疑程序",
+        "脱壳样本",
+        "病毒样本"
+      ],
+      "tools": [
+        "ghidra",
+        "x64dbg",
+        "yara",
+        "procmon",
+        "wireshark"
+      ],
+      "domain": "malware",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "reverse",
+        "investigate",
+        "detect"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "artifacts": [
+        "PE",
+        "ELF",
+        "APK",
+        "memory dump",
+        "PCAP"
+      ]
+    },
+    {
+      "id": "dotnet",
+      "priority": 78,
+      "description": ".NET/CLR assembly decompilation, metadata, IL and runtime inspection.",
+      "keywords": [
+        ".net",
+        "dotnet",
+        "clr",
+        "assembly",
+        "il",
+        "dnspy",
+        "ilspy",
+        "c#反编译",
+        ".net逆向",
+        "程序集",
+        "il代码"
+      ],
+      "tools": [
+        "ilspy",
+        "dnspy",
+        "dotnet"
+      ],
+      "domain": "native",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "reverse",
+        "debug"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "artifacts": [
+        "CLR assembly"
+      ]
+    },
+    {
+      "id": "android-code",
+      "priority": 79,
+      "description": "Offline Android method Java/smali recovery and static references through a pinned interpreted JADX profile; no device or runtime mutation.",
+      "keywords": ["android code recovery", "dex code recovery", "jadx recovery", "jadx", "apk", "dex", "apk反编译", "apk 反编译", "dex反编译", "dex 反编译", "java/smali", "smali恢复", "安卓代码恢复", "安卓静态代码", "离线 dex 代码"],
+      "tools": ["java21", "jadx-headless"],
+      "domain": "mobile",
+      "effect_class": "observation",
+      "intents": ["triage", "reverse", "investigate"],
+      "platforms": ["android"],
+      "artifacts": ["APK", "DEX"]
+    },
+    {
+      "id": "android-static",
+      "built_in": true,
+      "priority": 77,
+      "description": "Offline APK components, manifest/resource declarations, DEX metadata and selected instruction bytes/structural CFG through built-in bounded readers. Optional JADX recovery needs its separately verified local runtime profile.",
+      "keywords": [
+        "android static", "android offline", "offline apk", "offline dex",
+        "apk manifest", "apk components", "dex metadata", "dex instructions", "dex cfg", "dex 指令", "dex 控制流", "androidmanifest.xml",
+        "resources.arsc", "android resource table", "binary android xml",
+        "离线 apk", "离线apk", "离线 dex", "离线dex", "安卓离线", "安卓静态",
+        "apk 权限声明", "apk 组件声明", "dex 方法", "dex 类", "apk资源", "apk 资源"
+      ],
+      "tools": [],
+      "domain": "mobile",
+      "effect_class": "observation",
+      "intents": ["triage", "reverse", "investigate"],
+      "platforms": ["android"],
+      "artifacts": ["APK", "DEX", "AndroidManifest.xml", "resources.arsc"]
+    },
+    {
+      "id": "android",
+      "priority": 76,
+      "description": "Android APK/DEX/Smali/native-library analysis and runtime instrumentation.",
+      "keywords": [
+        "android",
+        "apk",
+        "dex",
+        "smali",
+        "jadx",
+        "apktool",
+        "adb",
+        "frida",
+        "split apk",
+        "app bundle",
+        "flutter",
+        "dart aot",
+        "安卓",
+        "手机端",
+        "移动端",
+        "apk逆向",
+        "smali"
+      ],
+      "tools": [
+        "jadx",
+        "apktool",
+        "adb",
+        "frida"
+      ],
+      "domain": "mobile",
+      "effect_class": "runtime mutation",
+      "intents": [
+        "triage",
+        "reverse",
+        "debug",
+        "trace"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "artifacts": [
+        "APK",
+        "DEX"
+      ]
+    },
+    {
+      "id": "ios",
+      "priority": 74,
+      "description": "iOS IPA/Mach-O/mobile analysis and runtime instrumentation.",
+      "keywords": [
+        "ios",
+        "iphone",
+        "ipa",
+        "mach-o",
+        "objective-c",
+        "swift",
+        "越狱",
+        "ios逆向",
+        "ipa逆向"
+      ],
+      "tools": [
+        "ghidra",
+        "frida",
+        "lldb"
+      ],
+      "domain": "mobile",
+      "effect_class": "runtime mutation",
+      "intents": [
+        "triage",
+        "reverse",
+        "debug",
+        "trace"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "artifacts": [
+        "IPA",
+        "Mach-O"
+      ]
+    },
+    {
+      "id": "js-web",
+      "priority": 72,
+      "description": "JavaScript/Electron/WASM/browser-client reverse engineering.",
+      "keywords": [
+        "javascript",
+        "electron",
+        "wasm",
+        "browser",
+        "web game",
+        "source map",
+        "sourcemap",
+        "har capture",
+        "har 抓包",
+        "离线har",
+        "sse capture",
+        "sse 抓包",
+        "event-stream",
+        "webpack",
+        "webpack chunk",
+        "js signature",
+        "signature chain",
+        "webcrypto",
+        "签名参数",
+        "加密参数",
+        "js加密",
+        "网页",
+        "浏览器",
+        "前端js",
+        "electron逆向",
+        "wasm逆向"
+      ],
+      "tools": [
+        "node",
+        "browser",
+        "mitmproxy"
+      ],
+      "domain": "web",
+      "effect_class": "observation",
+      "intents": [
+        "reverse",
+        "trace",
+        "investigate"
+      ],
+      "platforms": [
+        "browser"
+      ],
+      "artifacts": [
+        "JavaScript",
+        "WASM",
+        "SourceMap",
+        "HAR"
+      ]
+    },
+    {
+      "id": "firmware-iot",
+      "priority": 70,
+      "description": "Firmware, embedded filesystem, MCU/IoT binary and image analysis.",
+      "keywords": [
+        "firmware",
+        "iot",
+        "embedded",
+        "binwalk",
+        "squashfs",
+        "uboot",
+        "固件",
+        "嵌入式",
+        "物联网",
+        "固件分析"
+      ],
+      "tools": [
+        "binwalk",
+        "ghidra",
+        "qemu"
+      ],
+      "domain": "firmware",
+      "effect_class": "observation",
+      "intents": [
+        "triage",
+        "reverse",
+        "emulate"
+      ],
+      "platforms": [
+        "embedded"
+      ],
+      "artifacts": [
+        "firmware"
+      ]
+    },
+    {
+      "id": "game-resource",
+      "priority": 68,
+      "description": "Game archives/resources, proprietary asset formats and modding research.",
+      "keywords": [
+        "lod",
+        "pak",
+        "pac",
+        "archive",
+        "game resource",
+        "resource format",
+        "asset bundle",
+        "资源包",
+        "封包",
+        "游戏资源",
+        "资源格式",
+        "h3bitmap",
+        "游戏封包"
+      ],
+      "tools": [
+        "radare2"
+      ],
+      "domain": "game",
+      "effect_class": "local mutation",
+      "intents": [
+        "reverse",
+        "patch"
+      ],
+      "platforms": [
+        "windows"
+      ],
+      "artifacts": [
+        "game archive",
+        "resource"
+      ]
+    },
+    {
+      "id": "crypto-obfuscation",
+      "priority": 66,
+      "description": "Obfuscation, packing, encoding and cryptographic-use analysis.",
+      "keywords": [
+        "obfuscation",
+        "obfuscated",
+        "packer",
+        "vmprotect",
+        "themida",
+        "control flow flattening",
+        "crypto",
+        "加密",
+        "混淆",
+        "虚拟化保护",
+        "控制流平坦化",
+        "脱壳"
+      ],
+      "tools": [
+        "ghidra",
+        "x64dbg",
+        "die",
+        "frida"
+      ],
+      "domain": "crypto",
+      "effect_class": "observation",
+      "intents": [
+        "reverse",
+        "investigate"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "android",
+        "ios"
+      ],
+      "artifacts": [
+        "PE",
+        "ELF",
+        "Mach-O",
+        "DEX"
+      ]
+    },
+    {
+      "id": "traffic-protocol",
+      "priority": 64,
+      "description": "Protocol, packet and application-traffic reverse engineering.",
+      "keywords": [
+        "wireshark",
+        "pcap",
+        "protocol reverse",
+        "packet",
+        "socket",
+        "network protocol",
+        "协议逆向",
+        "抓包分析",
+        "数据包",
+        "网络协议"
+      ],
+      "tools": [
+        "kaitai",
+        "mitmproxy",
+        "scapy",
+        "tshark",
+        "wireshark"
+      ],
+      "domain": "network",
+      "effect_class": "observation",
+      "intents": [
+        "reverse",
+        "trace",
+        "investigate"
+      ],
+      "platforms": [
+        "network"
+      ],
+      "artifacts": [
+        "PCAP",
+        "protocol samples",
+        "raw bytes",
+        "schema"
+      ]
+    },
+    {
+      "id": "unclassified",
+      "priority": 0,
+      "description": "No existing route matched with enough evidence. Classify or add a route/playbook before target actions.",
+      "keywords": [],
+      "tools": [],
+      "domain": "unknown",
+      "effect_class": "observation",
+      "intents": [
+        "triage"
+      ],
+      "platforms": [],
+      "artifacts": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "builtin_ghidra_runtime",
+  "title": "Keep Ghidra on the pinned UCRT64 Python runtime",
+  "body": "The ReverseResearch Ghidra backend uses MSYS2 UCRT64 CPython 3.14 and validates the Python ABI before startup. ABI-sensitive native dependencies come from the matching UCRT64 environment while project Python adapters remain versioned with ReverseResearch.",
+  "route": "native-static",
+  "tags": [
+    "ghidra",
+    "python",
+    "runtime",
+    "abi"
+  ],
+  "origin": "builtin",
+  "domain": "native-static",
+  "architectures": [
+    "x86",
+    "x64"
+  ],
+  "tools": [
+    "ghidra"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "project:docs/architecture.md",
+    "license": "unspecified",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

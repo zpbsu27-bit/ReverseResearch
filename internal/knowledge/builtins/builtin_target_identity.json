@@ -1,0 +1,31 @@
+{
+  "id": "builtin_target_identity",
+  "title": "Freeze target identity before analysis",
+  "body": "Identify the exact target before analysis and preserve its SHA-256, size, format, and architecture with the research evidence. Recheck currentness around longer analysis so results are not silently attached to a replaced or edited file.",
+  "route": "pe-static",
+  "tags": [
+    "currentness",
+    "identity",
+    "sha256",
+    "triage"
+  ],
+  "origin": "builtin",
+  "domain": "native",
+  "architectures": [
+    "x86",
+    "x64"
+  ],
+  "tools": [
+    "die",
+    "target"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "project:docs/architecture.md",
+    "license": "unspecified",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

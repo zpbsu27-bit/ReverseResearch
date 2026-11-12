@@ -1,0 +1,6 @@
+{
+  "sha256": "6dec605fb0d44317eb8534fe7c186d6d0fdeb651375f618de5a929f76d60ef45",
+  "url": "https://android.googlesource.com/platform/art/+/refs/tags/android-16.0.0_r1/libdexfile/dex/dex_instruction_list.h?format=TEXT",
+  "source": "AOSP Apache-2.0 opcode declarations; not an engine runtime",
+  "tag": "android-16.0.0_r1"
+}

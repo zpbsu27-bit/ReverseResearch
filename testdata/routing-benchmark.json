@@ -1,0 +1,374 @@
+[
+  {
+    "text": "找这个老游戏金币的内存地址",
+    "expected": "memory-search"
+  },
+  {
+    "text": "scan the value, then refine the candidate addresses",
+    "expected": "memory-search"
+  },
+  {
+    "text": "给英雄移动力下断点看是谁写入",
+    "expected": "dynamic-debug"
+  },
+  {
+    "text": "set a breakpoint and inspect registers",
+    "expected": "dynamic-debug"
+  },
+  {
+    "text": "把旧版分兵函数迁移到新版",
+    "expected": "binary-diff"
+  },
+  {
+    "text": "binary diff these old version and new version builds",
+    "expected": "binary-diff"
+  },
+  {
+    "text": "把 75 0A 替换成 EB 0A 做补丁",
+    "expected": "patch"
+  },
+  {
+    "text": "plan a guarded byte patch and rollback",
+    "expected": "patch"
+  },
+  {
+    "text": "看这个程序的导入表、节区和编译器",
+    "expected": "pe-static"
+  },
+  {
+    "text": "inspect PE header and export table",
+    "expected": "pe-static"
+  },
+  {
+    "text": "查字符串引用并反编译这个函数",
+    "expected": "native-static"
+  },
+  {
+    "text": "build the call graph and decompile the native binary",
+    "expected": "native-static"
+  },
+  {
+    "text": "做一道 CTF Pwn 题，先看保护再分析 ROP",
+    "expected": "pwn-exploit"
+  },
+  {
+    "text": "analyze this heap exploitation pwn challenge",
+    "expected": "pwn-exploit"
+  },
+  {
+    "text": "为这个 CTF 赛题准备隔离沙箱",
+    "expected": "ctf-sandbox"
+  },
+  {
+    "text": "create a reproducible sandbox for the challenge",
+    "expected": "ctf-sandbox"
+  },
+  {
+    "text": "对授权目标做 nmap 端口扫描和服务枚举",
+    "expected": "pentest-network"
+  },
+  {
+    "text": "authorized pentest with nmap and sqlmap",
+    "expected": "pentest-network"
+  },
+  {
+    "text": "用 Burp 抓包重放这个 Web API 请求",
+    "expected": "web-security"
+  },
+  {
+    "text": "inspect this web application with Burp Repeater",
+    "expected": "web-security"
+  },
+  {
+    "text": "研究 EDR 对这个兼容层行为的检测和绕过韧性",
+    "expected": "endpoint-defense-research"
+  },
+  {
+    "text": "test endpoint telemetry and bypass resilience",
+    "expected": "endpoint-defense-research"
+  },
+  {
+    "text": "复现这个 CVE 并做补丁前后 diff",
+    "expected": "nday-research"
+  },
+  {
+    "text": "N-day patch diff and vulnerability reproduction",
+    "expected": "nday-research"
+  },
+  {
+    "text": "在隔离环境分析这个可疑恶意样本",
+    "expected": "malware-analysis"
+  },
+  {
+    "text": "defensive malware sample analysis",
+    "expected": "malware-analysis"
+  },
+  {
+    "text": "反编译这个 .NET 程序的 IL",
+    "expected": "dotnet"
+  },
+  {
+    "text": "use ILSpy on this CLR assembly",
+    "expected": "dotnet"
+  },
+  {
+    "text": "分析这个 APK 的 DEX 和 smali",
+    "expected": "android"
+  },
+  {
+    "text": "instrument this Android APK with Frida",
+    "expected": "android"
+  },
+  {
+    "text": "分析这个 IPA 里的 Mach-O",
+    "expected": "ios"
+  },
+  {
+    "text": "reverse this iOS Swift binary",
+    "expected": "ios"
+  },
+  {
+    "text": "分析 Electron 里的 JavaScript 和 WASM",
+    "expected": "js-web"
+  },
+  {
+    "text": "reverse this webpack/electron client",
+    "expected": "js-web"
+  },
+  {
+    "text": "分析这个路由器固件里的 squashfs",
+    "expected": "firmware-iot"
+  },
+  {
+    "text": "binwalk this firmware image",
+    "expected": "firmware-iot"
+  },
+  {
+    "text": "分析 H3bitmap.lod 里面的游戏资源",
+    "expected": "game-resource"
+  },
+  {
+    "text": "unpack this legacy game resource archive",
+    "expected": "game-resource"
+  },
+  {
+    "text": "这个程序用了 VMProtect 混淆和壳",
+    "expected": "crypto-obfuscation"
+  },
+  {
+    "text": "analyze control flow flattening and obfuscation",
+    "expected": "crypto-obfuscation"
+  },
+  {
+    "text": "用 Wireshark 分析这个自定义协议",
+    "expected": "traffic-protocol"
+  },
+  {
+    "text": "reverse this pcap network protocol",
+    "expected": "traffic-protocol"
+  },
+  {
+    "text": "没有明显关键词的本地二进制研究",
+    "expected": "native-static"
+  },
+  {
+    "text": "pull and analyze this split APK set before install-multiple",
+    "expected": "android"
+  },
+  {
+    "text": "这个 Flutter Dart AOT 应用需要先判断代码到底在 dex 还是 so",
+    "expected": "android"
+  },
+  {
+    "text": "Frida hook 这个 APK 的运行时方法",
+    "expected": "android"
+  },
+  {
+    "text": "trace the browser JavaScript signature chain before rebuilding it in Node",
+    "expected": "js-web"
+  },
+  {
+    "text": "定位这个 WebCrypto 签名参数来自哪个 webpack chunk",
+    "expected": "js-web"
+  },
+  {
+    "text": "这个 WASM 模块生成请求 token，需要保留 JS/WASM 边界",
+    "expected": "js-web"
+  },
+  {
+    "text": "一项现有分类都不匹配的未知对象研究",
+    "expected": "unclassified"
+  },
+  {
+    "text": "把这批 Sysmon 遥测做成 Sigma 检测规则并验证正负样本",
+    "expected": "blue-detection"
+  },
+  {
+    "text": "write and validate a Sigma rule with positive and negative telemetry fixtures",
+    "expected": "blue-detection"
+  },
+  {
+    "text": "做一次紫队验证，从 ATT&CK TTP 模拟到检测缺口再复测",
+    "expected": "purple-validation"
+  },
+  {
+    "text": "purple team adversary emulation and detection gap retest",
+    "expected": "purple-validation"
+  },
+  {
+    "text": "analyze this Linux ELF and record the GNU build-id before decompiling",
+    "expected": "linux-native"
+  },
+  {
+    "text": "分析这个 ELF 程序和 GNU build-id",
+    "expected": "linux-native"
+  },
+  {
+    "text": "build a libFuzzer harness and dedupe sanitizer crashes",
+    "expected": "vuln-research"
+  },
+  {
+    "text": "对这个解析器做模糊测试和崩溃去重",
+    "expected": "vuln-research"
+  },
+  {
+    "text": "ingest EVTX MFT and Prefetch into a forensic timeline",
+    "expected": "dfir-forensics"
+  },
+  {
+    "text": "把 EVTX、USN 和内存镜像做 DFIR 时间线",
+    "expected": "dfir-forensics"
+  },
+  {
+    "text": "audit this source repository with Semgrep and export SARIF",
+    "expected": "source-code-audit"
+  },
+  {
+    "text": "做源码审计并用 CodeQL 检查数据流",
+    "expected": "source-code-audit"
+  },
+  {
+    "text": "inventory SBOM dependencies and secret candidates with CycloneDX",
+    "expected": "supply-chain"
+  },
+  {
+    "text": "检查供应链依赖、SBOM 和密钥泄漏候选",
+    "expected": "supply-chain"
+  },
+  {
+    "text": "用 BloodHound 分析 identity security、domain trust 和 attack path identity",
+    "expected": "identity-ad"
+  },
+  {
+    "text": "analyze Active Directory identity security and certificate template attack paths",
+    "expected": "identity-ad"
+  },
+  {
+    "text": "审查 AWS security 的 cloud IAM、Prowler 和 IAM graph",
+    "expected": "cloud-security"
+  },
+  {
+    "text": "review Azure security and cloud attack path from a ScoutSuite snapshot",
+    "expected": "cloud-security"
+  },
+  {
+    "text": "做 Kubernetes security、pod security 和 Kubescape 审计",
+    "expected": "container-k8s"
+  },
+  {
+    "text": "review k8s security and kube-bench cluster audit results",
+    "expected": "container-k8s"
+  },
+  {
+    "text": "对授权范围做 network assessment 和 service discovery",
+    "expected": "network-assessment"
+  },
+  {
+    "text": "prepare a network assessment from service discovery and port inventory evidence",
+    "expected": "network-assessment"
+  },
+  {
+    "text": "设计 Atomic Red Team adversary emulation 计划但先不执行",
+    "expected": "adversary-emulation"
+  },
+  {
+    "text": "prepare a CALDERA red team emulation plan for ATT&CK validation",
+    "expected": "adversary-emulation"
+  },
+  {
+    "text": "导入 STIX/TAXII threat intelligence 并分析 IOC relationship",
+    "expected": "cti-analysis"
+  },
+  {
+    "text": "analyze MISP threat intelligence and intrusion set relationships",
+    "expected": "cti-analysis"
+  },
+  {
+    "text": "基于 Sysmon telemetry 做 threat hunting 和 hunt hypothesis",
+    "expected": "threat-hunting"
+  },
+  {
+    "text": "build an osquery hunt hypothesis for threat hunting",
+    "expected": "threat-hunting"
+  },
+  {
+    "text": "analyze this Active Directory BloodHound identity graph and domain trust attack path",
+    "expected": "identity-ad"
+  },
+  {
+    "text": "review this AWS cloud IAM inventory and resource exposure graph",
+    "expected": "cloud-security"
+  },
+  {
+    "text": "analyze this Kubernetes RBAC cluster inventory and container image security",
+    "expected": "container-k8s"
+  },
+  {
+    "text": "perform an authorized network assessment from this service inventory",
+    "expected": "network-assessment"
+  },
+  {
+    "text": "prepare ATT&CK adversary emulation with telemetry and retest",
+    "expected": "adversary-emulation"
+  },
+  {
+    "text": "import this STIX bundle and correlate IOC campaign relationships",
+    "expected": "cti-analysis"
+  },
+  {
+    "text": "build a threat hunting hypothesis using Sysmon telemetry and Sigma",
+    "expected": "threat-hunting"
+  },
+  {
+    "text": "比较两个版本的 Windows PE 程序，找出变化函数，生成迁移候选，并将证据关联到研究案例后输出报告。",
+    "expected": "binary-diff"
+  },
+  {
+    "text": "对比两个版本的二进制差分并检查候选地址",
+    "expected": "binary-diff"
+  },
+  {
+    "text": "分析这个 Windows PE 程序的结构和导入，保留静态证据并生成研究报告",
+    "expected": "native-static"
+  },
+  {
+    "text": "分析 Electron JavaScript 和 SourceMap 的声明，并查看离线 HAR 请求记录",
+    "expected": "js-web"
+  },
+  {
+    "text": "安卓离线 APK Manifest 和 resources.arsc 声明研究，查看 DEX 方法元数据并保留静态证据",
+    "expected": "android-static"
+  },
+  {
+    "text": "offline APK manifest and DEX metadata research",
+    "expected": "android-static"
+  },
+  {
+    "text": "比较两个季度的销售报表并生成总结",
+    "expected": "unclassified"
+  },
+  {
+    "text": "把研究报告迁移到文档目录",
+    "expected": "unclassified"
+  }
+]

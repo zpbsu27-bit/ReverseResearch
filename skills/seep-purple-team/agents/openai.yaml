@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seep Purple Team"
+  short_description: "Scoped TTP emulation through telemetry, detection, and retest."

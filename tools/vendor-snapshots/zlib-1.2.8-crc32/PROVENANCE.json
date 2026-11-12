@@ -1,0 +1,22 @@
+{
+  "project": "madler/zlib",
+  "version": "1.2.8",
+  "tag_object": "a8895ac226f94c3113665c763d3e10dd5d9ce4d9",
+  "commit": "50893291621658f355bc5b4d450a8d06a563053d",
+  "license": "zlib",
+  "purpose": "CRC slicing-by-four adaptation; no inflater or external library linked",
+  "files": {
+    "crc32.c": {
+      "source": "https://raw.githubusercontent.com/madler/zlib/50893291621658f355bc5b4d450a8d06a563053d/crc32.c",
+      "bytes": 13174,
+      "sha256": "3f3daca510273dda74eaf381c46d2551e3a3506891ae063ab451b87744a7a36c"
+    },
+    "zlib.h": {
+      "source": "https://raw.githubusercontent.com/madler/zlib/50893291621658f355bc5b4d450a8d06a563053d/zlib.h",
+      "bytes": 87883,
+      "sha256": "726b0569915917b967f87f3f08a1eec039101bf9dcc29d61c0b2b0b8f271b58d"
+    }
+  },
+  "license_file_sha256": "b09e2a43e9960d3d28d37d24f10dfbc462a4cb376da54ba571ac9a8874911ed5",
+  "modified_source": "private crc-r28/source/H3HD/src/hd_font_crc32.h"
+}

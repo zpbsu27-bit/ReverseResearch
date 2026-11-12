@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seep DFIR"
+  short_description: "Immutable forensic ingest and provenance-linked timeline workflow."

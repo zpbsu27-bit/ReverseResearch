@@ -1,0 +1,1256 @@
+[
+  {
+    "name": "AllocateMemory",
+    "description": "x32dbg backend tool AllocateMemory. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "integer",
+          "description": "Number of bytes to allocate."
+        },
+        "protection": {
+          "type": "string",
+          "description": "Memory protection: rwx, rw, rx, r (default rw).",
+          "default": "rw"
+        }
+      },
+      "required": [
+        "size"
+      ]
+    }
+  },
+  {
+    "name": "AnalyzeCode",
+    "description": "x32dbg backend tool AnalyzeCode. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address or module to analyze. If omitted, analyzes the current module."
+        },
+        "type": {
+          "type": "string",
+          "description": "Analysis type: 'function' (analr - analyze single function), 'module' (anal - analyze module), 'controlflow' (cfanal - control flow analysis). Default: module.",
+          "default": "module"
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "AnalyzeModule",
+    "description": "x32dbg backend tool AnalyzeModule. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "description": "Module name (e.g. kernel32, ntdll)."
+        }
+      },
+      "required": [
+        "module"
+      ]
+    }
+  },
+  {
+    "name": "Assemble",
+    "description": "x32dbg backend tool Assemble. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address to assemble at."
+        },
+        "instruction": {
+          "type": "string",
+          "description": "Assembly instruction (e.g. nop, mov eax 1, jmp 0x401000)."
+        }
+      },
+      "required": [
+        "address",
+        "instruction"
+      ]
+    }
+  },
+  {
+    "name": "AttachProcess",
+    "description": "x32dbg backend tool AttachProcess. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "pid": {
+          "type": "integer",
+          "description": "Process ID to attach to."
+        }
+      },
+      "required": [
+        "pid"
+      ]
+    }
+  },
+  {
+    "name": "ClearEventLog",
+    "description": "x32dbg backend tool ClearEventLog. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "CommentOrLabelAtAddress",
+    "description": "x32dbg backend tool CommentOrLabelAtAddress. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Hex address."
+        },
+        "value": {
+          "type": "string",
+          "description": "The comment or label text."
+        },
+        "mode": {
+          "type": "string",
+          "description": "'Comment' or 'Label'.",
+          "default": "Comment"
+        }
+      },
+      "required": [
+        "address",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "DeleteAllBreakpoints",
+    "description": "x32dbg backend tool DeleteAllBreakpoints. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "DeleteBookmark",
+    "description": "x32dbg backend tool DeleteBookmark. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Target address or expression."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "DeleteBreakpoint",
+    "description": "x32dbg backend tool DeleteBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string",
+          "description": "Hex address or API symbol of the breakpoint to remove."
+        }
+      },
+      "required": [
+        "target"
+      ]
+    }
+  },
+  {
+    "name": "DeleteExceptionBreakpoint",
+    "description": "x32dbg backend tool DeleteExceptionBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exceptionCode": {
+          "type": "string",
+          "description": "Exception code in hex to delete."
+        }
+      },
+      "required": [
+        "exceptionCode"
+      ]
+    }
+  },
+  {
+    "name": "DetectOEP",
+    "description": "x32dbg backend tool DetectOEP. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "description": "Module name (e.g. kernel32, ntdll)."
+        }
+      },
+      "required": [
+        "module"
+      ]
+    }
+  },
+  {
+    "name": "DisableBreakpoint",
+    "description": "x32dbg backend tool DisableBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Target address or expression."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "Disassemble",
+    "description": "x32dbg backend tool Disassemble. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address or expression (default: current IP).",
+          "default": "cip"
+        },
+        "count": {
+          "type": "integer",
+          "description": "Number of instructions (default 10, max 100).",
+          "default": 10
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "DisassembleFunction",
+    "description": "x32dbg backend tool DisassembleFunction. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Target address or expression."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "DumpMemory",
+    "description": "x32dbg backend tool DumpMemory. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Start address."
+        },
+        "size": {
+          "type": "integer",
+          "description": "Bytes to dump."
+        },
+        "filePath": {
+          "type": "string",
+          "description": "Output file path on disk."
+        }
+      },
+      "required": [
+        "address",
+        "size",
+        "filePath"
+      ]
+    }
+  },
+  {
+    "name": "DumpModule",
+    "description": "x32dbg backend tool DumpModule. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "description": "Module name to dump."
+        },
+        "filePath": {
+          "type": "string",
+          "description": "Output file path."
+        }
+      },
+      "required": [
+        "module",
+        "filePath"
+      ]
+    }
+  },
+  {
+    "name": "Echo",
+    "description": "x32dbg backend tool Echo. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Message to echo."
+        }
+      },
+      "required": [
+        "message"
+      ]
+    }
+  },
+  {
+    "name": "EnableBreakpoint",
+    "description": "x32dbg backend tool EnableBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Target address or expression."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "EvalExpression",
+    "description": "x32dbg backend tool EvalExpression. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "x64dbg expression (e.g. cip, eax+4, kernel32:CreateFileA)."
+        }
+      },
+      "required": [
+        "expression"
+      ]
+    }
+  },
+  {
+    "name": "ExecuteDebuggerCommand",
+    "description": "x32dbg backend tool ExecuteDebuggerCommand. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "The x64dbg command to execute."
+        }
+      },
+      "required": [
+        "command"
+      ]
+    }
+  },
+  {
+    "name": "FindPattern",
+    "description": "x32dbg backend tool FindPattern. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "type": "string",
+          "description": "Hex bytes with ?? wildcards, e.g. 'E8 ?? ?? ?? ?? 85 C0'."
+        },
+        "module": {
+          "type": "string",
+          "description": "Module to scan (default: main exe)."
+        },
+        "maxResults": {
+          "type": "integer",
+          "description": "Max results (default 10).",
+          "default": 10
+        }
+      },
+      "required": [
+        "pattern"
+      ]
+    }
+  },
+  {
+    "name": "FollowPointer",
+    "description": "x32dbg backend tool FollowPointer. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Starting address or expression."
+        },
+        "depth": {
+          "type": "integer",
+          "description": "Dereference depth (default 1, max 16).",
+          "default": 1
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "FreeMemory",
+    "description": "x32dbg backend tool FreeMemory. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Base address of the allocated block to free."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "GetAllRegisters",
+    "description": "x32dbg backend tool GetAllRegisters. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetArguments",
+    "description": "x32dbg backend tool GetArguments. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "description": "Number of args to read (default 4, max 16).",
+          "default": 4
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "GetCallStack",
+    "description": "x32dbg backend tool GetCallStack. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetCurrentAddress",
+    "description": "x32dbg backend tool GetCurrentAddress. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetDebugState",
+    "description": "x32dbg backend tool GetDebugState. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetDumpableRegions",
+    "description": "x32dbg backend tool GetDumpableRegions. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetEventLog",
+    "description": "x32dbg backend tool GetEventLog. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "description": "Number of most recent events to return (default: all, max 64)."
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "GetExports",
+    "description": "x32dbg backend tool GetExports. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "description": "Module name (e.g. kernel32, ntdll)."
+        }
+      },
+      "required": [
+        "module"
+      ]
+    }
+  },
+  {
+    "name": "GetFunctions",
+    "description": "x32dbg backend tool GetFunctions. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "description": "Module name (e.g. kernel32, ntdll)."
+        }
+      },
+      "required": [
+        "module"
+      ]
+    }
+  },
+  {
+    "name": "GetImports",
+    "description": "x32dbg backend tool GetImports. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "description": "Module name (e.g. kernel32, ntdll)."
+        }
+      },
+      "required": [
+        "module"
+      ]
+    }
+  },
+  {
+    "name": "GetMemoryMap",
+    "description": "x32dbg backend tool GetMemoryMap. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetPEB",
+    "description": "x32dbg backend tool GetPEB. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetPatches",
+    "description": "x32dbg backend tool GetPatches. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetReferences",
+    "description": "x32dbg backend tool GetReferences. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Target address to find references to."
+        },
+        "module": {
+          "type": "string",
+          "description": "Module to search in (default: main exe)."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "GetSEHChain",
+    "description": "x32dbg backend tool GetSEHChain. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "GetStrings",
+    "description": "x32dbg backend tool GetStrings. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "description": "Module to scan (default: main exe)."
+        },
+        "minLength": {
+          "type": "integer",
+          "description": "Min string length (default 4).",
+          "default": 4
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "GetThreads",
+    "description": "x32dbg backend tool GetThreads. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "ListBookmarks",
+    "description": "x32dbg backend tool ListBookmarks. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "ListBreakpoints",
+    "description": "x32dbg backend tool ListBreakpoints. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "ListCommandsByCategory",
+    "description": "x32dbg backend tool ListCommandsByCategory. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Optional category filter."
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "ListModules",
+    "description": "x32dbg backend tool ListModules. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "ListSymbols",
+    "description": "x32dbg backend tool ListSymbols. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "description": "Module name to list symbols from."
+        }
+      },
+      "required": [
+        "module"
+      ]
+    }
+  },
+  {
+    "name": "LoadBinary",
+    "description": "x32dbg backend tool LoadBinary. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "filePath": {
+          "type": "string",
+          "description": "Absolute file path of the executable to debug."
+        },
+        "arguments": {
+          "type": "string",
+          "description": "Optional command-line arguments.",
+          "default": ""
+        }
+      },
+      "required": [
+        "filePath"
+      ]
+    }
+  },
+  {
+    "name": "PauseDebug",
+    "description": "x32dbg backend tool PauseDebug. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "ReadMemory",
+    "description": "x32dbg backend tool ReadMemory. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Hex address or expression to read from."
+        },
+        "size": {
+          "type": "integer",
+          "description": "Number of bytes to read (max 4096).",
+          "default": 64
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "ResetHitCount",
+    "description": "x32dbg backend tool ResetHitCount. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Target address or expression."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "RestartDebug",
+    "description": "x32dbg backend tool RestartDebug. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "RestorePatches",
+    "description": "x32dbg backend tool RestorePatches. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "ResumeThread",
+    "description": "x32dbg backend tool ResumeThread. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "threadId": {
+          "type": "integer",
+          "description": "Thread ID to operate on."
+        }
+      },
+      "required": [
+        "threadId"
+      ]
+    }
+  },
+  {
+    "name": "RunToAddress",
+    "description": "x32dbg backend tool RunToAddress. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address to run to."
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "description": "Timeout ms (default 30000).",
+          "default": 30000
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "SaveDatabase",
+    "description": "x32dbg backend tool SaveDatabase. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "SearchForStrings",
+    "description": "x32dbg backend tool SearchForStrings. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "searchText": {
+          "type": "string",
+          "description": "The literal text to search for."
+        },
+        "encoding": {
+          "type": "string",
+          "description": "Character encoding: UTF-8 or UTF-16.",
+          "default": "UTF-8"
+        }
+      },
+      "required": [
+        "searchText"
+      ]
+    }
+  },
+  {
+    "name": "SearchSymbols",
+    "description": "x32dbg backend tool SearchSymbols. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "type": "string",
+          "description": "Symbol name pattern to search for (substring match)."
+        },
+        "module": {
+          "type": "string",
+          "description": "Module to search in (default: all modules)."
+        }
+      },
+      "required": [
+        "pattern"
+      ]
+    }
+  },
+  {
+    "name": "SetBookmark",
+    "description": "x32dbg backend tool SetBookmark. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Target address or expression."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "SetBreakpoint",
+    "description": "x32dbg backend tool SetBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string",
+          "description": "Hex address or API symbol to break on."
+        }
+      },
+      "required": [
+        "target"
+      ]
+    }
+  },
+  {
+    "name": "SetBreakpointCommand",
+    "description": "x32dbg backend tool SetBreakpointCommand. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Breakpoint address."
+        },
+        "command": {
+          "type": "string",
+          "description": "x64dbg command to run on hit (e.g. 'log {x:eax}', 'msg {utf8@[esp+4]}')."
+        }
+      },
+      "required": [
+        "address",
+        "command"
+      ]
+    }
+  },
+  {
+    "name": "SetBreakpointFastResume",
+    "description": "x32dbg backend tool SetBreakpointFastResume. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Breakpoint address."
+        },
+        "enable": {
+          "type": "boolean",
+          "description": "true to enable fast resume, false to disable.",
+          "default": true
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "SetConditionalBreakpoint",
+    "description": "x32dbg backend tool SetConditionalBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Breakpoint address."
+        },
+        "condition": {
+          "type": "string",
+          "description": "Break condition expression, e.g. 'eax==0'."
+        },
+        "log": {
+          "type": "string",
+          "description": "Log format string (optional)."
+        }
+      },
+      "required": [
+        "address",
+        "condition"
+      ]
+    }
+  },
+  {
+    "name": "SetExceptionBreakpoint",
+    "description": "x32dbg backend tool SetExceptionBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exceptionCode": {
+          "type": "string",
+          "description": "Exception code in hex (e.g. C000001D, 0EEDFADE, E06D7363)."
+        },
+        "chance": {
+          "type": "integer",
+          "description": "1 = first-chance, 2 = second-chance, 3 = both (default 1).",
+          "default": 1
+        },
+        "action": {
+          "type": "string",
+          "description": "break = break into debugger, ignore = pass to application (default break).",
+          "default": "break"
+        }
+      },
+      "required": [
+        "exceptionCode"
+      ]
+    }
+  },
+  {
+    "name": "SetHardwareBreakpoint",
+    "description": "x32dbg backend tool SetHardwareBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address for the hardware breakpoint."
+        },
+        "type": {
+          "type": "string",
+          "description": "Type: r (read), w (write), x (execute, default).",
+          "default": "x"
+        },
+        "size": {
+          "type": "integer",
+          "description": "Size: 1, 2, 4, or 8 (default 1).",
+          "default": 1
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "SetMemoryBreakpoint",
+    "description": "x32dbg backend tool SetMemoryBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address for the memory breakpoint."
+        },
+        "type": {
+          "type": "string",
+          "description": "Type: r (read/access), w (write), x (execute). Default: access (any)."
+        },
+        "singleshoot": {
+          "type": "boolean",
+          "description": "If true, breakpoint is removed after first hit (default false).",
+          "default": false
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "SetRegister",
+    "description": "x32dbg backend tool SetRegister. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "register": {
+          "type": "string",
+          "description": "Register name (e.g. eax, ecx, eip)."
+        },
+        "value": {
+          "type": "string",
+          "description": "Value to set (hex or decimal)."
+        }
+      },
+      "required": [
+        "register",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "StepInto",
+    "description": "x32dbg backend tool StepInto. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "StepOut",
+    "description": "x32dbg backend tool StepOut. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "StepOver",
+    "description": "x32dbg backend tool StepOver. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "StopDebug",
+    "description": "x32dbg backend tool StopDebug. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "SuspendThread",
+    "description": "x32dbg backend tool SuspendThread. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "threadId": {
+          "type": "integer",
+          "description": "Thread ID to operate on."
+        }
+      },
+      "required": [
+        "threadId"
+      ]
+    }
+  },
+  {
+    "name": "SwitchThread",
+    "description": "x32dbg backend tool SwitchThread. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "threadId": {
+          "type": "integer",
+          "description": "Thread ID to switch to."
+        }
+      },
+      "required": [
+        "threadId"
+      ]
+    }
+  },
+  {
+    "name": "ToggleBreakpoint",
+    "description": "x32dbg backend tool ToggleBreakpoint. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Target address or expression."
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "TraceInto",
+    "description": "x32dbg backend tool TraceInto. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "description": "Instructions to trace (default 10, max 100).",
+          "default": 10
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "TraceOver",
+    "description": "x32dbg backend tool TraceOver. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "description": "Instructions to trace (default 10, max 100).",
+          "default": 10
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "WaitForEvent",
+    "description": "x32dbg backend tool WaitForEvent. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "timeoutMs": {
+          "type": "integer",
+          "description": "Maximum wait time in milliseconds (default 30000, max 120000).",
+          "default": 30000
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "WaitForPause",
+    "description": "x32dbg backend tool WaitForPause. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "timeoutMs": {
+          "type": "integer",
+          "description": "Maximum wait time in milliseconds.",
+          "default": 30000
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "WatchExpressions",
+    "description": "x32dbg backend tool WatchExpressions. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "expressions": {
+          "type": "string",
+          "description": "Comma-separated x64dbg expressions to evaluate."
+        }
+      },
+      "required": [
+        "expressions"
+      ]
+    }
+  },
+  {
+    "name": "WriteMemToAddress",
+    "description": "x32dbg backend tool WriteMemToAddress. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Hex address to write to."
+        },
+        "byteString": {
+          "type": "string",
+          "description": "Hex bytes to write, e.g. '0F FF 90'."
+        }
+      },
+      "required": [
+        "address",
+        "byteString"
+      ]
+    }
+  },
+  {
+    "name": "run",
+    "description": "x32dbg backend tool run. The x32dbg module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "timeoutMs": {
+          "type": "integer",
+          "description": "Maximum time to wait for target to pause after resuming (default 300000ms = 5 minutes, max 600000ms = 10 minutes). The tool blocks until a breakpoint/exception fires or timeout.",
+          "default": 300000
+        }
+      },
+      "required": []
+    }
+  }
+]

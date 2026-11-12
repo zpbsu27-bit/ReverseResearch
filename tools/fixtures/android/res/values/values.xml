@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="title">RR offline</string>
+  <string name="unicode">你好😀</string>
+  <string name="styled"><b>bold</b> value</string>
+  <integer name="count">7</integer>
+  <bool name="enabled">true</bool>
+  <item name="alias" type="string">@string/title</item>
+  <string-array name="options">
+    <item>Alpha</item>
+    <item>@string/title</item>
+  </string-array>
+</resources>

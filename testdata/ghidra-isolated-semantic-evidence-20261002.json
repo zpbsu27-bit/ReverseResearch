@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "checked_utc": "2026-10-02T00:14:29.7153127Z",
+  "scope": "isolated Ghidra semantic corroboration for G01/G03",
+  "boundary": {
+    "validation": "candidate-semantic-evidence",
+    "runtime_verified": false,
+    "notes": "The evidence corroborates migration candidates and Unicode storage behavior; it is not runtime execution proof."
+  },
+  "runtime": {
+    "ghidra_version": "12.1.4",
+    "python": "MSYS2 UCRT64 CPython 3.14",
+    "existing_daemon_port": 19096,
+    "existing_daemon_pid_observed": 11588,
+    "isolated_port": 19196,
+    "isolated_port_released_after_runs": true,
+    "existing_daemon_owner_unchanged": true
+  },
+  "fixtures": {
+    "old": {
+      "sha256": "b5f4cffdc8864c57a400831c6555880515f24bc9aa38ac08538683dead45f840",
+      "bitness": 32,
+      "processor": "x86:LE:32:default",
+      "compiler_spec": "windows",
+      "database_function_count": 3,
+      "listed_functions_total": 2,
+      "functions": [
+        {
+          "name": "entry",
+          "start": "0x401000",
+          "end": "0x401023",
+          "size": 35
+        },
+        {
+          "name": "SmokeMix",
+          "start": "0x401030",
+          "end": "0x401041",
+          "size": 17
+        }
+      ]
+    },
+    "new": {
+      "sha256": "d4a6662720b389f02e2dccd173382f11c4a332b90b14334eaef362137c39b003",
+      "change": "single non-code tail byte changed from retained fixture",
+      "bitness": 32,
+      "processor": "x86:LE:32:default",
+      "compiler_spec": "windows",
+      "database_function_count": 3,
+      "listed_functions_total": 2,
+      "functions": [
+        {
+          "name": "entry",
+          "start": "0x401000",
+          "end": "0x401023",
+          "size": 35
+        },
+        {
+          "name": "SmokeMix",
+          "start": "0x401030",
+          "end": "0x401041",
+          "size": 17
+        }
+      ]
+    }
+  },
+  "unicode_storage": {
+    "chinese_state_directory": true,
+    "chinese_evidence_directory": true,
+    "chinese_source_parent_directory": true,
+    "chinese_source_basename": true,
+    "source_path_restored_in_database_info": true,
+    "temporary_import_alias_removed": true,
+    "ghidra_internal_name_rule": "LocalFileSystem item names require U+0020..U+00FF excluding reserved punctuation; unsupported basenames use stable rr_<sha24><safe suffix> aliases."
+  }
+}

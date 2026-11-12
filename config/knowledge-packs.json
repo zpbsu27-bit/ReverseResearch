@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "threat-ttp",
+      "title": "Threat behavior and ATT&CK mapping",
+      "domains": [
+        "threat-modeling",
+        "purple-validation",
+        "malware-analysis"
+      ],
+      "routes": [
+        "adversary-emulation",
+        "blue-detection",
+        "cloud-security",
+        "cti-analysis",
+        "dfir-forensics",
+        "endpoint-defense-research",
+        "identity-ad",
+        "malware-analysis",
+        "network-assessment",
+        "purple-validation",
+        "threat-hunting"
+      ],
+      "standards": [
+        {
+          "id": "mitre-attack",
+          "name": "MITRE ATT&CK",
+          "version": "reviewed-current",
+          "canonical_source": "https://attack.mitre.org/",
+          "purpose": "Normalize tactics, techniques, procedures, coverage and emulation references."
+        }
+      ],
+      "note_ids": [
+        "builtin_attack_evidence_mapping"
+      ],
+      "source": "builtin",
+      "license": "project-manifest",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "vulnerability-taxonomy",
+      "title": "Vulnerability taxonomy and weakness mapping",
+      "domains": [
+        "vulnerability-research",
+        "secure-design"
+      ],
+      "routes": [
+        "cloud-security",
+        "container-k8s",
+        "endpoint-defense-research",
+        "firmware-iot",
+        "identity-ad",
+        "ios",
+        "linux-native",
+        "malware-analysis",
+        "native-static",
+        "nday-research",
+        "network-assessment",
+        "source-code-audit",
+        "supply-chain",
+        "vuln-research",
+        "web-security"
+      ],
+      "standards": [
+        {
+          "id": "cwe",
+          "name": "Common Weakness Enumeration",
+          "version": "reviewed-current",
+          "canonical_source": "https://cwe.mitre.org/",
+          "purpose": "Normalize weakness classes."
+        },
+        {
+          "id": "capec",
+          "name": "Common Attack Pattern Enumeration and Classification",
+          "version": "reviewed-current",
+          "canonical_source": "https://capec.mitre.org/",
+          "purpose": "Relate weaknesses to attack-pattern semantics."
+        }
+      ],
+      "note_ids": [
+        "builtin_cwe_capec_mapping"
+      ],
+      "source": "builtin",
+      "license": "project-manifest",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "detection-engineering",
+      "title": "Detection engineering validation",
+      "domains": [
+        "detection-engineering",
+        "blue-team"
+      ],
+      "routes": [
+        "blue-detection",
+        "malware-analysis",
+        "purple-validation"
+      ],
+      "standards": [
+        {
+          "id": "sigma",
+          "name": "Sigma",
+          "version": "reviewed-current",
+          "canonical_source": "https://sigmahq.io/",
+          "purpose": "Portable structured detection rule semantics."
+        },
+        {
+          "id": "yara",
+          "name": "YARA",
+          "version": "reviewed-current",
+          "canonical_source": "https://virustotal.github.io/yara/",
+          "purpose": "Pattern-based malware and artifact detection."
+        },
+        {
+          "id": "suricata",
+          "name": "Suricata rules",
+          "version": "reviewed-current",
+          "canonical_source": "https://suricata.io/",
+          "purpose": "Network detection rule semantics."
+        }
+      ],
+      "note_ids": [
+        "builtin_detection_validation"
+      ],
+      "source": "builtin",
+      "license": "project-manifest",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "report-interchange",
+      "title": "Security result and intelligence interchange",
+      "domains": [
+        "reporting",
+        "interchange"
+      ],
+      "routes": [
+        "adversary-emulation",
+        "blue-detection",
+        "cloud-security",
+        "container-k8s",
+        "cti-analysis",
+        "dfir-forensics",
+        "firmware-iot",
+        "identity-ad",
+        "ios",
+        "linux-native",
+        "malware-analysis",
+        "nday-research",
+        "network-assessment",
+        "purple-validation",
+        "source-code-audit",
+        "supply-chain",
+        "threat-hunting",
+        "traffic-protocol",
+        "vuln-research",
+        "web-security"
+      ],
+      "standards": [
+        {
+          "id": "sarif",
+          "name": "SARIF",
+          "version": "reviewed-current",
+          "canonical_source": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/",
+          "purpose": "Static-analysis/result interchange."
+        },
+        {
+          "id": "stix",
+          "name": "STIX",
+          "version": "reviewed-current",
+          "canonical_source": "https://oasis-open.github.io/cti-documentation/",
+          "purpose": "Cyber threat intelligence object interchange."
+        }
+      ],
+      "note_ids": [
+        "builtin_report_interchange"
+      ],
+      "source": "builtin",
+      "license": "project-manifest",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "telemetry-normalization",
+      "title": "Telemetry normalization and forensic provenance",
+      "domains": [
+        "dfir",
+        "defense",
+        "telemetry"
+      ],
+      "routes": [
+        "adversary-emulation",
+        "blue-detection",
+        "cloud-security",
+        "container-k8s",
+        "dfir-forensics",
+        "endpoint-defense-research",
+        "identity-ad",
+        "malware-analysis",
+        "purple-validation",
+        "threat-hunting"
+      ],
+      "standards": [
+        {
+          "id": "ocsf",
+          "name": "Open Cybersecurity Schema Framework",
+          "version": "reviewed-current",
+          "canonical_source": "https://schema.ocsf.io/",
+          "purpose": "Normalize security event semantics while retaining raw-event provenance."
+        }
+      ],
+      "note_ids": [
+        "builtin_ocsf_normalization"
+      ],
+      "source": "builtin",
+      "license": "project-manifest",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "software-supply-chain",
+      "title": "Source and software supply-chain interchange",
+      "domains": [
+        "code",
+        "supply-chain"
+      ],
+      "routes": [
+        "container-k8s",
+        "source-code-audit",
+        "supply-chain"
+      ],
+      "standards": [
+        {
+          "id": "sarif",
+          "name": "SARIF",
+          "version": "2.1.0",
+          "canonical_source": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/",
+          "purpose": "Static-analysis result interchange."
+        },
+        {
+          "id": "spdx",
+          "name": "SPDX",
+          "version": "reviewed-current",
+          "canonical_source": "https://spdx.dev/",
+          "purpose": "Software bill-of-materials and licensing interchange."
+        },
+        {
+          "id": "cyclonedx",
+          "name": "CycloneDX",
+          "version": "reviewed-current",
+          "canonical_source": "https://cyclonedx.org/",
+          "purpose": "Software bill-of-materials and supply-chain interchange."
+        }
+      ],
+      "note_ids": [
+        "builtin_supply_chain_evidence"
+      ],
+      "source": "builtin",
+      "license": "project-manifest",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    }
+  ]
+}

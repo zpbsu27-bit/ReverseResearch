@@ -1,0 +1,30 @@
+{
+  "id": "builtin_guarded_patch",
+  "title": "Treat patching as a guarded state transition",
+  "body": "A patch plan should freeze source identity, expected original bytes, replacement bytes, and the expected postcondition before any write. Prefer copy mode, verify the exact postcondition, and retain an operation receipt so retries do not blindly repeat an uncertain mutation.",
+  "route": "patch",
+  "tags": [
+    "patch",
+    "rollback",
+    "receipt",
+    "verification"
+  ],
+  "origin": "builtin",
+  "domain": "binary-patching",
+  "architectures": [
+    "x86",
+    "x64"
+  ],
+  "tools": [
+    "patch"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "project:docs/architecture.md",
+    "license": "unspecified",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

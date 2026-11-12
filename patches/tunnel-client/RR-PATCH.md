@@ -1,0 +1,7 @@
+# Embedded transport adapter
+
+Canonical compiled SDK owner: this source subset of `github.com/openai/tunnel-client@v0.0.15`, selected by the root `go.mod` replacement. `provenance.json` records the upstream commit, module checksum, source ZIP SHA and each original file SHA. Apache-2.0 `LICENSE` and `NOTICE` are retained. No module-cache source is modified.
+
+Only four upstream files change: `client.go` passes an optional HTTP transport adapter into `pkg/runtimeconfig/config.go`; `pkg/controlplane/internal/tunnel_service_client.go` applies it after the SDK configures TLS, client certificates and proxy, and before the existing authentication, response receipts, metrics and logging middleware. An explicit Unix socket retains its original path. `pkg/controlplane/fx/fxmodule.go` distinguishes per-request routing from fixed startup proxy metadata. The adapter can select the current OS network path but must not replay or retry a request.
+
+Polling, control-plane authentication, MCP dispatch, delivery retry and runtime lifecycle are the original SDK implementation. RR does not create another tunnel client or restart loop. Standalone CLI/build/e2e trees are omitted from this embedded-runtime snapshot; runtime packages, embedded resources and their original source tests are retained. The optional hook is covered by RR's actual SDK/control-plane integration tests. Removing the root replacement restores the upstream SDK but requires removing RR's hook usage at the same time.

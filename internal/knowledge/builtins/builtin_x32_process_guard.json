@@ -1,0 +1,29 @@
+{
+  "id": "builtin_x32_process_guard",
+  "title": "Bind x32dbg mutations to a controlled process instance",
+  "body": "Before a typed x32dbg mutation, inspect the live process, acquire its process lease, and bind AttachProcess to that identity. Carry the same process key, owner, lease ID, and operation ID across later typed mutations; uncertain prepared operations are not replayed.",
+  "route": "dynamic-debug",
+  "tags": [
+    "x32dbg",
+    "lease",
+    "operation-id",
+    "process-identity"
+  ],
+  "origin": "builtin",
+  "domain": "native-dynamic",
+  "architectures": [
+    "x86"
+  ],
+  "tools": [
+    "x32dbg"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "project:docs/architecture.md",
+    "license": "unspecified",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

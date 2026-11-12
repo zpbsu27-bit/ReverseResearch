@@ -1,0 +1,185 @@
+ReverseResearch 项目目录地图
+==========================
+位置：<repo-root>
+更新时间：2026-10-03
+
+一、先看这里：目录职责总览
+--------------------------
+
+cmd\
+  正式可执行程序入口。
+  - reverseresearch\：主程序 ReverseResearch.exe 的 CLI / serve 入口。
+  - reverseagent\：远程/代理侧入口。
+  规则：正式产品入口只放这里，不把 smoke/fixture 混进来。
+
+internal\
+  Go 核心源码，按能力拆成独立包。
+  典型模块：backend、server、core、router、casebook、knowledge、recordio、
+  securefile、processcontrol、hookplan、memscan、pointermap、reporting 等。
+  这是项目主体代码目录，不放第三方二进制和运行时状态。
+
+config\
+  项目可版本控制的规范配置。
+  - routes.json：路由定义。
+  - playbooks.json：Playbook 定义。
+  - domain-packs.json / knowledge-packs.json：领域包/知识包。
+  - tool-metadata.json / tool-recipes.json：工具元数据和组合配方。
+  - tunnel.json：Tunnel 标识/密钥文件位置配置，不直接存密钥正文。
+
+docs\
+  架构、阶段施工记录、安全边界、平台范围、Tunnel 使用说明等长期文档。
+  根目录 README.md 负责“怎么用”，docs 负责“为什么这样设计/施工证据”。
+
+tools\
+  项目维护与验证工具，已经按职责重新归类：
+  - ops\：生产运维脚本。
+      * harden-local-install.ps1：Windows ACL 加固/审计。
+      * manage-autostart.ps1：Scheduled Task 安装、状态、graceful Stop/Restart。
+  - verify\：隔离候选验收脚本。
+      * verify-p2-security.ps1
+      * verify-research-records.ps1
+  - smoke\：真实后端/真实效果的隔离 smoke 工具。
+      * ghidra-isolated\
+      * x32-effect\
+  - fixtures\：供 smoke/verify 临时编译的小型测试进程。
+      * pointer\
+      * x32-effect\
+  - README.md：tools 自说明。
+  规则：这里不放第三方 runtime，也不放正式产品入口。
+
+runtime\
+  第三方部署运行时，除 runtime\README.md 外整体被 Git 忽略。
+  - die\：Detect It Easy 3.21 portable runtime。
+  - ghidra\
+      * app\：Ghidra 正式发行目录。
+      * java\：Ghidra 使用的 Java runtime。
+      * python-packages\：MCP/Ghidra Python 包；项目使用 MSYS2 UCRT64 CPython 3.14。
+  - radare2\
+      * engine\：radare2 正式运行时。
+      * mcp\：仅保留 r2mcp.exe、r2mcp-svc.exe、libcore_r2mcp.dll。
+  - x32dbg\
+      * release\：x32dbg/x64dbg 正式运行时与插件。
+      * commithash.txt：上游版本身份。
+  规则：runtime 只放“运行必需物”，不保留 SDK、编译目录、Ninja/Meson 中间物、Python cache。
+
+patches\
+  受 Git 管理的第三方 overlay/补丁源。
+  当前 patches\ghidra\ 保存 3 个 Ghidra/MCP 修正版 Python 文件。
+  注意：它们和 runtime\ghidra\python-packages 中对应文件内容相同是故意的：
+  patches 是“可追踪源”，runtime 是“部署副本”，不能为了去重把二者合并。
+
+skills\
+  ReverseResearch 的领域 Skill/工作流知识。
+  例如 seep-native-reverse、seep-protocol、seep-dfir、seep-malware、
+  seep-cloud、seep-mobile、seep-firmware 等。
+  INDEX.md 是 Skill 索引。
+  规则：Skill 是操作/研究方法，不与 config 或 docs 混放。
+
+testdata\
+  可复用的测试 fixture、基准数据、保留的 smoke 证据摘要。
+  例如 mcp-smoke.exe、routing-benchmark.json、online RR/RT contract 等。
+  它是“测试输入/固定证据”，不是测试代码。
+
+tests\
+  跨模块/运行时回归测试代码。
+  当前主要是 Ghidra runtime Python regression。
+  与 testdata 分开是合理的：tests 是“怎么测”，testdata 是“拿什么测”。
+
+state\
+  本机可变持久状态，整体被 Git 忽略。不要当源码清理。
+  主要子目录：
+  - analysis\：Ghidra 等分析数据库/目标分析资产；最重要，不能随便删。
+  - auth\：本地 MCP bearer 等私有认证状态。
+  - re-mcp-ghidra\：Ghidra daemon 身份/连接状态。
+  - compatibility\、hooks\、jobs\、knowledge\、patches\、
+    process-control\、research\：各能力的持久记录。
+  - tmp\：运行时临时区。当前 Ghidra worker/JVM 正在使用其中缓存和 hsperfdata。
+  规则：清理 state\tmp 前必须先确认对应 daemon/worker 已停止；运行中不要删。
+
+evidence\
+  本机生成的审计/研究证据，默认被 Git 忽略，只跟踪 .gitkeep。
+  与 state 分离：state 是“系统当前状态”，evidence 是“可追溯证据/日志”。
+
+.tmp\
+  项目维护过程的临时目录，被 Git 忽略。
+  当前只保留 promotion\ReverseResearch.prev.exe，作为上一版生产回滚二进制。
+  与 state\tmp 不同：.tmp 属于构建/发布维护；state\tmp 属于运行时进程。
+
+.git\
+  Git 仓库内部元数据。不要手工修改。
+
+二、根目录文件
+--------------
+
+README.md
+  用户/开发者总入口：运行方式、CLI、MCP、生产运维等。
+
+go.mod / go.sum
+  Go 模块与依赖锁定。
+
+ReverseResearch.exe
+  当前本机生产二进制。被 Git 忽略，来源应是已验证提交的可复现构建。
+
+ReverseResearch.ico / ReverseResearch.png
+  Windows 程序图标和 ChatGPT App 图标。数量很少，保留根目录便于发布/识别，
+  没必要为两个文件再增加 assets 层级。
+
+.gitignore
+  明确隔离 runtime、state、evidence、.tmp、生产 EXE 等机器本地内容。
+
+项目目录地图.txt
+  就是本文件。用于第一次进入项目时快速判断“东西应该放哪里”。
+
+三、为什么这些目录没有继续硬合并
+-------------------------------
+
+1. patches 和 runtime 不合并
+   patches 必须可版本控制；runtime 大且机器相关、被 Git 忽略。职责不同。
+
+2. state 和 evidence 不合并
+   state 是程序持续读写的当前状态；evidence 是审计/研究输出。生命周期不同。
+
+3. tests 和 testdata 不合并
+   tests 是测试代码；testdata 是 fixture/固定输入/证据。拆开更容易维护。
+
+4. skills 和 config 不合并
+   skills 是研究工作流和方法；config 是机器可解析的规范配置。
+
+5. tools 和 cmd 不合并
+   cmd 是正式产品入口；tools 是维护、验收、smoke 和 fixture。混在一起会让发布边界失真。
+
+6. .tmp 和 state\tmp 不合并
+   .tmp 是项目构建/发布临时物；state\tmp 是运行时拥有的临时状态，运行中的进程可能正占用。
+
+四、本轮整体整理做了什么
+-----------------------
+
+- tools 从扁平结构拆成 ops / verify / smoke / fixtures 四类，并同步修正全部引用。
+- 删除 seep-protocol 中一份完全重复且未被引用的 protocol.md，保留 canonical workflow.md。
+- runtime\ghidra 清除 Python __pycache__/pyc 和显式 CPython 3.12 ABI 残留。
+- runtime\ghidra\python-packages 进一步瘦身：删除被 UCRT64 Python 3.14 system-site 完全遮蔽的 35 组重复包/元数据约 20.72 MB；删除 Meson/Ninja 构建工具和 PyWin32 帮助文档约 6.64 MB。两批均先隔离，再通过独立 Ghidra 真开库/分析/list_functions smoke 后永久删除。
+- runtime\radare2\mcp 清除 Meson/Ninja 编译目录、对象目录、import library 和生成配置，只保留运行二进制。
+- runtime\x32dbg 删除仅用于编译的 pluginsdk，保留 release 运行时。
+- runtime\die 删除上游 .vscode 编辑器元数据。
+- .tmp\promotion 删除与当前生产 EXE 完全相同的 next.exe 和过期 promotion 日志，只保留上一版 rollback EXE。
+- patches\ghidra 与 runtime 中 3 个同内容文件保留双份，因为这是“受控源 + 部署副本”的必要结构。
+- state\tmp 未清理：当前 Ghidra daemon 及 3 个 worker 仍在运行，里面约 146 MB 临时文件属于活进程。
+
+五、放文件时的快速判断
+---------------------
+
+写 Go 产品代码       -> cmd\ 或 internal\
+放规范 JSON 配置     -> config\
+写架构/设计/施工文档 -> docs\
+放运维脚本           -> tools\ops\
+放验收脚本           -> tools\verify\
+放真实 smoke 程序    -> tools\smoke\
+放测试辅助进程源码   -> tools\fixtures\
+放测试 fixture/基准  -> testdata\
+放跨模块测试代码     -> tests\
+放第三方运行时       -> runtime\
+放第三方修补源       -> patches\
+放领域工作流 Skill   -> skills\
+程序持久状态         -> state\
+研究/审计证据        -> evidence\
+构建/发布临时物      -> .tmp\

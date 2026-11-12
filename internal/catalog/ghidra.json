@@ -1,0 +1,935 @@
+[
+  {
+    "name": "add_struct_member",
+    "description": "ghidra backend tool add_struct_member. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "struct_name": {
+          "type": "string",
+          "description": "Name of the structure."
+        },
+        "member_name": {
+          "type": "string",
+          "description": "Name for the new member."
+        },
+        "member_type": {
+          "default": "byte",
+          "type": "string",
+          "description": "C type of the member (e.g. \"int\", \"char *\")."
+        },
+        "offset": {
+          "default": -1,
+          "type": "integer",
+          "description": "Byte offset (-1 to append at end)."
+        },
+        "size": {
+          "default": 0,
+          "type": "integer",
+          "description": "Size in bytes (0 to auto-detect from type)."
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "struct_name",
+        "member_name",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "apply_type_at_address",
+    "description": "ghidra backend tool apply_type_at_address. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "type_name": {
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "type_name",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "batch",
+    "description": "ghidra backend tool batch. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "operations": {
+          "description": "List of tool calls to execute sequentially (max 50).",
+          "items": {
+            "description": "A single operation in a batch request.",
+            "properties": {
+              "tool": {
+                "description": "Tool name to call.",
+                "type": "string"
+              },
+              "params": {
+                "additionalProperties": true,
+                "description": "Tool parameters.",
+                "type": "object"
+              }
+            },
+            "required": [
+              "tool"
+            ],
+            "type": "object"
+          },
+          "maxItems": 50,
+          "type": "array"
+        },
+        "database": {
+          "description": "Database to target (stem ID from open_database). Auto-injected into each operation's params. Individual operations can override by including `database` in their params.",
+          "type": "string"
+        },
+        "stop_on_error": {
+          "default": true,
+          "description": "Stop on first error instead of continuing.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operations",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "call",
+    "description": "ghidra backend tool call. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "tool": {
+          "description": "Tool name to call.",
+          "type": "string"
+        },
+        "arguments": {
+          "additionalProperties": true,
+          "description": "Arguments to pass to the tool.",
+          "type": "object"
+        },
+        "database": {
+          "default": "",
+          "description": "Database to target (stem ID from open_database). Auto-injected into arguments unless already present.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "close_database",
+    "description": "ghidra backend tool close_database. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "save": {
+          "default": true,
+          "type": "boolean"
+        },
+        "force": {
+          "default": false,
+          "type": "boolean"
+        },
+        "database": {
+          "default": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  {
+    "name": "create_structure",
+    "description": "ghidra backend tool create_structure. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "is_union": {
+          "default": false,
+          "type": "boolean"
+        },
+        "size": {
+          "default": 0,
+          "type": "integer"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "name",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "decompile_function",
+    "description": "ghidra backend tool decompile_function. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "disassemble_function",
+    "description": "ghidra backend tool disassemble_function. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "execute",
+    "description": "ghidra backend tool execute. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "description": "Python async code to execute tool calls via invoke(name, arguments)",
+          "type": "string"
+        },
+        "database": {
+          "description": "Database to target (stem ID from open_database). Available as `database` variable in code and auto-injected into invoke params. Individual calls can override by passing `database` explicitly.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "find_code_by_string",
+    "description": "ghidra backend tool find_code_by_string. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "pattern": {
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "description": "Pagination offset.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "limit": {
+          "default": 50,
+          "description": "Maximum number of results.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "pattern",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "get_database_info",
+    "description": "ghidra backend tool get_database_info. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "type": "object",
+      "required": [
+        "database"
+      ]
+    }
+  },
+  {
+    "name": "get_schema",
+    "description": "ghidra backend tool get_schema. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "tools": {
+          "description": "Tool names to get schemas for.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "detail": {
+          "default": "detailed",
+          "description": "'brief' for a one-line signature + summary per tool, 'detailed' for parameter schemas as markdown (default), 'full' for complete JSON schemas",
+          "enum": [
+            "brief",
+            "detailed",
+            "full"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "tools"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "get_strings",
+    "description": "ghidra backend tool get_strings. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "offset": {
+          "default": 0,
+          "description": "Pagination offset.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "limit": {
+          "default": 100,
+          "description": "Maximum number of results.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "filter_pattern": {
+          "default": "",
+          "description": "Optional regex to filter results.",
+          "type": "string"
+        },
+        "min_length": {
+          "default": 4,
+          "type": "integer"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "type": "object",
+      "required": [
+        "database"
+      ]
+    }
+  },
+  {
+    "name": "get_structure",
+    "description": "ghidra backend tool get_structure. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "name",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "get_type_info",
+    "description": "ghidra backend tool get_type_info. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "get_xrefs_from",
+    "description": "ghidra backend tool get_xrefs_from. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "description": "Pagination offset.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "limit": {
+          "default": 100,
+          "description": "Maximum number of results.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "get_xrefs_to",
+    "description": "ghidra backend tool get_xrefs_to. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "description": "Pagination offset.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "limit": {
+          "default": 100,
+          "description": "Maximum number of results.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "list_databases",
+    "description": "ghidra backend tool list_databases. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {},
+      "type": "object"
+    }
+  },
+  {
+    "name": "list_functions",
+    "description": "ghidra backend tool list_functions. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "offset": {
+          "default": 0,
+          "description": "Pagination offset.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "limit": {
+          "default": 100,
+          "description": "Maximum number of results.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "filter_pattern": {
+          "default": "",
+          "description": "Optional regex to filter results.",
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "type": "object",
+      "required": [
+        "database"
+      ]
+    }
+  },
+  {
+    "name": "list_local_types",
+    "description": "ghidra backend tool list_local_types. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "offset": {
+          "default": 0,
+          "description": "Pagination offset.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "limit": {
+          "default": 100,
+          "description": "Maximum number of results.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "filter_pattern": {
+          "default": "",
+          "description": "Optional regex to filter results.",
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "type": "object",
+      "required": [
+        "database"
+      ]
+    }
+  },
+  {
+    "name": "list_names",
+    "description": "ghidra backend tool list_names. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "offset": {
+          "default": 0,
+          "description": "Pagination offset.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "limit": {
+          "default": 100,
+          "description": "Maximum number of results.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "filter_pattern": {
+          "default": "",
+          "description": "Optional regex to filter results.",
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "type": "object",
+      "required": [
+        "database"
+      ]
+    }
+  },
+  {
+    "name": "list_structures",
+    "description": "ghidra backend tool list_structures. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "offset": {
+          "default": 0,
+          "description": "Pagination offset.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "limit": {
+          "default": 100,
+          "description": "Maximum number of results.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "filter_pattern": {
+          "default": "",
+          "description": "Optional regex to filter results.",
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "type": "object",
+      "required": [
+        "database"
+      ]
+    }
+  },
+  {
+    "name": "list_targets",
+    "description": "ghidra backend tool list_targets. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {},
+      "type": "object"
+    }
+  },
+  {
+    "name": "open_database",
+    "description": "ghidra backend tool open_database. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "file_path": {
+          "type": "string",
+          "description": "Path to the binary file."
+        },
+        "run_auto_analysis": {
+          "default": false,
+          "type": "boolean",
+          "description": "Run Ghidra auto-analysis after opening."
+        },
+        "keep_open": {
+          "default": true,
+          "type": "boolean",
+          "description": "Keep other open databases (default True)."
+        },
+        "database_id": {
+          "default": "",
+          "type": "string",
+          "description": "Custom ID (must match [a-z][a-z0-9_]{0,31})."
+        },
+        "force_new": {
+          "default": false,
+          "type": "boolean",
+          "description": "Delete existing project and start fresh."
+        },
+        "language": {
+          "default": "",
+          "type": "string",
+          "description": "Ghidra language ID (e.g. ``x86:LE:64:default``,\n      ``ARM:LE:32:v8``). Auto-detected when omitted.\n      Use list_targets to see options."
+        },
+        "compiler_spec": {
+          "default": "",
+          "type": "string",
+          "description": "Ghidra compiler spec (e.g. ``gcc``,\n           ``windows``). Auto-detected when omitted."
+        }
+      },
+      "required": [
+        "file_path"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "parse_type_declaration",
+    "description": "ghidra backend tool parse_type_declaration. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "declaration": {
+          "type": "string",
+          "description": "C declaration (e.g. \"typedef int DWORD;\" or\n         \"struct point { int x; int y; };\")."
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "declaration",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "rename_function",
+    "description": "ghidra backend tool rename_function. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "new_name": {
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "new_name",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "retype_struct_member",
+    "description": "ghidra backend tool retype_struct_member. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "struct_name": {
+          "type": "string"
+        },
+        "member_name": {
+          "type": "string"
+        },
+        "new_type": {
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "struct_name",
+        "member_name",
+        "new_type",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "save_database",
+    "description": "ghidra backend tool save_database. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "outfile": {
+          "default": "",
+          "type": "string"
+        },
+        "flags": {
+          "default": -1,
+          "type": "integer"
+        },
+        "force": {
+          "default": false,
+          "type": "boolean"
+        },
+        "database": {
+          "default": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  {
+    "name": "search_tools",
+    "description": "ghidra backend tool search_tools. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "pattern": {
+          "description": "Regex pattern to match against tool names, descriptions, and tags",
+          "type": "string"
+        },
+        "detail": {
+          "default": "brief",
+          "description": "'brief' (default) for a one-line signature + summary per tool, 'detailed' for parameter schemas as markdown, 'full' for complete JSON schemas",
+          "enum": [
+            "brief",
+            "detailed",
+            "full"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "pattern"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "set_comment",
+    "description": "ghidra backend tool set_comment. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "comment": {
+          "type": "string",
+          "description": "Comment text (empty string to clear)."
+        },
+        "comment_type": {
+          "default": "eol",
+          "type": "string",
+          "description": "One of \"eol\", \"pre\", \"post\", \"plate\", \"repeatable\"."
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "comment",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "set_decompiler_comment",
+    "description": "ghidra backend tool set_decompiler_comment. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "comment",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "set_type",
+    "description": "ghidra backend tool set_type. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "description": "Address (hex string, decimal, or symbol name).",
+          "type": "string"
+        },
+        "type_string": {
+          "type": "string",
+          "description": "C type string (e.g. \"int\", \"char *\", \"struct foo\")."
+        },
+        "database": {
+          "type": "string",
+          "description": "Database to target (stem ID from open_database / list_databases)."
+        }
+      },
+      "required": [
+        "address",
+        "type_string",
+        "database"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "wait_for_analysis",
+    "description": "ghidra backend tool wait_for_analysis. The ghidra module starts lazily on first call.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "database": {
+          "default": "",
+          "type": "string",
+          "description": "Single database ID to wait for."
+        },
+        "databases": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "List of database IDs (returns when first is ready)."
+        }
+      },
+      "type": "object"
+    }
+  }
+]

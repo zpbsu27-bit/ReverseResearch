@@ -1,0 +1,34 @@
+{
+  "id": "builtin_detection_validation",
+  "title": "Validated detections require positive and negative proof",
+  "body": "A detection is not validated by rule syntax alone. Record the telemetry requirement, syntax/schema checks, a positive fixture and expected hit, a negative fixture that stays clean, false-positive notes, evidence, revision identity, and an evidence-backed retest.",
+  "route": "blue-detection",
+  "tags": [
+    "sigma",
+    "yara",
+    "suricata",
+    "detection",
+    "validation"
+  ],
+  "origin": "builtin",
+  "domain": "detection-engineering",
+  "architectures": [
+    "x86",
+    "x86-64",
+    "arm64"
+  ],
+  "tools": [
+    "sigma",
+    "yara",
+    "suricata"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "project:docs/p0-security-research-contracts.md",
+    "license": "project",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-10-02T06:18:26.3585878Z",
+  "validation": "isolated-real-x32-effect",
+  "runtime_verified": true,
+  "port": 19095,
+  "preflight_port_free": true,
+  "preflight_no_debugger_process": true,
+  "fixture": {
+    "arch": "i386",
+    "bits": 32,
+    "sha256": "5284ae8640ad0a34285023c7c4902bf89b664c8d2aea72bbca756b4508ae6972"
+  },
+  "effects": {
+    "initial_value": "0x11223344",
+    "after_guarded_write": "0xA1B2C3D4",
+    "after_external_reset": "0x11223344",
+    "after_completed_replay": "0x11223344"
+  },
+  "replay_result_digest_same": true,
+  "conflicting_operation_id_reuse_rejected": true,
+  "session_binding_removed": true,
+  "port_released": true,
+  "post_smoke_port_free": true,
+  "post_smoke_debugger_processes": "none"
+}

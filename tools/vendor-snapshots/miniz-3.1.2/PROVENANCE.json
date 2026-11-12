@@ -1,0 +1,27 @@
+{
+  "project": "richgel999/miniz",
+  "version": "3.1.2",
+  "tag": "3.1.2",
+  "commit": "77d0dce8627735138c51770d1799a1ef48f2117d",
+  "source_base_url": "https://raw.githubusercontent.com/richgel999/miniz/77d0dce8627735138c51770d1799a1ef48f2117d/",
+  "license": "MIT as supplied by upstream LICENSE; retain notices",
+  "files": {
+    "LICENSE": {
+      "bytes": 1184,
+      "sha256": "0115478d567121238cf6cc1c0c361926cf07a49d9e4c9e66da97fac6a01646b3"
+    },
+    "miniz_common.h": {
+      "bytes": 2529,
+      "sha256": "f1ba29821c8caef83585b328196aa346c5da7c82890a70a3d10d77c6cec0ed39"
+    },
+    "miniz_tinfl.c": {
+      "bytes": 40637,
+      "sha256": "2296ebd21ef9af5ebbefd5b454d4bb67d8fb4af2d24945e7fb32114374f75a76"
+    },
+    "miniz_tinfl.h": {
+      "bytes": 8695,
+      "sha256": "da4850920fdf09f8877d9affabe1ebba1852ce4b1ebbd121f2ba7a7ea8e57e5d"
+    }
+  },
+  "status": "comparison snapshot only; not yet integrated; source files fetched for minimal tinfl feasibility review"
+}

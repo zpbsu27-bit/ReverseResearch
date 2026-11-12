@@ -1,0 +1,31 @@
+{
+  "id": "builtin_report_interchange",
+  "title": "Keep the Case canonical and export report formats as projections",
+  "body": "The Case object graph is the canonical research record. SARIF, STIX, JSON, Markdown and HTML are projections for consumers. Each report revision should pin the source Case revision and linked evidence/findings so an export can be reproduced without turning the export format into a second source of truth.",
+  "route": "malware-analysis",
+  "tags": [
+    "sarif",
+    "stix",
+    "report",
+    "interchange"
+  ],
+  "origin": "builtin",
+  "domain": "reporting",
+  "architectures": [
+    "x86",
+    "x86-64",
+    "arm64"
+  ],
+  "tools": [
+    "casebook"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "project:docs/p0-security-research-contracts.md",
+    "license": "project",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

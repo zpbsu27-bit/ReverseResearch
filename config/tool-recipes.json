@@ -1,0 +1,2024 @@
+{
+  "version": 2,
+  "recipes": [
+    {
+      "tool": "afl++",
+      "provider": "manual",
+      "package": "AFL++",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/AFLplusplus/AFLplusplus",
+      "signature_verification": "reviewed upstream release/source revision",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "lab",
+      "expected_executables": [
+        "afl-fuzz"
+      ],
+      "post_install_smoke": [
+        "afl-fuzz -h"
+      ],
+      "upgrade_path": "reviewed upstream release/build",
+      "uninstall_path": "remove lab installation",
+      "supported_platforms": [
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86",
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true,
+      "notes": "Execution remains Lab/Engagement/Job scoped."
+    },
+    {
+      "tool": "apktool",
+      "aliases": [],
+      "provider": "manual",
+      "package": "Apktool",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://apktool.org/",
+      "signature_verification": "release checksum/manual verification",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "apktool.bat",
+        "apktool"
+      ],
+      "post_install_smoke": [
+        "apktool --version"
+      ],
+      "upgrade_path": "replace reviewed upstream release",
+      "uninstall_path": "remove installed files",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "atomic-red-team",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "Atomic Red Team",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/redcanaryco/atomic-red-team",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "MIT",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "lab",
+      "expected_executables": [
+        "Invoke-AtomicRedTeam.psd1"
+      ],
+      "post_install_smoke": [
+        "module identity present"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only adversary-emulation content; execution requires Engagement + Job."
+    },
+    {
+      "tool": "aws",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "AWS CLI",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://aws.amazon.com/cli/",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-system",
+      "expected_executables": [
+        "aws.exe",
+        "aws"
+      ],
+      "post_install_smoke": [
+        "aws --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only. Credential use and provider actions are never implicit."
+    },
+    {
+      "tool": "az",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "Azure CLI",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/Azure/azure-cli",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "MIT",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-system",
+      "expected_executables": [
+        "az.cmd",
+        "az"
+      ],
+      "post_install_smoke": [
+        "az version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only. Credential use and provider actions are never implicit."
+    },
+    {
+      "tool": "binwalk",
+      "aliases": [],
+      "provider": "manual",
+      "package": "Binwalk",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/ReFirmLabs/binwalk",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "MIT",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "binwalk.exe",
+        "binwalk"
+      ],
+      "post_install_smoke": [
+        "binwalk --help"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Provision only after source/release review; firmware extraction remains task-owned."
+    },
+    {
+      "tool": "bloodhound",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "BloodHound",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/SpecterOps/BloodHound",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "verify-current-upstream-terms",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "BloodHound.exe",
+        "bloodhound"
+      ],
+      "post_install_smoke": [
+        "installed executable identity present"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only graph adapter; no credential collection is implied."
+    },
+    {
+      "tool": "bpftrace",
+      "provider": "manual",
+      "package": "bpftrace",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://bpftrace.org/",
+      "signature_verification": "distribution package or reviewed upstream release",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "system",
+      "expected_executables": [
+        "bpftrace"
+      ],
+      "post_install_smoke": [
+        "bpftrace --version"
+      ],
+      "upgrade_path": "distribution package manager",
+      "uninstall_path": "distribution package manager",
+      "supported_platforms": [
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true,
+      "notes": "Privilege and kernel capability requirements remain explicit."
+    },
+    {
+      "tool": "burp",
+      "aliases": [
+        "burpsuite"
+      ],
+      "provider": "installed-only",
+      "package": "Burp Suite",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://portswigger.net/burp",
+      "signature_verification": "vendor signature/manual verification",
+      "license": "PortSwigger terms",
+      "redistribution": "prohibited",
+      "install_scope": "user",
+      "expected_executables": [
+        "BurpSuitePro.exe",
+        "BurpSuiteCommunity.exe"
+      ],
+      "post_install_smoke": [
+        "installed executable identity present"
+      ],
+      "upgrade_path": "vendor installer",
+      "uninstall_path": "vendor uninstaller",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": true,
+      "redistributable": false,
+      "notes": "Installed-only adapter; ReverseResearch never redistributes Burp."
+    },
+    {
+      "tool": "caldera",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "MITRE CALDERA",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/mitre/caldera",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "lab",
+      "expected_executables": [
+        "caldera",
+        "server.py"
+      ],
+      "post_install_smoke": [
+        "installed server identity present"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only lab platform; emulation execution requires Engagement + Job."
+    },
+    {
+      "tool": "certipy",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "Certipy",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/ly4k/Certipy",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "MIT",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "certipy.exe",
+        "certipy"
+      ],
+      "post_install_smoke": [
+        "certipy --help"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only credential-bearing identity adapter; active actions require explicit scope."
+    },
+    {
+      "tool": "chainsaw",
+      "provider": "manual",
+      "package": "Chainsaw",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/WithSecureLabs/chainsaw",
+      "signature_verification": "reviewed upstream release checksum",
+      "license": "GPL-3.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "chainsaw.exe",
+        "chainsaw"
+      ],
+      "post_install_smoke": [
+        "chainsaw --help"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "codeql",
+      "provider": "installed-only",
+      "package": "CodeQL CLI",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://codeql.github.com/",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "GitHub CodeQL terms",
+      "redistribution": "prohibited-unless-licensed",
+      "install_scope": "user",
+      "expected_executables": [
+        "codeql.exe",
+        "codeql"
+      ],
+      "post_install_smoke": [
+        "codeql version"
+      ],
+      "upgrade_path": "vendor/upstream release",
+      "uninstall_path": "remove installed CLI",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": true,
+      "redistributable": false
+    },
+    {
+      "tool": "curl",
+      "aliases": [],
+      "provider": "manual",
+      "package": "curl",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://curl.se/",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "curl-license",
+      "redistribution": "upstream-license",
+      "install_scope": "system-or-user",
+      "expected_executables": [
+        "curl.exe",
+        "curl"
+      ],
+      "post_install_smoke": [
+        "curl --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Explicit provision plan only; execution remains scope/Job controlled."
+    },
+    {
+      "tool": "docker",
+      "aliases": [
+        "docker-desktop"
+      ],
+      "provider": "installed-only",
+      "package": "Docker Desktop",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://www.docker.com/products/docker-desktop/",
+      "signature_verification": "vendor signature/manual verification",
+      "license": "Docker subscription terms",
+      "redistribution": "prohibited",
+      "install_scope": "machine",
+      "expected_executables": [
+        "docker.exe"
+      ],
+      "post_install_smoke": [
+        "docker version"
+      ],
+      "upgrade_path": "vendor-managed update",
+      "uninstall_path": "vendor uninstaller",
+      "supported_platforms": [
+        "windows",
+        "macos",
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": true,
+      "redistributable": false,
+      "notes": "Installed-only runtime; not required for every lab profile."
+    },
+    {
+      "tool": "emba",
+      "provider": "installed-only",
+      "package": "EMBA",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/e-m-b-a/emba",
+      "signature_verification": "reviewed upstream revision and local executable/script identity",
+      "license": "GPL-3.0",
+      "redistribution": "upstream-license; ReverseResearch does not bundle it",
+      "install_scope": "lab",
+      "expected_executables": [
+        "emba"
+      ],
+      "post_install_smoke": [
+        "./emba --help"
+      ],
+      "upgrade_path": "reviewed upstream revision in isolated lab",
+      "uninstall_path": "remove lab checkout and task-owned dependencies",
+      "supported_platforms": [
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86-64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Complex dependency stack; ReverseResearch only discovers installed copies and plans use explicitly."
+    },
+    {
+      "tool": "firmae",
+      "provider": "installed-only",
+      "package": "FirmAE",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/pr0v3rbs/FirmAE",
+      "signature_verification": "reviewed upstream revision and local script identity",
+      "license": "MIT",
+      "redistribution": "upstream-license; ReverseResearch does not bundle it",
+      "install_scope": "lab",
+      "expected_executables": [
+        "run.sh"
+      ],
+      "post_install_smoke": [
+        "installed checkout identity present"
+      ],
+      "upgrade_path": "reviewed upstream revision in isolated lab",
+      "uninstall_path": "remove lab checkout and task-owned VM/artifacts",
+      "supported_platforms": [
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86-64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Firmware emulation remains Lab/Engagement/Job scoped; no automatic provisioning."
+    },
+    {
+      "tool": "frida",
+      "aliases": [
+        "frida-tools"
+      ],
+      "provider": "pip",
+      "package": "frida-tools",
+      "version_constraint": "pinned-or-reviewed",
+      "canonical_source": "https://frida.re/",
+      "signature_verification": "package-manager/TLS",
+      "license": "wxWindows",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "frida",
+        "frida-ps"
+      ],
+      "post_install_smoke": [
+        "frida --version"
+      ],
+      "upgrade_path": "explicit package-manager upgrade after review",
+      "uninstall_path": "pip uninstall frida-tools",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86",
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true,
+      "notes": "Dynamic instrumentation client. Installation remains plan-only until an explicit apply owner exists."
+    },
+    {
+      "tool": "gcloud",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "Google Cloud CLI",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://cloud.google.com/sdk",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Google-Cloud-SDK-terms",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-system",
+      "expected_executables": [
+        "gcloud.cmd",
+        "gcloud"
+      ],
+      "post_install_smoke": [
+        "gcloud version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only. Credential use and provider actions are never implicit."
+    },
+    {
+      "tool": "ghidra",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "Ghidra",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/NationalSecurityAgency/ghidra",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "project-or-user",
+      "expected_executables": [
+        "ghidraRun.bat",
+        "ghidraRun"
+      ],
+      "post_install_smoke": [
+        "project runtime identity present"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Project-pinned/installed-only adapter; do not replace live Ghidra sessions during provisioning."
+    },
+    {
+      "tool": "gitleaks",
+      "provider": "manual",
+      "package": "Gitleaks",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/gitleaks/gitleaks",
+      "signature_verification": "reviewed upstream release/checksum",
+      "license": "MIT",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "gitleaks.exe",
+        "gitleaks"
+      ],
+      "post_install_smoke": [
+        "gitleaks version"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "grype",
+      "provider": "manual",
+      "package": "Grype",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/anchore/grype",
+      "signature_verification": "reviewed upstream release/checksum",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "grype.exe",
+        "grype"
+      ],
+      "post_install_smoke": [
+        "grype version"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "hayabusa",
+      "provider": "manual",
+      "package": "Hayabusa",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/Yamato-Security/hayabusa",
+      "signature_verification": "reviewed upstream release checksum",
+      "license": "AGPL-3.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "hayabusa.exe",
+        "hayabusa"
+      ],
+      "post_install_smoke": [
+        "hayabusa --version"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "impacket",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "Impacket",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/fortra/impacket",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "impacket-smbclient.exe",
+        "impacket-smbclient"
+      ],
+      "post_install_smoke": [
+        "impacket-smbclient -h"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only credential/network adapter; active actions require Engagement + Job."
+    },
+    {
+      "tool": "jadx",
+      "aliases": [
+        "jadx-gui"
+      ],
+      "provider": "manual",
+      "package": "JADX",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/skylot/jadx",
+      "signature_verification": "release checksum/signature when available",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "jadx.exe",
+        "jadx-gui.exe"
+      ],
+      "post_install_smoke": [
+        "jadx --version"
+      ],
+      "upgrade_path": "replace reviewed upstream release",
+      "uninstall_path": "remove installed directory",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "jadx-headless",
+      "provider": "manual",
+      "package": "jadx-headless-mcp interpreted metadata profile",
+      "version": "0.7.1",
+      "canonical_source": "https://github.com/1013503897/jadx-headless-mcp/releases/tag/v0.7.1",
+      "checksum": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+      "signature_verification": "fixed engine SHA; no publisher signature claim; bridge/compiler identities separately observed",
+      "license": "Apache-2.0 engine; MIT bridge",
+      "redistribution": "upstream-license",
+      "install_scope": "project",
+      "expected_executables": ["java", "javac", "java.exe", "javac.exe"],
+      "post_install_smoke": ["ReverseResearch tools scan; inspect jadx-headless runtime artifacts", "owned Android code recovery workflow"],
+      "upgrade_path": "review a new pin and bridge/runtime contract together",
+      "uninstall_path": "remove only unused project engine profile; retain shared Java21",
+      "supported_platforms": ["windows", "linux"],
+      "supported_architectures": ["x86-64"],
+      "redistributable": true,
+      "notes": "Jar is data, not an executable. The existing app_android_recover/Java21/backend lifecycle starts the metadata bridge; discovery never downloads or starts it. Actual native lifecycle support and analysis scope require their own evidence."
+    },
+    {
+      "tool": "jazzer",
+      "provider": "manual",
+      "package": "Jazzer",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/CodeIntelligenceTesting/jazzer",
+      "signature_verification": "reviewed upstream release checksum",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "lab",
+      "expected_executables": [
+        "jazzer",
+        "jazzer_driver"
+      ],
+      "post_install_smoke": [
+        "jazzer --help"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove lab installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "joern",
+      "provider": "manual",
+      "package": "Joern",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://joern.io/",
+      "signature_verification": "reviewed upstream release",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "joern",
+        "joern.bat"
+      ],
+      "post_install_smoke": [
+        "joern --help"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "kaitai",
+      "provider": "manual",
+      "package": "Kaitai Struct Compiler",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://kaitai.io/",
+      "signature_verification": "reviewed upstream release",
+      "license": "GPL-3.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "kaitai-struct-compiler",
+        "ksc"
+      ],
+      "post_install_smoke": [
+        "kaitai-struct-compiler --version"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "kape",
+      "provider": "installed-only",
+      "package": "KAPE",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://www.kroll.com/en/insights/publications/cyber/kape",
+      "signature_verification": "vendor signature/manual verification",
+      "license": "vendor terms",
+      "redistribution": "prohibited-unless-licensed",
+      "install_scope": "user",
+      "expected_executables": [
+        "kape.exe",
+        "gkape.exe"
+      ],
+      "post_install_smoke": [
+        "installed executable identity present"
+      ],
+      "upgrade_path": "vendor release",
+      "uninstall_path": "vendor/manual removal",
+      "supported_platforms": [
+        "windows"
+      ],
+      "supported_architectures": [
+        "x86-64"
+      ],
+      "commercial": true,
+      "redistributable": false
+    },
+    {
+      "tool": "kube-bench",
+      "aliases": [],
+      "provider": "manual",
+      "package": "kube-bench",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/aquasecurity/kube-bench",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "kube-bench.exe",
+        "kube-bench"
+      ],
+      "post_install_smoke": [
+        "kube-bench version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "linux",
+        "windows"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Explicit provision plan only; execution remains scope/Job controlled."
+    },
+    {
+      "tool": "kubectl",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "kubectl",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://kubernetes.io/docs/reference/kubectl/",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-system",
+      "expected_executables": [
+        "kubectl.exe",
+        "kubectl"
+      ],
+      "post_install_smoke": [
+        "kubectl version --client"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only. Live cluster credentials/actions require explicit scope; offline import is preferred."
+    },
+    {
+      "tool": "kubescape",
+      "aliases": [],
+      "provider": "manual",
+      "package": "Kubescape",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/kubescape/kubescape",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "kubescape.exe",
+        "kubescape"
+      ],
+      "post_install_smoke": [
+        "kubescape version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Explicit provision plan only; execution remains scope/Job controlled."
+    },
+    {
+      "tool": "lldb",
+      "aliases": [],
+      "provider": "manual",
+      "package": "LLDB",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://lldb.llvm.org/",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0-with-LLVM-exception",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-system",
+      "expected_executables": [
+        "lldb.exe",
+        "lldb"
+      ],
+      "post_install_smoke": [
+        "lldb --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Debugger execution remains explicit and target-scoped."
+    },
+    {
+      "tool": "masscan",
+      "aliases": [],
+      "provider": "manual",
+      "package": "MASSCAN",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/robertdavidgraham/masscan",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "AGPL-3.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "masscan.exe",
+        "masscan"
+      ],
+      "post_install_smoke": [
+        "masscan --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Network-active tool; execution requires Engagement target/rate limits."
+    },
+    {
+      "tool": "memprocfs",
+      "provider": "manual",
+      "package": "MemProcFS",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/ufrisk/MemProcFS",
+      "signature_verification": "reviewed upstream release/checksum",
+      "license": "AGPL-3.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-system",
+      "expected_executables": [
+        "MemProcFS.exe"
+      ],
+      "post_install_smoke": [
+        "MemProcFS.exe -help"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "misp",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "MISP",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/MISP/MISP",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "AGPL-3.0",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "service-or-lab",
+      "expected_executables": [
+        "misp",
+        "misp-cli"
+      ],
+      "post_install_smoke": [
+        "service/client identity present"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only service/client; private Case data is never uploaded implicitly."
+    },
+    {
+      "tool": "mitmproxy",
+      "aliases": [
+        "mitmdump",
+        "mitmweb"
+      ],
+      "provider": "pip",
+      "package": "mitmproxy",
+      "version_constraint": "pinned-or-reviewed",
+      "canonical_source": "https://mitmproxy.org/",
+      "signature_verification": "package-manager/TLS",
+      "license": "MIT",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "mitmproxy",
+        "mitmdump"
+      ],
+      "post_install_smoke": [
+        "mitmproxy --version"
+      ],
+      "upgrade_path": "explicit package-manager upgrade after review",
+      "uninstall_path": "pip uninstall mitmproxy",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true,
+      "notes": "Certificate trust remains an explicit external step."
+    },
+    {
+      "tool": "netexec",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "NetExec",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/Pennyw0rth/NetExec",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "verify-current-upstream-terms",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "nxc.exe",
+        "nxc",
+        "netexec"
+      ],
+      "post_install_smoke": [
+        "nxc --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only credential/network adapter; active actions require Engagement + Job."
+    },
+    {
+      "tool": "nmap",
+      "aliases": [],
+      "provider": "manual",
+      "package": "Nmap",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://nmap.org/",
+      "signature_verification": "vendor/manual package verification",
+      "license": "NPSL",
+      "redistribution": "vendor-terms",
+      "install_scope": "machine",
+      "expected_executables": [
+        "nmap.exe"
+      ],
+      "post_install_smoke": [
+        "nmap --version"
+      ],
+      "upgrade_path": "vendor installer/package manager",
+      "uninstall_path": "vendor uninstaller",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": false,
+      "notes": "Active network use still requires Engagement/Scope authorization."
+    },
+    {
+      "tool": "opencti",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "OpenCTI",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/OpenCTI-Platform/opencti",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "service-or-lab",
+      "expected_executables": [
+        "opencti",
+        "opencti-worker"
+      ],
+      "post_install_smoke": [
+        "service identity present"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only service adapter; private Case data is never uploaded implicitly."
+    },
+    {
+      "tool": "osquery",
+      "aliases": [],
+      "provider": "manual",
+      "package": "osquery",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/osquery/osquery",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-system",
+      "expected_executables": [
+        "osqueryi.exe",
+        "osqueryi"
+      ],
+      "post_install_smoke": [
+        "osqueryi --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Threat-hunt queries are read-only unless a separate effectful action is explicitly planned."
+    },
+    {
+      "tool": "osv-scanner",
+      "provider": "manual",
+      "package": "OSV-Scanner",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/google/osv-scanner",
+      "signature_verification": "reviewed upstream release/checksum",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "osv-scanner.exe",
+        "osv-scanner"
+      ],
+      "post_install_smoke": [
+        "osv-scanner --version"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "plaso",
+      "provider": "pip",
+      "package": "plaso",
+      "version_constraint": "pinned-or-reviewed",
+      "canonical_source": "https://github.com/log2timeline/plaso",
+      "signature_verification": "package-manager/TLS plus pinned version",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "log2timeline.py",
+        "psort.py"
+      ],
+      "post_install_smoke": [
+        "log2timeline.py --version"
+      ],
+      "upgrade_path": "explicit pinned package upgrade",
+      "uninstall_path": "pip uninstall plaso",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "prowler",
+      "aliases": [],
+      "provider": "manual",
+      "package": "Prowler",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/prowler-cloud/prowler",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "prowler.exe",
+        "prowler"
+      ],
+      "post_install_smoke": [
+        "prowler --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Cloud assessment requires explicit account/project scope and credential reference."
+    },
+    {
+      "tool": "pwntools",
+      "aliases": [
+        "pwn"
+      ],
+      "provider": "pip",
+      "package": "pwntools",
+      "version_constraint": "pinned-or-reviewed",
+      "canonical_source": "https://github.com/Gallopsled/pwntools",
+      "signature_verification": "package-manager/TLS",
+      "license": "MIT",
+      "redistribution": "upstream-license",
+      "install_scope": "wsl",
+      "expected_executables": [
+        "python"
+      ],
+      "post_install_smoke": [
+        "python -c import pwn"
+      ],
+      "upgrade_path": "explicit package-manager upgrade after review",
+      "uninstall_path": "pip uninstall pwntools",
+      "supported_platforms": [
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86",
+        "x86-64",
+        "arm",
+        "arm64"
+      ],
+      "redistributable": true,
+      "notes": "Prefer WSL/Linux lab; no automatic execution against targets."
+    },
+    {
+      "tool": "qemu",
+      "aliases": [],
+      "provider": "manual",
+      "package": "QEMU",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://www.qemu.org/",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "GPL-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "lab",
+      "expected_executables": [
+        "qemu-system-x86_64.exe",
+        "qemu-system-x86_64"
+      ],
+      "post_install_smoke": [
+        "qemu-system-x86_64 --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Firmware/native emulation remains isolated Lab work."
+    },
+    {
+      "tool": "rr",
+      "provider": "manual",
+      "package": "rr",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://rr-project.org/",
+      "signature_verification": "distribution package or reviewed upstream release",
+      "license": "MIT",
+      "redistribution": "upstream-license",
+      "install_scope": "system-or-user",
+      "expected_executables": [
+        "rr"
+      ],
+      "post_install_smoke": [
+        "rr --version"
+      ],
+      "upgrade_path": "distribution package or reviewed upstream release",
+      "uninstall_path": "distribution package manager/manual removal",
+      "supported_platforms": [
+        "linux"
+      ],
+      "supported_architectures": [
+        "x86-64"
+      ],
+      "redistributable": true,
+      "notes": "Linux record/replay debugger. Plan only."
+    },
+    {
+      "tool": "scapy",
+      "provider": "pip",
+      "package": "scapy",
+      "version_constraint": "pinned-or-reviewed",
+      "canonical_source": "https://scapy.net/",
+      "signature_verification": "package-manager/TLS plus pinned version",
+      "license": "GPL-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "scapy"
+      ],
+      "post_install_smoke": [
+        "scapy --version"
+      ],
+      "upgrade_path": "explicit pinned package upgrade",
+      "uninstall_path": "pip uninstall scapy",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true,
+      "notes": "Active packet transmission remains Engagement/Job scoped."
+    },
+    {
+      "tool": "scoutsuite",
+      "aliases": [],
+      "provider": "manual",
+      "package": "ScoutSuite",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/nccgroup/ScoutSuite",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "GPL-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "scout.exe",
+        "scout"
+      ],
+      "post_install_smoke": [
+        "scout --help"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Cloud assessment requires explicit account/project scope and credential reference."
+    },
+    {
+      "tool": "semgrep",
+      "provider": "pip",
+      "package": "semgrep",
+      "version_constraint": "pinned-or-reviewed",
+      "canonical_source": "https://semgrep.dev/",
+      "signature_verification": "package-manager/TLS plus pinned version",
+      "license": "verify-current-CLI-terms",
+      "redistribution": "review-required",
+      "install_scope": "user",
+      "expected_executables": [
+        "semgrep"
+      ],
+      "post_install_smoke": [
+        "semgrep --version"
+      ],
+      "upgrade_path": "explicit pinned package upgrade",
+      "uninstall_path": "pip uninstall semgrep",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": false
+    },
+    {
+      "tool": "sharphound",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "SharpHound",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/SpecterOps/SharpHound",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "verify-current-upstream-terms",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "SharpHound.exe"
+      ],
+      "post_install_smoke": [
+        "installed executable identity present"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only identity collector; collection requires explicit Engagement scope."
+    },
+    {
+      "tool": "sigma",
+      "provider": "manual",
+      "package": "Sigma CLI",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://sigmahq.io/",
+      "signature_verification": "reviewed upstream package/release",
+      "license": "verify-current-upstream-terms",
+      "redistribution": "review-required",
+      "install_scope": "user",
+      "expected_executables": [
+        "sigma.exe",
+        "sigma"
+      ],
+      "post_install_smoke": [
+        "sigma --help"
+      ],
+      "upgrade_path": "reviewed upstream package/release",
+      "uninstall_path": "remove/uninstall package",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": false
+    },
+    {
+      "tool": "sqlmap",
+      "aliases": [],
+      "provider": "manual",
+      "package": "sqlmap",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/sqlmapproject/sqlmap",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "GPL-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "sqlmap.py",
+        "sqlmap"
+      ],
+      "post_install_smoke": [
+        "sqlmap --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Active web testing requires explicit authorized target scope."
+    },
+    {
+      "tool": "steampipe",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "Steampipe",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://github.com/turbot/steampipe",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "verify-current-upstream-terms",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-lab",
+      "expected_executables": [
+        "steampipe.exe",
+        "steampipe"
+      ],
+      "post_install_smoke": [
+        "steampipe --version"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only cloud query adapter; provider credentials are never inferred."
+    },
+    {
+      "tool": "suricata",
+      "provider": "manual",
+      "package": "Suricata",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://suricata.io/",
+      "signature_verification": "distribution package or reviewed upstream release",
+      "license": "GPL-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "system",
+      "expected_executables": [
+        "suricata.exe",
+        "suricata"
+      ],
+      "post_install_smoke": [
+        "suricata --build-info"
+      ],
+      "upgrade_path": "distribution package/upstream release",
+      "uninstall_path": "distribution package/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "syft",
+      "provider": "manual",
+      "package": "Syft",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/anchore/syft",
+      "signature_verification": "reviewed upstream release/checksum",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "syft.exe",
+        "syft"
+      ],
+      "post_install_smoke": [
+        "syft version"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "taxii",
+      "aliases": [],
+      "provider": "installed-only",
+      "package": "TAXII client",
+      "version_constraint": "installed-version",
+      "canonical_source": "https://oasis-open.github.io/cti-documentation/taxii/intro",
+      "signature_verification": "vendor/upstream release verification",
+      "license": "implementation-specific",
+      "redistribution": "not-managed-by-project",
+      "install_scope": "user-or-service",
+      "expected_executables": [
+        "taxii",
+        "taxii2-client"
+      ],
+      "post_install_smoke": [
+        "client identity present"
+      ],
+      "upgrade_path": "reviewed vendor/upstream release",
+      "uninstall_path": "vendor/package-manager/manual removal",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "commercial": false,
+      "redistributable": false,
+      "notes": "Installed-only implementation-specific adapter; no automatic CTI synchronization."
+    },
+    {
+      "tool": "trivy",
+      "provider": "manual",
+      "package": "Trivy",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/aquasecurity/trivy",
+      "signature_verification": "reviewed upstream release/checksum",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "trivy.exe",
+        "trivy"
+      ],
+      "post_install_smoke": [
+        "trivy --version"
+      ],
+      "upgrade_path": "reviewed upstream release",
+      "uninstall_path": "remove installation",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "volatility3",
+      "provider": "pip",
+      "package": "volatility3",
+      "version_constraint": "pinned-or-reviewed",
+      "canonical_source": "https://github.com/volatilityfoundation/volatility3",
+      "signature_verification": "package-manager/TLS plus pinned version",
+      "license": "verify-current-upstream-terms",
+      "redistribution": "review-required",
+      "install_scope": "user",
+      "expected_executables": [
+        "vol.py",
+        "vol"
+      ],
+      "post_install_smoke": [
+        "python -m volatility3 --help"
+      ],
+      "upgrade_path": "explicit pinned package upgrade",
+      "uninstall_path": "pip uninstall volatility3",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": false
+    },
+    {
+      "tool": "winafl",
+      "provider": "manual",
+      "package": "WinAFL",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/googleprojectzero/winafl",
+      "signature_verification": "reviewed upstream release/source revision",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "lab",
+      "expected_executables": [
+        "afl-fuzz.exe"
+      ],
+      "post_install_smoke": [
+        "afl-fuzz.exe -h"
+      ],
+      "upgrade_path": "reviewed upstream build",
+      "uninstall_path": "remove lab installation",
+      "supported_platforms": [
+        "windows"
+      ],
+      "supported_architectures": [
+        "x86",
+        "x86-64"
+      ],
+      "redistributable": true,
+      "notes": "Execution remains Lab/Engagement/Job scoped."
+    },
+    {
+      "tool": "wireshark",
+      "aliases": [
+        "tshark"
+      ],
+      "provider": "manual",
+      "package": "Wireshark",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://www.wireshark.org/",
+      "signature_verification": "vendor signature/manual verification",
+      "license": "GPL-2.0-or-later",
+      "redistribution": "upstream-license",
+      "install_scope": "machine",
+      "expected_executables": [
+        "Wireshark.exe",
+        "tshark.exe"
+      ],
+      "post_install_smoke": [
+        "tshark --version"
+      ],
+      "upgrade_path": "vendor installer/package manager",
+      "uninstall_path": "vendor uninstaller",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true,
+      "notes": "Capture-driver choices require explicit operator selection."
+    },
+    {
+      "tool": "yara",
+      "aliases": [
+        "yara64"
+      ],
+      "provider": "manual",
+      "package": "YARA",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://github.com/VirusTotal/yara",
+      "signature_verification": "release checksum/manual verification",
+      "license": "BSD-3-Clause",
+      "redistribution": "upstream-license",
+      "install_scope": "user",
+      "expected_executables": [
+        "yara.exe",
+        "yara64.exe"
+      ],
+      "post_install_smoke": [
+        "yara --version"
+      ],
+      "upgrade_path": "replace reviewed upstream release",
+      "uninstall_path": "remove installed files",
+      "supported_platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    },
+    {
+      "tool": "wabt",
+      "aliases": ["wasm-validate", "wasm-objdump", "wasm2wat", "wat2wasm"],
+      "provider": "manual",
+      "package": "WebAssembly/wabt",
+      "version_constraint": "1.0.42",
+      "canonical_source": "https://github.com/WebAssembly/wabt/releases/tag/1.0.42",
+      "signature_verification": "compare archive SHA-256 with official release metadata; version/SHA recording is not publisher authentication",
+      "license": "Apache-2.0",
+      "redistribution": "upstream-license",
+      "install_scope": "project-or-user",
+      "expected_executables": ["wasm-validate", "wasm-objdump", "wasm2wat"],
+      "post_install_smoke": ["wasm-validate --version", "wasm-objdump --version", "wasm2wat --version"],
+      "upgrade_path": "review and replace the entire admitted producer profile",
+      "uninstall_path": "remove operator-supplied WABT directory",
+      "supported_platforms": ["windows", "linux", "macos"],
+      "supported_architectures": ["x86-64", "arm64"],
+      "redistributable": true,
+      "notes": "Tools must already be supplied. RR never installs or downloads at runtime and never invokes a WASM interpreter. wat2wasm is used only for verification fixtures."
+    },
+    {
+      "tool": "zeek",
+      "provider": "manual",
+      "package": "Zeek",
+      "version_constraint": "reviewed-stable",
+      "canonical_source": "https://zeek.org/",
+      "signature_verification": "distribution package or reviewed upstream release",
+      "license": "BSD-3-Clause",
+      "redistribution": "upstream-license",
+      "install_scope": "system-or-user",
+      "expected_executables": [
+        "zeek"
+      ],
+      "post_install_smoke": [
+        "zeek --version"
+      ],
+      "upgrade_path": "distribution package/upstream release",
+      "uninstall_path": "distribution package/manual removal",
+      "supported_platforms": [
+        "linux",
+        "macos"
+      ],
+      "supported_architectures": [
+        "x86-64",
+        "arm64"
+      ],
+      "redistributable": true
+    }
+  ]
+}

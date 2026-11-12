@@ -1,0 +1,207 @@
+[
+  {
+    "name": "analyze",
+    "description": "r2 backend tool analyze. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "number",
+          "description": "Analysis level (0-4, higher is more thorough)"
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "description": "Optional maximum analysis time in seconds for this call only. Use 0 to disable the timeout."
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "close_file",
+    "description": "r2 backend tool close_file. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "decompile_function",
+    "description": "r2 backend tool decompile_function. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address of the function to decompile"
+        },
+        "cursor": {
+          "type": "string",
+          "description": "Cursor for pagination (line number to start from)"
+        },
+        "page_size": {
+          "type": "integer",
+          "description": "Number of lines per page (default: 1000, max: 10000)"
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "disassemble",
+    "description": "r2 backend tool disassemble. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address to start disassembly"
+        },
+        "num_instructions": {
+          "type": "integer",
+          "description": "Number of instructions to disassemble (default: 10)"
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  },
+  {
+    "name": "list_exports",
+    "description": "r2 backend tool list_exports. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "string",
+          "description": "Regular expression to filter the results"
+        },
+        "count": {
+          "type": "boolean",
+          "description": "If true, return only the number of matching results instead of the full list"
+        },
+        "cursor": {
+          "type": "string",
+          "description": "Cursor for pagination (line number to start from)"
+        },
+        "page_size": {
+          "type": "integer",
+          "description": "Number of lines per page (default: 1000, max: 10000)"
+        }
+      }
+    }
+  },
+  {
+    "name": "list_functions",
+    "description": "r2 backend tool list_functions. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "only_named": {
+          "type": "boolean",
+          "description": "If true, only list functions with named symbols (excludes functions with numeric suffixes like sym.func.1000016c8)"
+        },
+        "filter": {
+          "type": "string",
+          "description": "Regular expression to filter the results"
+        },
+        "count": {
+          "type": "boolean",
+          "description": "If true, return only the number of matching results instead of the full list"
+        },
+        "start": {
+          "type": "integer",
+          "description": "Starting index for pagination (default: 0)"
+        },
+        "max_length": {
+          "type": "integer",
+          "description": "Maximum number of results to return, -1 for all (default: 50)"
+        }
+      }
+    }
+  },
+  {
+    "name": "list_strings",
+    "description": "r2 backend tool list_strings. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "string",
+          "description": "Regular expression to filter the results"
+        },
+        "count": {
+          "type": "boolean",
+          "description": "If true, return only the number of matching results instead of the full list"
+        },
+        "cursor": {
+          "type": "string",
+          "description": "Cursor for pagination (line number to start from)"
+        },
+        "page_size": {
+          "type": "integer",
+          "description": "Number of lines per page (default: 1000, max: 10000)"
+        }
+      }
+    }
+  },
+  {
+    "name": "open_file",
+    "description": "r2 backend tool open_file. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": "string",
+          "description": "Path to the file to open"
+        },
+        "baddr": {
+          "type": "string",
+          "description": "Optional base address for PIE binaries, same as radare2 -B / -m (for example 0x400000). For raw/headerless files (no ELF/PE magic), this now also creates an explicit io map so the file's content actually appears at this address, matching radare2 CLI's -m behavior"
+        },
+        "arch": {
+          "type": "string",
+          "description": "Optional asm.arch override (eg. 'arm'), same as radare2 -a. Needed for raw/headerless binaries which cannot be autodetected and would otherwise default to the host arch"
+        },
+        "bits": {
+          "type": "string",
+          "description": "Optional asm.bits override (eg. 16 for ARM Thumb), same as radare2 -b"
+        },
+        "cpu": {
+          "type": "string",
+          "description": "Optional asm.cpu override (eg. 'cortex'), same as radare2 -k/-e asm.cpu"
+        }
+      },
+      "required": [
+        "file_path"
+      ]
+    }
+  },
+  {
+    "name": "show_info",
+    "description": "r2 backend tool show_info. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "xrefs_to",
+    "description": "r2 backend tool xrefs_to. The r2 module starts lazily on first call.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Address to check for cross-references"
+        }
+      },
+      "required": [
+        "address"
+      ]
+    }
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "schema": "rr-bundler-producer.v1",
+  "targetExecuted": false,
+  "webpackVersion": "5.102.1",
+  "esbuildVersion": "0.25.10",
+  "webpackModuleIds": {
+    "main.cjs": "0",
+    "a.cjs": "1",
+    "dep.cjs": "2"
+  },
+  "inputs": {
+    "main.cjs": {
+      "source": "module.exports = require(\"./a.cjs\");\n",
+      "sha256": "8cd8fee1c214f016ce80c87dc5dd2ca1b53010f74bf9057406f73eb14c25249c"
+    },
+    "a.cjs": {
+      "source": "exports.answer = require(\"./dep.cjs\").value;\n",
+      "sha256": "0ff35d476b917d990508ab437361ad2c1afbf73b15f66044dcae0ae0b009a265"
+    },
+    "dep.cjs": {
+      "source": "exports.value = 42;\n",
+      "sha256": "8a8b00380ddfe8056a9cb48c2862a6408f1de78eedc8bac7a5c20b2c01ae4bef"
+    }
+  },
+  "outputs": {
+    "webpack.cjs": {
+      "bytes": 1748,
+      "sha256": "3f447388c8d9829f2586b1dea1439edeb282f54e7a0482efffc23cf03015d8bd"
+    },
+    "esbuild.cjs": {
+      "bytes": 465,
+      "sha256": "27403c966e06a477613533907c6437c87c3126b56d23720819e9ac3f8c1d871e"
+    }
+  }
+}

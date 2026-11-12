@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seep Code Audit"
+  short_description: "Bounded source, dependency, SBOM and secret-candidate workflow."

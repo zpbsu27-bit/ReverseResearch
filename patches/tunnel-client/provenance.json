@@ -1,0 +1,2191 @@
+{
+  "schema": "reverseresearch.sdk-snapshot.v1",
+  "module": "github.com/openai/tunnel-client",
+  "version": "v0.0.15",
+  "origin": {
+    "VCS": "git",
+    "URL": "https://github.com/openai/tunnel-client",
+    "Hash": "a390c168ff1b2d14e73a95991c186c6aba3ff5a0",
+    "Ref": "refs/tags/v0.0.15"
+  },
+  "moduleSum": "h1:iUs79HYY0CVlyjmH9Q/eGdSAH30Qi+br1b8crpX87dQ=",
+  "sourceZIP_SHA256": "21dd4a8d3fa3cc90e980c8a35cb4cef02ec84a7770859b47fe823961ed73f62f",
+  "subset": "embedded SDK runtime, its embedded documentation/plugins, and source tests; standalone CLI/e2e/build artifacts excluded",
+  "files": [
+    {
+      "path": "client_test.go",
+      "bytes": 8135,
+      "upstreamSHA256": "001105d590098103f3feab6ee4dd29b0e1273baac8a255b5f77083522291f203"
+    },
+    {
+      "path": "client.go",
+      "bytes": 10358,
+      "upstreamSHA256": "7c56e685a22a3c2e317ee10e296043f2f5b6ffc76efd69b21538328462d24225"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 18000,
+      "upstreamSHA256": "ac9ed40cd09dcc476093039f60492f7186c21795dd1c6b37be6c8de41e06a042"
+    },
+    {
+      "path": "docs/assistantkb_test.go",
+      "bytes": 8393,
+      "upstreamSHA256": "eacf43ce269e5d425a1b5d0296101b4c25b7f5d43aa5195afefc33277f351f34"
+    },
+    {
+      "path": "docs/assistantkb.go",
+      "bytes": 11985,
+      "upstreamSHA256": "dcadfb0b6ff585e629cd81ce1b11a66411c5946331fb51ae67a10301a388cf74"
+    },
+    {
+      "path": "docs/configuration.md",
+      "bytes": 50900,
+      "upstreamSHA256": "c8af8b43e530e98cc122bdb4b17d42c806f608cc5c6c9fba13a3df91f8d437a9"
+    },
+    {
+      "path": "docs/connectors.md",
+      "bytes": 11453,
+      "upstreamSHA256": "2b19a47a3408011e889ac275f51666038379c357e27771b0e1dd3f14feb4a6fc"
+    },
+    {
+      "path": "docs/deployment.md",
+      "bytes": 721,
+      "upstreamSHA256": "727d6018c26d1a8c24ded3b052c6b2f2ee6a6968c629aff865b54aa8254824cb"
+    },
+    {
+      "path": "docs/deployment/cloudflared.md",
+      "bytes": 6633,
+      "upstreamSHA256": "fca900ec11ef4d26f0d1c276aaad46a63727dc47593e7ae65af958ac29a55e84"
+    },
+    {
+      "path": "docs/deployment/docker.md",
+      "bytes": 2979,
+      "upstreamSHA256": "0c5463e3bb704afcf02f8ff1e3e4c82c2117301dd92dba6d0d5c9543dd0143e0"
+    },
+    {
+      "path": "docs/deployment/kubernetes-dedicated.md",
+      "bytes": 3210,
+      "upstreamSHA256": "c8ffc2574a965e2ec2262f4913c255028d7eacb732ea0444b8f24793d280f234"
+    },
+    {
+      "path": "docs/deployment/kubernetes-sidecar.md",
+      "bytes": 2169,
+      "upstreamSHA256": "e6ce1ca9ce45d92b9fe50e9990a81b8a47d774d967bf03f108925de39f0b0da3"
+    },
+    {
+      "path": "docs/deployment/overview.md",
+      "bytes": 2391,
+      "upstreamSHA256": "e70df1271689822257de072feeac46ddb7ec2e77cf5b2c63a09e6b95658f0ae3"
+    },
+    {
+      "path": "docs/deployment/systemd-vm.md",
+      "bytes": 937,
+      "upstreamSHA256": "91dc3b580248f591c438a29332adb264dd6cb76479d3adde3467058ddfe1fb29"
+    },
+    {
+      "path": "docs/development.md",
+      "bytes": 8243,
+      "upstreamSHA256": "c0880694b6b7c336035cde75d846b50a9e27f55460b89c3f1f94d92e6ec84a25"
+    },
+    {
+      "path": "docs/end-user-guide.md",
+      "bytes": 17180,
+      "upstreamSHA256": "119efb7060168e26278c336df8e5d92e3c0c2938f562f628c44e7eb8c55740dd"
+    },
+    {
+      "path": "docs/enterprise-customer-onboarding.md",
+      "bytes": 19368,
+      "upstreamSHA256": "7cd248026aca2b9c554c483c8028d1aaf5c03f43e96bf8f9c956c9ff3e57cb7f"
+    },
+    {
+      "path": "docs/harpoon-target-templates.md",
+      "bytes": 36036,
+      "upstreamSHA256": "95c6103117d3b065d5c9bbe61e0c3e8b7bd0daeb6712162aa1910e37e39d6c9a"
+    },
+    {
+      "path": "docs/health.md",
+      "bytes": 11806,
+      "upstreamSHA256": "85685ad6a71926b016255f62b8bc8a0a6a9f42be68dcd9acd73414e309ca9303"
+    },
+    {
+      "path": "docs/images/adminui-log-level-toggle.png",
+      "bytes": 148965,
+      "upstreamSHA256": "047be62fa3179116830a5b2ef5b54afd4cbc03ba7aba2e701b8eb39b72bad7af"
+    },
+    {
+      "path": "docs/images/chatgpt-connector-tunnel-select.png",
+      "bytes": 108529,
+      "upstreamSHA256": "c233bd46397b1a1b5853a189e58fc1ef74fc6c8eeb86c4dd1f2857ef6521ab15"
+    },
+    {
+      "path": "docs/images/generated/cover-tunnel-orbit-v1.svg",
+      "bytes": 3571,
+      "upstreamSHA256": "685f9c5a01bdc8136a253d6d68f5ed96d10bed5bb08bcdc6a926506b2881704d"
+    },
+    {
+      "path": "docs/images/generated/divider-codex-v1.svg",
+      "bytes": 1854,
+      "upstreamSHA256": "e781efcd60b548b843f2d2bfd3ba516aac2fc26d489566473f5f80e0f341342f"
+    },
+    {
+      "path": "docs/images/generated/divider-keys-v1.svg",
+      "bytes": 1635,
+      "upstreamSHA256": "d28e8b9491d41247f62008b15571f50c6995e21450c5e7d0db16479a10de5c00"
+    },
+    {
+      "path": "docs/images/generated/divider-ui-v1.svg",
+      "bytes": 1846,
+      "upstreamSHA256": "b517e9725d03064481cbb58f0423a0e5c9a90b6adf0353e5c814a61b199b0fd3"
+    },
+    {
+      "path": "docs/images/generated/pdf-pages/page-code-v1.webp",
+      "bytes": 128410,
+      "upstreamSHA256": "84a74c547f843613648ba1709676741726e2eb04674f2c1ff2b5ee04212338ca"
+    },
+    {
+      "path": "docs/images/generated/pdf-pages/page-cover-v1.webp",
+      "bytes": 102802,
+      "upstreamSHA256": "d0e194508b36e2edbba2f1c1a60f65cb018ff830c876ab0674829700e557926e"
+    },
+    {
+      "path": "docs/images/generated/pdf-pages/page-interior-v1.webp",
+      "bytes": 91756,
+      "upstreamSHA256": "a3504906900efc9fd016c68c2f30a49de5899d142b5a960460de25cee2540734"
+    },
+    {
+      "path": "docs/images/generated/pdf-pages/page-screenshots-v1.webp",
+      "bytes": 90246,
+      "upstreamSHA256": "a53334a7bf57c8a39e137940ea3c0dab4f97b7c0f51971ec7c52b5ad74097b00"
+    },
+    {
+      "path": "docs/images/tunnel-create-modal.png",
+      "bytes": 59726,
+      "upstreamSHA256": "0786a1df11039e9c9dc69ad9326aa20de34fa9f9fa1e3d75cf2f0348f7824604"
+    },
+    {
+      "path": "docs/images/tunnel-permissions-group-role.png",
+      "bytes": 54128,
+      "upstreamSHA256": "fcc3da6334ef11972a83b1c376c35071d08f6a02d253af07fc4b276964d47b71"
+    },
+    {
+      "path": "docs/images/tunnel-permissions-role.png",
+      "bytes": 112704,
+      "upstreamSHA256": "d4ee204a57f75a991dab319bb80925d38a9ebd8a1ce72ca38caebe6357c5ddbe"
+    },
+    {
+      "path": "docs/onboarding.md",
+      "bytes": 13241,
+      "upstreamSHA256": "ffa65048bbc79793a1f40bca62bf4aaabcfe36f2fae13d1d7138ed21b277cc9e"
+    },
+    {
+      "path": "docs/openapi.json",
+      "bytes": 67356,
+      "upstreamSHA256": "9d13151a8a0026f33ad59bee9c649ab5dc22f5e33999ec366970fa77c8f23e92"
+    },
+    {
+      "path": "docs/output/.gitignore",
+      "bytes": 14,
+      "upstreamSHA256": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d"
+    },
+    {
+      "path": "docs/pdf/end_user_guide_page_blocks.py",
+      "bytes": 18007,
+      "upstreamSHA256": "62e9b51a703648a6e58a11beffbd23abaf84b19c7d782e13aafa8ee162affc4e"
+    },
+    {
+      "path": "docs/pdf/tunnel-guide.css",
+      "bytes": 6926,
+      "upstreamSHA256": "27851d61dad967b3130724b876a26f2ec92e06200f5126810046409cc42fee24"
+    },
+    {
+      "path": "docs/pdf/visual-manifest.md",
+      "bytes": 3096,
+      "upstreamSHA256": "f07e08826cfb8514a9bcfada39f468a57bd8ba01110a1896975a5bb8a3fb9557"
+    },
+    {
+      "path": "docs/permissions.md",
+      "bytes": 7740,
+      "upstreamSHA256": "c9f768986c515e3cfa1232359794c7d740026694264496ebf3821c4c75ae153b"
+    },
+    {
+      "path": "docs/profile-editor.md",
+      "bytes": 2626,
+      "upstreamSHA256": "0e21ed6f772fda2ebd359f2f1f68559437061e2e49172a680ac6a9ec800e18a5"
+    },
+    {
+      "path": "docs/protocol.md",
+      "bytes": 32306,
+      "upstreamSHA256": "54193c4a09727d2e69f4cb18d2a87f73b14b9c33889137b30869124f4a30b6da"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 2504,
+      "upstreamSHA256": "e64380d61ad07b90f361b9a507d173f76ee0a57eb58633746c251df327782263"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "bytes": 885,
+      "upstreamSHA256": "93f449b7b4c187c2dfeb599b76bd793cc2168b3b6367ca2e46dae303708c76f2"
+    },
+    {
+      "path": "docs/routing-correction.md",
+      "bytes": 8430,
+      "upstreamSHA256": "6169b22d1f161d9e18d564011e60d399f43dabdc67bdacc6c4d6540c46db14e6"
+    },
+    {
+      "path": "docs/screenshots/admin-codex.png",
+      "bytes": 69330,
+      "upstreamSHA256": "5c42f0b151554c597e6afb8fba381266f543822a95c2d283b9ea9aa83d1fa143"
+    },
+    {
+      "path": "docs/screenshots/admin-log-export.webp",
+      "bytes": 141178,
+      "upstreamSHA256": "f127a5f131569f6a61e4abe8b8cfba5eb847a7adfb6a1187e7f13074ddd6206a"
+    },
+    {
+      "path": "docs/screenshots/admin-logs.png",
+      "bytes": 20568,
+      "upstreamSHA256": "083864b4b1430b16855c5212d908fa72dbb6aa7908617127cde7da496700ca87"
+    },
+    {
+      "path": "docs/screenshots/admin-metrics.png",
+      "bytes": 51747,
+      "upstreamSHA256": "d5de6e8bc52e061d5d201354659b5637964f428847629c8d2325e966a0c67b13"
+    },
+    {
+      "path": "docs/screenshots/admin-overview.png",
+      "bytes": 132107,
+      "upstreamSHA256": "ef1810853046ecf02f920b5173e5bd0b76e823af4d36c63c76e27d47b1aef115"
+    },
+    {
+      "path": "docs/security/runtime-cloudflared-scan-boundary.md",
+      "bytes": 3472,
+      "upstreamSHA256": "6b85a889d98c075d85c31f167dee72cdb7ed3871f44707221d7487f10461ec7d"
+    },
+    {
+      "path": "docs/security/runtime-scan-boundary.md",
+      "bytes": 3880,
+      "upstreamSHA256": "239319af848c07bf767c2b45561074601d7ac9a613be4048d03859873c963115"
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "bytes": 11323,
+      "upstreamSHA256": "524192e0c5c4e10c0aafbc6abd92946085f0ba7e033147c140f4667346c50629"
+    },
+    {
+      "path": "go.mod",
+      "bytes": 2378,
+      "upstreamSHA256": "85836b5aac65c8b0402b6f1baa71e88a73499bc7a09e668198017e2f8936c712"
+    },
+    {
+      "path": "go.sum",
+      "bytes": 11161,
+      "upstreamSHA256": "210e4c88cf8a86324935fb9de7b8e4a5b73f85a749e946afa9ff84ca22f0e021"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 10758,
+      "upstreamSHA256": "f4c1d7ba32ef5bcf5cf03e2eefec5825ebafedf50fa330a36700a49c605c1ef4"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 551,
+      "upstreamSHA256": "1364c020d86ecf948b78b7c655175032068203d13aece70fb0bfe112d7802dc2"
+    },
+    {
+      "path": "pkg/adminui/assets/app.js",
+      "bytes": 110816,
+      "upstreamSHA256": "6ce6d5cce56c13a1077159e6b4886a83a61063ace2a9f45049e5f37e347b7acd"
+    },
+    {
+      "path": "pkg/adminui/assets/index.html",
+      "bytes": 413,
+      "upstreamSHA256": "a860fff292715c45bd6df9f1a137558bbe6be16b8b44ed457302245cc94d4caa"
+    },
+    {
+      "path": "pkg/adminui/assets/styles.css",
+      "bytes": 13483,
+      "upstreamSHA256": "2089d7cfa8a98db10d5b8c5916d0bbe695ce83629a1bbe6ef65a20e3c2fc9954"
+    },
+    {
+      "path": "pkg/adminui/channel_status.go",
+      "bytes": 7812,
+      "upstreamSHA256": "bcdef34f14694559a43bd8f099267c2871f3c57973aaa5418bf9e078798876d0"
+    },
+    {
+      "path": "pkg/adminui/codex_test.go",
+      "bytes": 4227,
+      "upstreamSHA256": "cbb319dc699580aab8b0068f80306a5e56d01b0258c292b61e2925ac5357de1f"
+    },
+    {
+      "path": "pkg/adminui/codex.go",
+      "bytes": 14612,
+      "upstreamSHA256": "133f583c140ebc8fbdf48f11614f991ffa809fdbfa50aaf9dfbc6cd41bc083ff"
+    },
+    {
+      "path": "pkg/adminui/fxmodule_test.go",
+      "bytes": 1623,
+      "upstreamSHA256": "bf6cf24f49e53ca77731c6dd926ae0d329671aecfab717999370834c0cad0f98"
+    },
+    {
+      "path": "pkg/adminui/fxmodule.go",
+      "bytes": 9769,
+      "upstreamSHA256": "963a4bafb7efb43d9f8747f0a2956ca509b1e329bdbe05fd738b2654a9263c9b"
+    },
+    {
+      "path": "pkg/adminui/harpoon_integration_test.go",
+      "bytes": 4501,
+      "upstreamSHA256": "52f4f05c04d2e52fc53f9d8a7a0b2ee981a77e8957d158439048c5fd0601aab7"
+    },
+    {
+      "path": "pkg/adminui/harpoon_test.go",
+      "bytes": 3694,
+      "upstreamSHA256": "cc2a63e841a3881b8dd7953ad57027d2ea0e54fad4a0185a7792fe50401e3042"
+    },
+    {
+      "path": "pkg/adminui/harpoon.go",
+      "bytes": 5818,
+      "upstreamSHA256": "8a1396e8bb0eedbeeb600db4a932771c56011074d00806e1fc903119f24bebe7"
+    },
+    {
+      "path": "pkg/adminui/log_buffer_test.go",
+      "bytes": 5211,
+      "upstreamSHA256": "61592f3ea058b93865fcb5e40aa9fe05a6fb13f1c44bcd1cc1902bee8a9c8182"
+    },
+    {
+      "path": "pkg/adminui/log_buffer.go",
+      "bytes": 8281,
+      "upstreamSHA256": "e4ca4e1a6dc64d18284a0c2aa4eec3d2b1d7240d9020ab0cc5d0ce697861812f"
+    },
+    {
+      "path": "pkg/adminui/log_export_test.go",
+      "bytes": 30867,
+      "upstreamSHA256": "8dd2905b023d07ff356886a2d4aad67cf19e386a51fa5db9fd9672f6fdc18889"
+    },
+    {
+      "path": "pkg/adminui/log_export.go",
+      "bytes": 31799,
+      "upstreamSHA256": "59775c7d03f1f9307046cddbe20bec03f016912c5058ea8fd3b735098171bfea"
+    },
+    {
+      "path": "pkg/adminui/log_level_test.go",
+      "bytes": 2889,
+      "upstreamSHA256": "31068339e2d2c4c1032b6925e4a3c6f6810e982797d0067c011ccb32bf4ebc54"
+    },
+    {
+      "path": "pkg/adminui/log_level.go",
+      "bytes": 2444,
+      "upstreamSHA256": "f041679b573eae811ed5f103fe82bd15580ce92240ac662d79acf8c553464c13"
+    },
+    {
+      "path": "pkg/adminui/oauth_test.go",
+      "bytes": 5369,
+      "upstreamSHA256": "3f76631086a06786e3018135d8ce9d63c7d205d1479d1f3c12f06408a245c4a5"
+    },
+    {
+      "path": "pkg/adminui/oauth.go",
+      "bytes": 2880,
+      "upstreamSHA256": "5ccc725e259c0cd61f4e7280c0b6b9434769b2089cbf74780afcf5f10569ce64"
+    },
+    {
+      "path": "pkg/adminui/startup_test.go",
+      "bytes": 3964,
+      "upstreamSHA256": "1337ae8de9daabc2e3bd9883e1e5df2315d50e50b99b9d379e63a5894a8d1f7b"
+    },
+    {
+      "path": "pkg/adminui/startup.go",
+      "bytes": 8261,
+      "upstreamSHA256": "4d2a6a0e0c670a03f10931802fb2576ed8c1ae338eabe17f9fc58c38982553bb"
+    },
+    {
+      "path": "pkg/adminui/status_test.go",
+      "bytes": 6116,
+      "upstreamSHA256": "5c164c0794134445ea192803e42989d52d8aeb74299bf3e4a792c6e2582a5fbe"
+    },
+    {
+      "path": "pkg/adminui/system_test.go",
+      "bytes": 3348,
+      "upstreamSHA256": "960d94997bedd7a27d3a86be464eb83697a89943b5fb4e655f846a6878757630"
+    },
+    {
+      "path": "pkg/adminui/system.go",
+      "bytes": 2633,
+      "upstreamSHA256": "c68df5a5d96d59046b47e85f957560ba24e6737396091c257a8cf2258f1b9c2c"
+    },
+    {
+      "path": "pkg/adminui/template_log_export_test.go",
+      "bytes": 3744,
+      "upstreamSHA256": "f5e854e188e5c4acba2da99c60c686cfd011b68a72462c8a90a2d5eed426bc13"
+    },
+    {
+      "path": "pkg/adminui/ui.go",
+      "bytes": 3071,
+      "upstreamSHA256": "2135919b8767e748b007611faa9fa5895516cdbba8c8ebe372654c1bb7770428"
+    },
+    {
+      "path": "pkg/app/app_test.go",
+      "bytes": 1226,
+      "upstreamSHA256": "708c91381a630c6953d60725e99ec9c516daf7efeeca193acf4a13072a5f0ce0"
+    },
+    {
+      "path": "pkg/app/app.go",
+      "bytes": 3889,
+      "upstreamSHA256": "8895248bb9e2303948b9eb00fa444789ea75b7a6b7e86a7d333d8ce83638a6c5"
+    },
+    {
+      "path": "pkg/clientcapabilities/client_capabilities_test.go",
+      "bytes": 3172,
+      "upstreamSHA256": "9201b77f3626ca455af509d34ef0788277899e6bb06a5c6dfd857ce813fc1521"
+    },
+    {
+      "path": "pkg/clientcapabilities/client_capabilities.go",
+      "bytes": 3106,
+      "upstreamSHA256": "6d895da23d4b5cbaa15170fee3eeaed7210bf8430b18980b5539c2f003b4fd41"
+    },
+    {
+      "path": "pkg/clientcapabilities/testdata/parse_cases.json",
+      "bytes": 24338,
+      "upstreamSHA256": "a3ef00b53fdc6047ce9b20cb40bebb7868124acb8520fafb9aaccb9bf55dfa17"
+    },
+    {
+      "path": "pkg/clientinstance/client_instance_test.go",
+      "bytes": 1049,
+      "upstreamSHA256": "2d8280bcefba467ac57d3135b988d7976ddb9cf06cd759d7b139eba1623c18aa"
+    },
+    {
+      "path": "pkg/clientinstance/client_instance.go",
+      "bytes": 807,
+      "upstreamSHA256": "53048fade4f04d8c2b15550e1dbebb402c63d4db95789f9d28de68ed4e52effe"
+    },
+    {
+      "path": "pkg/cloudflared/adapter_test.go",
+      "bytes": 1189,
+      "upstreamSHA256": "7c8905af743653a61ac3fd7f78880674f2ac6f1f50bfffcaf13f0faaf6c31ef2"
+    },
+    {
+      "path": "pkg/cloudflared/config_test.go",
+      "bytes": 3649,
+      "upstreamSHA256": "c859e68970ae060543fdbaa5c0657f5197a111b0d6cb97fce6a88d7bcdf44749"
+    },
+    {
+      "path": "pkg/cloudflared/config.go",
+      "bytes": 720,
+      "upstreamSHA256": "1a6048905ca58881d086914b6e92a2cfc164ba348e97e1bcbb4bc480deb548bc"
+    },
+    {
+      "path": "pkg/cloudflared/configgen/config.go",
+      "bytes": 5591,
+      "upstreamSHA256": "729f3658bce7ecd4ae29ecc70a00759b22e671a917120bf11adc278e31215d8c"
+    },
+    {
+      "path": "pkg/cloudflared/manifest.json",
+      "bytes": 1038,
+      "upstreamSHA256": "80003d8a8f38d6a0bd74aabc096e9f99a6e8fad8ed4da699e26a8231fa453aa1"
+    },
+    {
+      "path": "pkg/cloudflared/runtime_adapter.go",
+      "bytes": 2062,
+      "upstreamSHA256": "284ded86a2cfc1ad2b0a04b16f675f1388d44883eb5d5291e5652e498f45eb00"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/health_test.go",
+      "bytes": 931,
+      "upstreamSHA256": "7cc9117c4fb7d2f284fca83f744e53432594fa743944c38aa55f91133a0b524e"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/manifest.go",
+      "bytes": 1833,
+      "upstreamSHA256": "d6471de23a9ea59ccdf825eb759499390aad78697699d32cde2c8241d54b0025"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/manifest.json",
+      "bytes": 1038,
+      "upstreamSHA256": "80003d8a8f38d6a0bd74aabc096e9f99a6e8fad8ed4da699e26a8231fa453aa1"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/process_unix_test.go",
+      "bytes": 334,
+      "upstreamSHA256": "d1d74e1e49133f2ec7754b267bfa11b15c019af7a26ee84fdcfdc73ffc9a968e"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/process_unix.go",
+      "bytes": 383,
+      "upstreamSHA256": "97a40e1ccf7f58a1a9f781e09a45e46b2fb22c7bd70167319b52ff446d6561f5"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/process_windows.go",
+      "bytes": 98,
+      "upstreamSHA256": "07c0d6c2f48c1f7a35735b308080cb23bd8797483675664f7cb639bfdaac69d0"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/startup_timeout_test.go",
+      "bytes": 504,
+      "upstreamSHA256": "8fa0a560ba831b89069113367d0fe4dce700cb9a5240f26307c5f6be3249550f"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/startup_timeout.go",
+      "bytes": 1075,
+      "upstreamSHA256": "4a1f52c1a7cb7e8f9201218ec203965dc94041da10e1dee87dbe34d945c10204"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/state.go",
+      "bytes": 2592,
+      "upstreamSHA256": "8a9fc3761fdb0e034e400f1ccacbe907cd6e7abe808ecc26ea1d934309f97847"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/supervisor_test.go",
+      "bytes": 15431,
+      "upstreamSHA256": "b1701b3310d3a7624991a55370b91191bbf39aee264c22ee83d5ff701fe1d3fc"
+    },
+    {
+      "path": "pkg/cloudflared/runtime/supervisor.go",
+      "bytes": 13605,
+      "upstreamSHA256": "2952d58380a7daede5e395c3f5f0c836ecf58ddf0811608f1e8ccd53bc857b70"
+    },
+    {
+      "path": "pkg/codexappserver/bridge_test.go",
+      "bytes": 9908,
+      "upstreamSHA256": "4d7dbb1e131d33e63671c2fb9c3bd4ad4b6694ac0c89fe8ae5e9200fc93ce335"
+    },
+    {
+      "path": "pkg/codexappserver/bridge.go",
+      "bytes": 36242,
+      "upstreamSHA256": "ba5c9fa5e6c9e46199873feae2a039b39ac557b95e7261d7c73be91e5e80e8af"
+    },
+    {
+      "path": "pkg/codexplugin/codexplugin_test.go",
+      "bytes": 10078,
+      "upstreamSHA256": "07835d1e449974f142d8af3c67a7c47f064fd8b157612f6b790bb7fbf180a897"
+    },
+    {
+      "path": "pkg/codexplugin/codexplugin.go",
+      "bytes": 19960,
+      "upstreamSHA256": "26af191b3e05994d65b9d046516a33b3504a71dfa961f2ce7e6c4c600f8f87ec"
+    },
+    {
+      "path": "pkg/codexplugin/health_details_test.go",
+      "bytes": 2414,
+      "upstreamSHA256": "7265c3cd4c1f3164d3dc97a53b660e2aa50b6e7b85eb0f5b84dcf3b31dbaa497"
+    },
+    {
+      "path": "pkg/codexplugin/manager_managed_files_test.go",
+      "bytes": 6064,
+      "upstreamSHA256": "ff8d26e712818cafc00c5e9cc370ba8f042997de9ca3ca96b37b2d123561da3c"
+    },
+    {
+      "path": "pkg/codexplugin/manager_test.go",
+      "bytes": 19893,
+      "upstreamSHA256": "7dd9a22abe22145df6c64130aca7ac25e1a034d9b1f97f2e20efdaece2548755"
+    },
+    {
+      "path": "pkg/codexplugin/manager.go",
+      "bytes": 67177,
+      "upstreamSHA256": "f1a1bdd7140bfd183cd6fa4399d3f6528914b6c8903393a2555c74b7d3398393"
+    },
+    {
+      "path": "pkg/codexplugin/session/health_details_test.go",
+      "bytes": 3352,
+      "upstreamSHA256": "6aa014bb478b3eb2922d58568784b00b7814021d93885befc409ada0db12506d"
+    },
+    {
+      "path": "pkg/codexplugin/session/health_details.go",
+      "bytes": 1772,
+      "upstreamSHA256": "d7e6bf6f0f8b81d3436257234759b9c5cbcd64cb627edb956bcf9da0225941ca"
+    },
+    {
+      "path": "pkg/codexplugin/session/managed_files_test.go",
+      "bytes": 10866,
+      "upstreamSHA256": "b6dabce6532cbd1fec210f9172a777e8de2c7f80a6744e2cfc24a0af78ebff10"
+    },
+    {
+      "path": "pkg/codexplugin/session/managed_files.go",
+      "bytes": 5424,
+      "upstreamSHA256": "221e5c56da27a38a443291fa1828350541fc8f6c8fc65d5ff259e87a9b227ca6"
+    },
+    {
+      "path": "pkg/codexplugin/session/process_identity_darwin.go",
+      "bytes": 2337,
+      "upstreamSHA256": "c3a1ee112af8fe1b85063f5f1f7f2888051863753b35dfe098c62fcf60c91782"
+    },
+    {
+      "path": "pkg/codexplugin/session/process_identity_linux.go",
+      "bytes": 2265,
+      "upstreamSHA256": "6134d7b6a17471235891c8997501f9c2524f4f5bb8d215e0ee893df2383e62cc"
+    },
+    {
+      "path": "pkg/codexplugin/session/process_identity_other.go",
+      "bytes": 492,
+      "upstreamSHA256": "1a60d902f6201dc33e8c753825f87b1d75ae5f9b22da23d047c1eacbff64a3d5"
+    },
+    {
+      "path": "pkg/codexplugin/session/process_identity_test.go",
+      "bytes": 1423,
+      "upstreamSHA256": "0a65b9004b6c0267fb40ba8d0de47eb6687417c5a35dd05b7c4bca9c0341ea92"
+    },
+    {
+      "path": "pkg/codexplugin/session/process_identity_windows.go",
+      "bytes": 1572,
+      "upstreamSHA256": "cafac2f08bc1a3bc11a052cd4c2ab64152d4727cbb810aa5dc03a3a7fa0ad77e"
+    },
+    {
+      "path": "pkg/codexplugin/session/process_identity.go",
+      "bytes": 2233,
+      "upstreamSHA256": "5d9f581c3e1a2fe2cb589b67ee66caf8cdd78833ff2d7af9922e66f6544af698"
+    },
+    {
+      "path": "pkg/codexplugin/session/process_unix.go",
+      "bytes": 554,
+      "upstreamSHA256": "11e6ff9a157170faa29908755983f2cedad07b452c5dafc85026a00485b13c6c"
+    },
+    {
+      "path": "pkg/codexplugin/session/process_windows.go",
+      "bytes": 1273,
+      "upstreamSHA256": "26b903b1718ac26a9b481fc1dbd5c41e300810a31774fd1101d97a9c3ae3b84b"
+    },
+    {
+      "path": "pkg/codexplugin/session/session_exec_unix_test.go",
+      "bytes": 2048,
+      "upstreamSHA256": "53d30ef760926c72e7e51c858b79737af580d8a3d6e88193210f04ae2236f511"
+    },
+    {
+      "path": "pkg/codexplugin/session/session_security_test.go",
+      "bytes": 6614,
+      "upstreamSHA256": "3475ebfb4e227d9f25151e7d471ebe44076c679f81d9adee93202b6bba33a781"
+    },
+    {
+      "path": "pkg/codexplugin/session/session_test.go",
+      "bytes": 29257,
+      "upstreamSHA256": "8ee0b071b99955608f160e0fe434db7a1ddde71eef9367049011b37aedaf7b6b"
+    },
+    {
+      "path": "pkg/codexplugin/session/session.go",
+      "bytes": 47622,
+      "upstreamSHA256": "75290e7bc06e92a8d370ad6ba5aefbd86c56a2009d44f7e4be4ba229f3c64b63"
+    },
+    {
+      "path": "pkg/codexplugin/state/file_lock_other.go",
+      "bytes": 280,
+      "upstreamSHA256": "faedc42329cb91c60934ad1ddb8b9fee27c88c94df93ff5aba095b7b6e4ab696"
+    },
+    {
+      "path": "pkg/codexplugin/state/file_lock_unix.go",
+      "bytes": 586,
+      "upstreamSHA256": "db0a2383ecc5d71d8df41fb5b0f68c44322dfaf5fad669544049c8627b392af8"
+    },
+    {
+      "path": "pkg/codexplugin/state/file_lock_windows.go",
+      "bytes": 670,
+      "upstreamSHA256": "6f7f232c9d4e8a6bff0e3061fbb3faf0e78acd6d167cf6b4e35eb3dcd3b185f6"
+    },
+    {
+      "path": "pkg/codexplugin/state/lock_test.go",
+      "bytes": 1004,
+      "upstreamSHA256": "29a4fc6dde1e00219fa776b31383b18aab80cb8aa771c0419011e5df441c4243"
+    },
+    {
+      "path": "pkg/codexplugin/state/lock.go",
+      "bytes": 1349,
+      "upstreamSHA256": "1736751f8dbeafe4f543e3bfcaecd15acaf026390abae3fe6d427e62de42d907"
+    },
+    {
+      "path": "pkg/codexplugin/state/state_test.go",
+      "bytes": 3753,
+      "upstreamSHA256": "1194f003ff7ddf6403b9696f9e5ef128f9e8e9d50451a90031b72cc6be9e4042"
+    },
+    {
+      "path": "pkg/codexplugin/state/state.go",
+      "bytes": 13592,
+      "upstreamSHA256": "5d6bcd21a39bd1d04494752a449b17b701cc4faecdc6168553877f1853061f7e"
+    },
+    {
+      "path": "pkg/config/adapter_test.go",
+      "bytes": 46932,
+      "upstreamSHA256": "61de4f0a547791b55b3e1d82c16bf5eabf652038b2fce48e95624831f10d6bb7"
+    },
+    {
+      "path": "pkg/config/admin_test.go",
+      "bytes": 6657,
+      "upstreamSHA256": "d7a55c95ce6545be64b4ff2b6061e8c2fdcf1dc8698ba682d52d6e00c6104d43"
+    },
+    {
+      "path": "pkg/config/admin.go",
+      "bytes": 5817,
+      "upstreamSHA256": "cf43a5a2782e54a86f9e76b69167133c184840ead486e27181cea7293ae9a3bf"
+    },
+    {
+      "path": "pkg/config/config.go",
+      "bytes": 17443,
+      "upstreamSHA256": "894936e2d01075fc1e01cda240a71e278a22f9d856b90122de04f913fcd28232"
+    },
+    {
+      "path": "pkg/config/profile.go",
+      "bytes": 1563,
+      "upstreamSHA256": "f36eb4586dcda7bf6c1cc4ae1b9dada24f596a7aa4d14ad0e13c3ec7c64a7e06"
+    },
+    {
+      "path": "pkg/controlplane/admin/client_test.go",
+      "bytes": 9987,
+      "upstreamSHA256": "f03e38edf3513696561b85b0acc0332806cdade0cfb066249f12d14ef6a479ee"
+    },
+    {
+      "path": "pkg/controlplane/admin/tunnel_client.go",
+      "bytes": 6930,
+      "upstreamSHA256": "a1ba82036bc83717e44c286077151c3884811045536cb4dae83b55dd33dae986"
+    },
+    {
+      "path": "pkg/controlplane/admin/types.go",
+      "bytes": 1768,
+      "upstreamSHA256": "4576c6904e50ce748e13e7dc097914f7577d7445f8121b65b8adb2c4d195e5c4"
+    },
+    {
+      "path": "pkg/controlplane/apierror/apierror_test.go",
+      "bytes": 1278,
+      "upstreamSHA256": "30edd4eb829b6d077051e1e6b4a6f6046e136811b36c29590d67abde22519287"
+    },
+    {
+      "path": "pkg/controlplane/apierror/apierror.go",
+      "bytes": 6153,
+      "upstreamSHA256": "158950aa72e7003a19ed335d07d3832837094430628ce3f86511f550f6461e8f"
+    },
+    {
+      "path": "pkg/controlplane/doc.go",
+      "bytes": 2578,
+      "upstreamSHA256": "92b10fe7827ce043804a67b19800c1d9ef36744b84f80230d317e69cf0b26e8e"
+    },
+    {
+      "path": "pkg/controlplane/fx/fxmodule_test.go",
+      "bytes": 19282,
+      "upstreamSHA256": "ad53651ff42558ffdc842e6d605be9c8c6d1b6874ebaaed26dddff07ab8b1810"
+    },
+    {
+      "path": "pkg/controlplane/fx/fxmodule.go",
+      "bytes": 14073,
+      "upstreamSHA256": "c55d955273ee95fb5af58b6b406d9d2ed12dbcbb813df0a59ff051a24d343563"
+    },
+    {
+      "path": "pkg/controlplane/health_test.go",
+      "bytes": 4794,
+      "upstreamSHA256": "ebc09ac54e097e3db9f5046309a344a270c7e0370e1a93312b2047afe80d92a7"
+    },
+    {
+      "path": "pkg/controlplane/health.go",
+      "bytes": 9726,
+      "upstreamSHA256": "046a7e096f4b7e45f9dacefb71333cbc6a480c786da45f13a73c2a66a0c21e09"
+    },
+    {
+      "path": "pkg/controlplane/internal/client_capabilities_test.go",
+      "bytes": 3289,
+      "upstreamSHA256": "0499470a4672c06f55d432e0d775013827822bed195d1b17ebda55429464ce5b"
+    },
+    {
+      "path": "pkg/controlplane/internal/command_parser_test.go",
+      "bytes": 5047,
+      "upstreamSHA256": "be427d835918c990de7af7b42d266fd1237c24b5cdb75cea0dfb7a9fdcb4e5e7"
+    },
+    {
+      "path": "pkg/controlplane/internal/command_parser.go",
+      "bytes": 2996,
+      "upstreamSHA256": "bb24122af6675fe01c58e892decd13228e1086f28705f940deab6374b47a5d1b"
+    },
+    {
+      "path": "pkg/controlplane/internal/command_types.go",
+      "bytes": 3702,
+      "upstreamSHA256": "313916b978d870524606ff804e11b06d0116aca12df22ae84f630e61cfa7a951"
+    },
+    {
+      "path": "pkg/controlplane/internal/health_observation_test.go",
+      "bytes": 3490,
+      "upstreamSHA256": "fb336666b422212decf895201f64f92c32a350a8ba5effa7d53f22b23c8ff1fb"
+    },
+    {
+      "path": "pkg/controlplane/internal/health.go",
+      "bytes": 703,
+      "upstreamSHA256": "95d964f7f43a928ff4548cb38dc41e729f8d56d0ecbebd6e0198a86b3145605e"
+    },
+    {
+      "path": "pkg/controlplane/internal/metrics_test.go",
+      "bytes": 878,
+      "upstreamSHA256": "d04b37751e7e257d0d6b79438b3f1e8b30b5d503f53e8666399020e1ab0d7d71"
+    },
+    {
+      "path": "pkg/controlplane/internal/metrics.go",
+      "bytes": 5172,
+      "upstreamSHA256": "6ea878a845402f19a9ddb608af185aa0752da6772c77a4a625d12a2f9c7cf437"
+    },
+    {
+      "path": "pkg/controlplane/internal/openapi_contract_test.go",
+      "bytes": 1841,
+      "upstreamSHA256": "7ff7124fa1f5c89570795ac89121e08fdab8b1ae252a1e72fbaa7128087350a3"
+    },
+    {
+      "path": "pkg/controlplane/internal/poller_test.go",
+      "bytes": 30152,
+      "upstreamSHA256": "0bd85f8b03e53f3f7b63130a716be36527ebdc11196f4a4ddcd2896e5e48eee1"
+    },
+    {
+      "path": "pkg/controlplane/internal/poller.go",
+      "bytes": 10656,
+      "upstreamSHA256": "6717e22568673519ee2ca93116497ae9d0ded3b95927e57be9cdd9a29d76ef6d"
+    },
+    {
+      "path": "pkg/controlplane/internal/retry_after_test.go",
+      "bytes": 20792,
+      "upstreamSHA256": "60b5266073d367e857726e5f1a4d9162a3f94e4d656a73472afd85f5d1d1370b"
+    },
+    {
+      "path": "pkg/controlplane/internal/retry_after.go",
+      "bytes": 1602,
+      "upstreamSHA256": "e9565d1849977788d06f94cf55bda84268ae99e2f179bfd6b757da0abf617782"
+    },
+    {
+      "path": "pkg/controlplane/internal/roundtripper_test.go",
+      "bytes": 8760,
+      "upstreamSHA256": "2753506274977fc203f549e80c15e56fd43dd049d90ea7492f457fcb389e6dc3"
+    },
+    {
+      "path": "pkg/controlplane/internal/roundtripper.go",
+      "bytes": 4775,
+      "upstreamSHA256": "a3fb04afc7c4e1170087513150fee9d514f9ffedf9ef7b47ceaf8c20d5fb338a"
+    },
+    {
+      "path": "pkg/controlplane/internal/routing_test.go",
+      "bytes": 37922,
+      "upstreamSHA256": "b839ec439cd4a5ed57f3b0d1db1467c035a44e107f572f430cc006e36c552313"
+    },
+    {
+      "path": "pkg/controlplane/internal/routing.go",
+      "bytes": 4548,
+      "upstreamSHA256": "f994c78b9aab353ea872c7d15193274e2fb18c8c4cb4da9678314617757c19e3"
+    },
+    {
+      "path": "pkg/controlplane/internal/testdata/routing_sequences.json",
+      "bytes": 45293,
+      "upstreamSHA256": "da182b8ffa583911f6505c8e41a681f03e13eee7022bf3f8b865ac347b7d47ee"
+    },
+    {
+      "path": "pkg/controlplane/internal/tunnel_service_client_test.go",
+      "bytes": 104125,
+      "upstreamSHA256": "0fcb5eaef0785e4f81a09d850025881793054c63509257ddf1678d288d05b40f"
+    },
+    {
+      "path": "pkg/controlplane/internal/tunnel_service_client.go",
+      "bytes": 40321,
+      "upstreamSHA256": "13b271becec791f0b1102f5acb6eb1973f04d7368ccb5660f8aba80b3bd1de5f"
+    },
+    {
+      "path": "pkg/controlplane/managed_cloudflare_test.go",
+      "bytes": 660,
+      "upstreamSHA256": "4f8ccbcc289b1a9309537d49f0b1ce2d4d3980d2d3b53950c8a7e24094097d67"
+    },
+    {
+      "path": "pkg/controlplane/managed_cloudflare.go",
+      "bytes": 1083,
+      "upstreamSHA256": "5bbd8a20bce8650969f123b337cb3b6f0b18b4713eab993beff9342e7a221a1c"
+    },
+    {
+      "path": "pkg/controlplane/metadata_test.go",
+      "bytes": 959,
+      "upstreamSHA256": "5ae87cab7d139ff3f19a29c2e76c8f78c2fdef23a54d5b59bcccdfea1a86e6c0"
+    },
+    {
+      "path": "pkg/controlplane/metadata.go",
+      "bytes": 1473,
+      "upstreamSHA256": "9125b7d0f352c8879366214ed53ef26f94c23e293181d2c388a223fad5c9ec96"
+    },
+    {
+      "path": "pkg/controlplane/polled_command.go",
+      "bytes": 3353,
+      "upstreamSHA256": "073bb8b6bb298d584551fe8493dfe1d5e9d336596178bfd839e686507115f255"
+    },
+    {
+      "path": "pkg/controlplane/responder.go",
+      "bytes": 679,
+      "upstreamSHA256": "096e3a52018c0e37aab0795ffece0c15bdff36fb5ce51ec86f7a19b32566c9f8"
+    },
+    {
+      "path": "pkg/controlplane/wiretypes/openapi_contract_test.go",
+      "bytes": 37226,
+      "upstreamSHA256": "88349b8f0c76ce253954dd720b6c0309719df10a0e72e6b95a4e2fe0b2bd9eee"
+    },
+    {
+      "path": "pkg/controlplane/wiretypes/routing.go",
+      "bytes": 3790,
+      "upstreamSHA256": "8fbbdb7827090bea65487c186c75ac44926120b1565206bdda39e865b462db79"
+    },
+    {
+      "path": "pkg/controlplane/wiretypes/testdata/wire/jsonrpc_notify_response.json",
+      "bytes": 269,
+      "upstreamSHA256": "54b6198d3d7b4830ca882932e0efd32dcad961314be275554033743d98cef844"
+    },
+    {
+      "path": "pkg/controlplane/wiretypes/testdata/wire/poll_command_envelope.json",
+      "bytes": 706,
+      "upstreamSHA256": "f00e9f37a7d0e729d82d3ee7af765bee60472170a263fd6ccc7cb43fe8fabcf1"
+    },
+    {
+      "path": "pkg/controlplane/wiretypes/wire_test.go",
+      "bytes": 18136,
+      "upstreamSHA256": "a90a145d6d46dd377fbeefd6a5609038106283e00c5510de4982572fe9cdd0d4"
+    },
+    {
+      "path": "pkg/controlplane/wiretypes/wire.go",
+      "bytes": 5069,
+      "upstreamSHA256": "6c1562c6aa57dfdc46c447cba7cb0e0f48137ae7527d8e8d9a169da784235912"
+    },
+    {
+      "path": "pkg/dispatcher/fxmodule_test.go",
+      "bytes": 10262,
+      "upstreamSHA256": "43f262f4fee83a587f3b2b798e54f712e52cb07b9c8af06e56607bb18f3c10a3"
+    },
+    {
+      "path": "pkg/dispatcher/fxmodule.go",
+      "bytes": 11397,
+      "upstreamSHA256": "bc93a3c315d79691f47907a026968fa45f121ff6361bbdd70a4e63956ec12387"
+    },
+    {
+      "path": "pkg/dispatcher/health.go",
+      "bytes": 241,
+      "upstreamSHA256": "d3117de6e71296652cb66d53ef351940ddd091950472867ace04fcd04a8190ad"
+    },
+    {
+      "path": "pkg/dispatcher/internal/health_test.go",
+      "bytes": 6268,
+      "upstreamSHA256": "ccf56c69457e075f0043a5d751f80eb6443ec2bc840578a77d3aa7e65962dc96"
+    },
+    {
+      "path": "pkg/dispatcher/internal/health.go",
+      "bytes": 4696,
+      "upstreamSHA256": "1ef449bca33ad53c3f83e9e8f8b26e3eb298e5661865837012acd35ac05517e3"
+    },
+    {
+      "path": "pkg/dispatcher/internal/metrics_test.go",
+      "bytes": 3996,
+      "upstreamSHA256": "349e5ed25de1f40ea492d7a63be8c16c6221da1993f96727e29d573470428d1e"
+    },
+    {
+      "path": "pkg/dispatcher/internal/metrics.go",
+      "bytes": 2796,
+      "upstreamSHA256": "f1a220bd5f7c5d6f9ab2dd8f181ad9143f22f294279f42063f728b069bb307ad"
+    },
+    {
+      "path": "pkg/dispatcher/internal/processor_test.go",
+      "bytes": 143466,
+      "upstreamSHA256": "0a3ac9e54e1001946c38bdc9958f5c0e8527703b9b855c8e5fc2d64405ad51e9"
+    },
+    {
+      "path": "pkg/dispatcher/internal/processor.go",
+      "bytes": 45370,
+      "upstreamSHA256": "5660a9f7bdd9177bcd39846572881dcf503854bde9331bffc5a69b2b497679d9"
+    },
+    {
+      "path": "pkg/dispatcher/internal/queue_listener_test.go",
+      "bytes": 12331,
+      "upstreamSHA256": "8c6a4b6de2614b30b2dc42bf40e5e431d0c55e46feaf65511025f7f3a1755626"
+    },
+    {
+      "path": "pkg/dispatcher/internal/queue_listener.go",
+      "bytes": 7582,
+      "upstreamSHA256": "9b329289b0d387386e9e5058268a2ee33ae21bbc314ac70d024844635e17a1af"
+    },
+    {
+      "path": "pkg/dispatcher/internal/tunnel_failure_test.go",
+      "bytes": 7716,
+      "upstreamSHA256": "408ca67c6ac92a20acb85ba29a0511c3446ac7efbf6c7c794b1b2f6b5538f1e9"
+    },
+    {
+      "path": "pkg/dispatcher/internal/tunnel_failure.go",
+      "bytes": 11400,
+      "upstreamSHA256": "e18f4b62822d503e76b5a404c305feb3fed85e319d8a6f3a8a0381daef314959"
+    },
+    {
+      "path": "pkg/harpoon/call_buffer_test.go",
+      "bytes": 1210,
+      "upstreamSHA256": "f4372bbc912b1585dcc6bc1b4a658bc17ba0ee5ccb8cc340f422932d27afe2f5"
+    },
+    {
+      "path": "pkg/harpoon/call_buffer.go",
+      "bytes": 2361,
+      "upstreamSHA256": "159185ee7879cd58594e2f697646462f132c33f1961956c59f1948a72c7402f9"
+    },
+    {
+      "path": "pkg/harpoon/compat_test.go",
+      "bytes": 3531,
+      "upstreamSHA256": "2acb32430bf5472b8bfee916f43a1aaf23b6b1de447b8615a443542e0edadad5"
+    },
+    {
+      "path": "pkg/harpoon/fxmodule_test.go",
+      "bytes": 2640,
+      "upstreamSHA256": "ae7fca88864f4af1b83870da3bd9fd6b781541fe36e8881394853385817843bc"
+    },
+    {
+      "path": "pkg/harpoon/fxmodule.go",
+      "bytes": 4447,
+      "upstreamSHA256": "5581b9915205c3062f913c7094a636f65ecf85e5dd6dd410bac5091b8d883f21"
+    },
+    {
+      "path": "pkg/harpoon/hostbus/hostbus_test.go",
+      "bytes": 3313,
+      "upstreamSHA256": "fdb9be77f0f100c698a8e26fa54bdd3c5fe3d9f04771728ec192e40c7b81793e"
+    },
+    {
+      "path": "pkg/harpoon/hostbus/hostbus.go",
+      "bytes": 2835,
+      "upstreamSHA256": "942c80ee7bfb458d8d3b92f8ed31964910dbf66c4e14f046a225d7a02115df1a"
+    },
+    {
+      "path": "pkg/harpoon/inmemory_transport_test.go",
+      "bytes": 13420,
+      "upstreamSHA256": "9b6277f002e79027143b0f944b90b389fbfbb944e03d42682a54b32b7745f978"
+    },
+    {
+      "path": "pkg/harpoon/integration_test.go",
+      "bytes": 34486,
+      "upstreamSHA256": "20b3cab9d1b535ba0aa79c1c6a4e8544324c871dd0002ae1381508c2e0b1eb95"
+    },
+    {
+      "path": "pkg/harpoon/metrics_test.go",
+      "bytes": 7349,
+      "upstreamSHA256": "a542918ed0abedff8ec6c72ab467aa2831248206cbad547004148cf12db45ee4"
+    },
+    {
+      "path": "pkg/harpoon/metrics.go",
+      "bytes": 590,
+      "upstreamSHA256": "1157e22d86b14d50159e2ece07712143557f9050bd67e7ab834cbade45566244"
+    },
+    {
+      "path": "pkg/harpoon/registry_test.go",
+      "bytes": 10711,
+      "upstreamSHA256": "9e44c3c68faac6f9e8342c2a021e87172b0b3f1eca9761e251d583f1d7b1fe34"
+    },
+    {
+      "path": "pkg/harpoon/registry.go",
+      "bytes": 914,
+      "upstreamSHA256": "ca6b1cb2178d78aa7059dc51986bfb95e752f8be9f4bf12707f8f168930c8e51"
+    },
+    {
+      "path": "pkg/harpoon/server_test.go",
+      "bytes": 40095,
+      "upstreamSHA256": "782c9a460d774dbfe85202d8b11766458cabea2c45a2f1f34cef6588dad49974"
+    },
+    {
+      "path": "pkg/harpoon/server.go",
+      "bytes": 11005,
+      "upstreamSHA256": "d56d3e6c59b292e74260a273317a388e3dd00b76ea39f49bfcd1eb9b3f2c7b38"
+    },
+    {
+      "path": "pkg/harpoon/transform_test.go",
+      "bytes": 6696,
+      "upstreamSHA256": "a678e37ff6d653b94653636dd0148609f986b8d5f3d7aa5731f4e03d5d904332"
+    },
+    {
+      "path": "pkg/headerscope/context.go",
+      "bytes": 629,
+      "upstreamSHA256": "f997b4114449082e3cfe3687bf241ae1c23c6000d3766f4e724aaecf5a697d44"
+    },
+    {
+      "path": "pkg/health/health_adapter_test.go",
+      "bytes": 607,
+      "upstreamSHA256": "0c06da573c7bd6ab2e5131188133ba8c7380487399c2b65fc1367f7587e33c2a"
+    },
+    {
+      "path": "pkg/health/health.go",
+      "bytes": 983,
+      "upstreamSHA256": "678d04af24536964a31881b44562333b48c9bd38aadbab1b94542c147791f818"
+    },
+    {
+      "path": "pkg/healthstate/health.go",
+      "bytes": 2356,
+      "upstreamSHA256": "49a2ea6846dd9d4e460b867624326d00e37b8fd267b5e9b4f9a59c02708f2aaa"
+    },
+    {
+      "path": "pkg/healthstate/mcp.go",
+      "bytes": 2240,
+      "upstreamSHA256": "cadd15c31a206d7f91920f9b0b1db9ca5996a30fa6228e567205da3759fea83b"
+    },
+    {
+      "path": "pkg/healthstate/operations.go",
+      "bytes": 2982,
+      "upstreamSHA256": "10f398306a46f362efc08917ba7b41a4a8826ccc5a28226a5f32ef711110907a"
+    },
+    {
+      "path": "pkg/healthstate/optional.go",
+      "bytes": 1263,
+      "upstreamSHA256": "cb3199dbb827caba88ff1c0af131252306f8d6905e3b14cc555e4c7ae73ff1a1"
+    },
+    {
+      "path": "pkg/healthurl/healthurl_test.go",
+      "bytes": 1107,
+      "upstreamSHA256": "1218dda165f6be5cde41701850aea8776cf0e1efda4ee15256bdf16cf2afebe6"
+    },
+    {
+      "path": "pkg/healthurl/healthurl.go",
+      "bytes": 2021,
+      "upstreamSHA256": "ae1f1beb7ba6737596df5617703a802b2ab66cc895030db1be056faea684d7ac"
+    },
+    {
+      "path": "pkg/httpguard/guard_test.go",
+      "bytes": 9828,
+      "upstreamSHA256": "523d9509ade11119799f633b3da6a32c074d44bd74f2b9637a51d317b1b97aa1"
+    },
+    {
+      "path": "pkg/httpguard/guard.go",
+      "bytes": 5519,
+      "upstreamSHA256": "2bb55202561ff21bde2f5bc106fcb7e1496baf3905ffaa123923b252210f7d92"
+    },
+    {
+      "path": "pkg/localfiles/files_test.go",
+      "bytes": 8231,
+      "upstreamSHA256": "c2fa676eb7d01a3e1c4b3f89b224bccb9849d13867d3d676cb0452a1f72cf285"
+    },
+    {
+      "path": "pkg/localfiles/files_unix_test.go",
+      "bytes": 926,
+      "upstreamSHA256": "4c02a40ada3559d0b4397e9a94cb4fea8281044b4e2c646bbc132fa0cc123598"
+    },
+    {
+      "path": "pkg/localfiles/files.go",
+      "bytes": 4491,
+      "upstreamSHA256": "c01a19330bd225999865d1dc5ee5c8196b8da37329b037daf2af246cf98909bc"
+    },
+    {
+      "path": "pkg/localfiles/nonblock_other.go",
+      "bytes": 61,
+      "upstreamSHA256": "d68b835e688db53bc88e459a9891a7602cfa0b0808d414dd7134b71f7eb13a8f"
+    },
+    {
+      "path": "pkg/localfiles/nonblock_unix.go",
+      "bytes": 166,
+      "upstreamSHA256": "55fe8b1290500072e23fef495297373c746e8a0e3b4cd0c9a8dd99357b2ab22b"
+    },
+    {
+      "path": "pkg/localproxy/http_headers_test.go",
+      "bytes": 5178,
+      "upstreamSHA256": "1897b8e312f20a4b7fd8677baf07b04c216f8eb508a7e6ae4c5e6270f6fb2c34"
+    },
+    {
+      "path": "pkg/localproxy/localproxy_test.go",
+      "bytes": 38005,
+      "upstreamSHA256": "df4245a18bddb84c64f198cb531b715c0c7c5282e6acfc56c567debd6865cef7"
+    },
+    {
+      "path": "pkg/localproxy/localproxy.go",
+      "bytes": 48870,
+      "upstreamSHA256": "f17a5d8a3921dd620104b6d48c1d18dc3c954632c12a57f425d55b6aaea7a198"
+    },
+    {
+      "path": "pkg/log/fxmodule_test.go",
+      "bytes": 1419,
+      "upstreamSHA256": "41936c72fdafbde891611037fe85dfaa4e989782eabedd4aa38128ae6add3def"
+    },
+    {
+      "path": "pkg/log/fxmodule.go",
+      "bytes": 1501,
+      "upstreamSHA256": "80fd56a25435d4c30dd0f7cbcc4cdd3dff5f2aa7b8d6ec88436add651b321cc2"
+    },
+    {
+      "path": "pkg/log/level_controller.go",
+      "bytes": 1942,
+      "upstreamSHA256": "b3d70db750dcb7eb79c798fe2faa019e58ff65efdb222c13b738c66f7e96d9cf"
+    },
+    {
+      "path": "pkg/log/logger_internal_test.go",
+      "bytes": 991,
+      "upstreamSHA256": "2c6d5ea748de3543b937ba3cd6cdd743f40dee07193ca81d556f4e95250b9261"
+    },
+    {
+      "path": "pkg/log/logger_test.go",
+      "bytes": 7548,
+      "upstreamSHA256": "7c3dc0e1fae7f9d6703529d37c71dd4592406f35f10a6fc0176e3bfb9f86e069"
+    },
+    {
+      "path": "pkg/log/logger.go",
+      "bytes": 7721,
+      "upstreamSHA256": "c90cfaeb3c94dc28771f7cbe603a91b33b3e19c0d74994ea146c7496db12a0d9"
+    },
+    {
+      "path": "pkg/log/roundtripper_test.go",
+      "bytes": 8163,
+      "upstreamSHA256": "be6056050eb277e32375b58f3aa0a7ab4e169b687227ed3281469836192b56b8"
+    },
+    {
+      "path": "pkg/log/roundtripper.go",
+      "bytes": 3265,
+      "upstreamSHA256": "c9ac3dd6becb90b5d850f6c68172501bd9eb4ac53e030706c0040e22797ad19b"
+    },
+    {
+      "path": "pkg/log/tee_handler.go",
+      "bytes": 2001,
+      "upstreamSHA256": "b337b34603d9d8caf95373d5ac75c40bac4808e04ba159c37bb90c64e0cec808"
+    },
+    {
+      "path": "pkg/log/url_test.go",
+      "bytes": 7361,
+      "upstreamSHA256": "84f1e303f70a466d4ef4051d337e85ca4ae88f6ef032473b1e8d740e1a709579"
+    },
+    {
+      "path": "pkg/log/url.go",
+      "bytes": 3917,
+      "upstreamSHA256": "4baf0fe8e2b719bf68fb1fb8cf6c52a6895c120854f58f6e8615f915e3864fbf"
+    },
+    {
+      "path": "pkg/mcpclient/channel_transport_factory_test.go",
+      "bytes": 35021,
+      "upstreamSHA256": "a802753c15ac018980bbb114133d564dee5c5277426c5d5a9f9024424b58cc92"
+    },
+    {
+      "path": "pkg/mcpclient/channel_transport_factory.go",
+      "bytes": 9957,
+      "upstreamSHA256": "49774ea6268258830392f380c6b13bec9e0822731aee85e9a8090baa4f9b2852"
+    },
+    {
+      "path": "pkg/mcpclient/forwarding_transport_impl_test.go",
+      "bytes": 27211,
+      "upstreamSHA256": "da29906412796181df1616528916e25a56b9bc145b9d4ed65fe51966ad769403"
+    },
+    {
+      "path": "pkg/mcpclient/forwarding_transport_impl.go",
+      "bytes": 8200,
+      "upstreamSHA256": "aab20912cb5fa944ecba4ec6f047eeb3fbd10e9e5673e83e717cd10fe1c5098c"
+    },
+    {
+      "path": "pkg/mcpclient/forwarding_transport_test.go",
+      "bytes": 663,
+      "upstreamSHA256": "d3a3985a159d66a76c7aa1d58961fa2d1d83b9bfc2a0672f59e95e8ee7142d97"
+    },
+    {
+      "path": "pkg/mcpclient/forwarding_transport.go",
+      "bytes": 5312,
+      "upstreamSHA256": "ac3dc4e83ea6da889f89536e6efd178b0fc750d389f2e3d01085bef38ae886f5"
+    },
+    {
+      "path": "pkg/mcpclient/fxmodule_test.go",
+      "bytes": 28976,
+      "upstreamSHA256": "c8dd6982c0b53308fde430d9d4467409f17e4b86fd0867ba0f5c8e041ff2fd34"
+    },
+    {
+      "path": "pkg/mcpclient/fxmodule.go",
+      "bytes": 20258,
+      "upstreamSHA256": "8a428f0cf77be05cfbfc9daa366f80d6de69327e39ac3e23ae1ce1cf91a0874c"
+    },
+    {
+      "path": "pkg/mcpclient/headers_test.go",
+      "bytes": 2487,
+      "upstreamSHA256": "2f17ec09896a84be0a37b66d9ff49ab02ac77f40aeb2a6c922adb122f3ba7806"
+    },
+    {
+      "path": "pkg/mcpclient/headers.go",
+      "bytes": 910,
+      "upstreamSHA256": "a608b7fd8aeb9c16f98341accc280bda8bbb632b663758bb6b59288645dd179d"
+    },
+    {
+      "path": "pkg/mcpclient/internal/context_test.go",
+      "bytes": 5345,
+      "upstreamSHA256": "5a7b517114c08489ffc9eabbbb82c484256526d625da9761f390895002e67f24"
+    },
+    {
+      "path": "pkg/mcpclient/internal/context.go",
+      "bytes": 4645,
+      "upstreamSHA256": "95c87c78ca9a1063be120a410c6f89484636fefb2437fc01079a0201a1151301"
+    },
+    {
+      "path": "pkg/mcpclient/internal/roundtripper_test.go",
+      "bytes": 12037,
+      "upstreamSHA256": "e9c2a47cf555e5717badab474080f868dc6f646a8c97ba5d1d36291620680db3"
+    },
+    {
+      "path": "pkg/mcpclient/internal/roundtripper.go",
+      "bytes": 2433,
+      "upstreamSHA256": "ae7f399e1a6b186b39c850cfe81d3b812459eb01cd09e9fbdad13cf353407c51"
+    },
+    {
+      "path": "pkg/mcpclient/internal/static_headers_test.go",
+      "bytes": 4706,
+      "upstreamSHA256": "8c0d82be4ba56a5dc7c1442029ba37c4a59be75452ab6e20a629559f3bab7c25"
+    },
+    {
+      "path": "pkg/mcpclient/internal/static_headers.go",
+      "bytes": 3066,
+      "upstreamSHA256": "984690f3c97745b9d05c83f24e001dabfbe14019f18d440e11deeba2eb3be73f"
+    },
+    {
+      "path": "pkg/mcpclient/probe_state_test.go",
+      "bytes": 2734,
+      "upstreamSHA256": "8d2149061bdadf8fcbeb9fc4edb8148fba90c52898f7b24c9f9b46f1c359d8db"
+    },
+    {
+      "path": "pkg/mcpclient/probe_state.go",
+      "bytes": 4880,
+      "upstreamSHA256": "30e448666c8fc069004035d92070b6b73af0e2cbb18a8ea4c8549fe0b5b3c395"
+    },
+    {
+      "path": "pkg/mcpclient/protocol_observation_test.go",
+      "bytes": 26078,
+      "upstreamSHA256": "900502962467ed1bbc759b9aabdd10e3aa264bad67b7f973608643f805969559"
+    },
+    {
+      "path": "pkg/mcpclient/protocol_observation.go",
+      "bytes": 17720,
+      "upstreamSHA256": "2ff6df5cfc0032787b6eaae6f66fda19f275836bf4464e00d2d56ac35d130e81"
+    },
+    {
+      "path": "pkg/mcpclient/serialized_forwarding_transport_test.go",
+      "bytes": 44503,
+      "upstreamSHA256": "295c96c59fd5e93d7f2cf8a9b621bc347155f59212902f58aedfcb4935a55d53"
+    },
+    {
+      "path": "pkg/mcpclient/serialized_forwarding_transport.go",
+      "bytes": 30363,
+      "upstreamSHA256": "e87c10133da7b9f3760c9144fbbb2b620c4425d54be0b096c0cf9c29ab489038"
+    },
+    {
+      "path": "pkg/mcpclient/shared_connection_transport_test.go",
+      "bytes": 9864,
+      "upstreamSHA256": "8fd22440e5241f4876f0b5749396c3ed2778665b848c09071b391fd8b5ce9e1a"
+    },
+    {
+      "path": "pkg/mcpclient/shared_connection_transport.go",
+      "bytes": 5616,
+      "upstreamSHA256": "5db9b1de586ac697e0c00e9931e3b9bcfa249fcd09792ac32a342688d5d2256f"
+    },
+    {
+      "path": "pkg/mcpclient/stdio_command_factory.go",
+      "bytes": 1661,
+      "upstreamSHA256": "65be5f08e51e349c50cd35d5275bc8bc8d7cc9ee7c21d6fae7a2130395911dad"
+    },
+    {
+      "path": "pkg/mcpclient/stdio_command_test.go",
+      "bytes": 5705,
+      "upstreamSHA256": "f9890f1d5e8827d6bbf9f4fe49c2fe3436053ce1852b8278ce849c4abfb5bb07"
+    },
+    {
+      "path": "pkg/mcpclient/stdio_command.go",
+      "bytes": 8180,
+      "upstreamSHA256": "1e29165d5c40d5420b56709db5d245fe498d4d7fa42365b7aed2c2a9d45492b7"
+    },
+    {
+      "path": "pkg/mcpclient/stdio_initialization_test.go",
+      "bytes": 21930,
+      "upstreamSHA256": "1ba895657e2fdcd37f5d13acabdcbe9af4211c1c94d015d09ac445687523c944"
+    },
+    {
+      "path": "pkg/mcpclient/transport_provider_fx.go",
+      "bytes": 1214,
+      "upstreamSHA256": "cf16fd5cfb576964c18815d6a3ccc5bcf5f501d5c0fd949813389b02b508e042"
+    },
+    {
+      "path": "pkg/mcpclient/transport_provider.go",
+      "bytes": 3309,
+      "upstreamSHA256": "cca38fd29a89914663a2b540a0bc9c49775b475a00d3bfe6c464a9f037df5248"
+    },
+    {
+      "path": "pkg/mcpserverinfo/mcp_server_info_test.go",
+      "bytes": 8928,
+      "upstreamSHA256": "31b5e0ad4d2c42b8b2e7ab68c0cdd7961002ff78df97ca90f03aa2bda205e685"
+    },
+    {
+      "path": "pkg/mcpserverinfo/mcp_server_info.go",
+      "bytes": 4928,
+      "upstreamSHA256": "7e1ca9a0765de768b3717557b50dca69dae14366a935ea71a50c8a4af9388586"
+    },
+    {
+      "path": "pkg/metrics/fxmodule.go",
+      "bytes": 1441,
+      "upstreamSHA256": "7ec3be5c42e2582f96d8ad4c23105c9cc2d4479d911d5c225d0f2e7bed97521f"
+    },
+    {
+      "path": "pkg/metrics/http_attributes_test.go",
+      "bytes": 3599,
+      "upstreamSHA256": "af04b759e50bb32636860111c8c66bd848640efdd6eb8c941dd5f5fef4e27f06"
+    },
+    {
+      "path": "pkg/metrics/http_attributes.go",
+      "bytes": 1090,
+      "upstreamSHA256": "87dbf6549b3280859c5cd54c72c46945895f5c228c930d63858333bdbd5c8fc8"
+    },
+    {
+      "path": "pkg/oauth/auth_meta_test.go",
+      "bytes": 18159,
+      "upstreamSHA256": "da42d4c539c8b851c4b6e20cea586346bbc382f61c6ef60e8e7fad7f794423fb"
+    },
+    {
+      "path": "pkg/oauth/auth_meta.go",
+      "bytes": 11706,
+      "upstreamSHA256": "0eacd4aaf3bb33e3675ce4c286171dda305aa88d85123606f80a1b2c095b5bed"
+    },
+    {
+      "path": "pkg/oauth/discovery_failure_test.go",
+      "bytes": 2716,
+      "upstreamSHA256": "5d135d6d55d79736bb14c587b1fa01aa796193add7aeeb9632cd7c237edb46fb"
+    },
+    {
+      "path": "pkg/oauth/discovery_failure.go",
+      "bytes": 997,
+      "upstreamSHA256": "3d154c06a79084f78c93982d83a589bf3485e49978fc5908cc7fc34752503224"
+    },
+    {
+      "path": "pkg/oauth/discovery_origin_test.go",
+      "bytes": 7826,
+      "upstreamSHA256": "2bb82a4cd2417fe330eeceb551421bfbab60d779ef595120c0699fc3d61be361"
+    },
+    {
+      "path": "pkg/oauth/discovery_origin.go",
+      "bytes": 1917,
+      "upstreamSHA256": "b71c74000ef40ea5965d4235bbe63d44638ae9ad37e453cc330adb0dff339f31"
+    },
+    {
+      "path": "pkg/oauth/discovery_retry_policy.go",
+      "bytes": 1772,
+      "upstreamSHA256": "4732a8f4f4971750b8288fc6c97cf2c7abb26f7fe42497efdaf36d67a150c999"
+    },
+    {
+      "path": "pkg/oauth/discovery_test.go",
+      "bytes": 19315,
+      "upstreamSHA256": "d8fbe2b8882d0953e53b2834dbf0673fee31b789230b0a3ef147d48fb373331d"
+    },
+    {
+      "path": "pkg/oauth/discovery_transport_compatibility_test.go",
+      "bytes": 9548,
+      "upstreamSHA256": "efc8bbdea87139af9ba99724110885011ced0899c6301ff0a60717cc0ad34f0e"
+    },
+    {
+      "path": "pkg/oauth/discovery.go",
+      "bytes": 10361,
+      "upstreamSHA256": "eb6628d7b8da57556fd9e77a7f5e00be11b0374a35e5933a6af302ca54a4c295"
+    },
+    {
+      "path": "pkg/oauth/health_test.go",
+      "bytes": 1812,
+      "upstreamSHA256": "abeacdf274696c6384bef1ef6332939148ba28ea6c2e765f975457e9edf0bc41"
+    },
+    {
+      "path": "pkg/oauth/health.go",
+      "bytes": 1672,
+      "upstreamSHA256": "7be9371844987903ddceab266cc0c07373bdf73d095d208e3d697c1083f9b418"
+    },
+    {
+      "path": "pkg/oauth/hostbundle_test.go",
+      "bytes": 31959,
+      "upstreamSHA256": "de5f0a8bb2fe4d248c1ccbecdb0b2aba2304ade00408e428b8ca5a6e4fda01c0"
+    },
+    {
+      "path": "pkg/oauth/hostbundle.go",
+      "bytes": 14321,
+      "upstreamSHA256": "9c17c1f1b3a48ff264c4b5ef1c25fda787bff8a30f2141889b2cb27ff5c46b68"
+    },
+    {
+      "path": "pkg/oauth/log_safety.go",
+      "bytes": 371,
+      "upstreamSHA256": "7ce6392e299fb9a8b42f3ce88d8a7a10327a07bc2d189fc58b0fee1d31686b9b"
+    },
+    {
+      "path": "pkg/oauth/module_retry_test.go",
+      "bytes": 8521,
+      "upstreamSHA256": "2aff169e9eeb89e7f49b7cf5438edbc9491eb39c942de2076794340f732cf08d"
+    },
+    {
+      "path": "pkg/oauth/module_test.go",
+      "bytes": 20987,
+      "upstreamSHA256": "b72ff20577df06ee906401ae09a0796b8b44c81ab56910281a4c363d13a6349b"
+    },
+    {
+      "path": "pkg/oauth/module.go",
+      "bytes": 12453,
+      "upstreamSHA256": "c89bccf065e878d90b6c23139bd5fa1aa38598f7bbe6ef1283983f72d59150f8"
+    },
+    {
+      "path": "pkg/oauth/resource_meta_test.go",
+      "bytes": 19730,
+      "upstreamSHA256": "48ff903499fcfa335ff9ed81c0d89267a89be6da5c10f333945399d36387b1cf"
+    },
+    {
+      "path": "pkg/oauth/resource_meta.go",
+      "bytes": 10301,
+      "upstreamSHA256": "f7809a3ca3274dd2a996d894f8d817cf70b44d66e338f99aa775d0c1008d2912"
+    },
+    {
+      "path": "pkg/oauth/state.go",
+      "bytes": 3977,
+      "upstreamSHA256": "e79da58073e37e1a5540488dbdef181a3e67db06d62f3fe57cf67f5ff265181c"
+    },
+    {
+      "path": "pkg/process/process_test.go",
+      "bytes": 4241,
+      "upstreamSHA256": "4c02f6f9de28d21141e1dc42fa717d60e3ad1882c27eedc3219b11f858657005"
+    },
+    {
+      "path": "pkg/process/process.go",
+      "bytes": 1318,
+      "upstreamSHA256": "363cb6ff4eb670a372306f96579f29785cbd489d65f60c47221ab1663ced3202"
+    },
+    {
+      "path": "pkg/proxy/logging.go",
+      "bytes": 482,
+      "upstreamSHA256": "a79bc8eb198d446abb0fe016bf3a054534b40d1c9b40499620c05eacce608bfd"
+    },
+    {
+      "path": "pkg/proxy/route_test.go",
+      "bytes": 7046,
+      "upstreamSHA256": "d418d10df799035a07f50ccecaf6639d116cff1e1c1a5f764ccebceec17aaf29"
+    },
+    {
+      "path": "pkg/proxy/route.go",
+      "bytes": 7984,
+      "upstreamSHA256": "c61dcfda6a4de3c7cfa76665b978641a48ac49c4ed549b62d586a00f65ea4378"
+    },
+    {
+      "path": "pkg/proxyhealth/checker_test.go",
+      "bytes": 15185,
+      "upstreamSHA256": "15517b8e6f8a304b0304cbaea23995c5777e96b30fa8f15e3668d9de2ff60459"
+    },
+    {
+      "path": "pkg/proxyhealth/checker.go",
+      "bytes": 16246,
+      "upstreamSHA256": "5a1b8aa8ab2586957eac74d7c5bfde7cc0e6993373bf3aa776392f5092886fb7"
+    },
+    {
+      "path": "pkg/proxyhealth/health_test.go",
+      "bytes": 6476,
+      "upstreamSHA256": "fce853d839a0799cf771e49c7f11897555779836c02986452f0f068cd3bee54c"
+    },
+    {
+      "path": "pkg/proxyhealth/health.go",
+      "bytes": 4191,
+      "upstreamSHA256": "d87ea91aeebaa507dbbdac15931c81ba9b2c1f3ca152ca48ebdad46c7e63c425"
+    },
+    {
+      "path": "pkg/proxyhealth/metrics.go",
+      "bytes": 4130,
+      "upstreamSHA256": "176974b22ab04ca95a856fc5815e26f80ab6e4b76b03e16fd4091b5e2fb5ff48"
+    },
+    {
+      "path": "pkg/runtimeapp/app.go",
+      "bytes": 1715,
+      "upstreamSHA256": "a244996a66ce9caecfa0b35dae220e465eded0d9b14f3dcab0140193ab17ad41"
+    },
+    {
+      "path": "pkg/runtimeapp/cloudflared/app.go",
+      "bytes": 1506,
+      "upstreamSHA256": "7af050cf1a4dd86cb1837075406edf96d79a0d463e2bdef10b28dd3bbb4374b2"
+    },
+    {
+      "path": "pkg/runtimecli/runtimecli.go",
+      "bytes": 4326,
+      "upstreamSHA256": "cce72a7a2eb5824ab321eb5c35a256238f440659956fb21551f67f88e6f6e6e1"
+    },
+    {
+      "path": "pkg/runtimeconfig/config.go",
+      "bytes": 101471,
+      "upstreamSHA256": "d4fa1cf76e593a8872fb812ddb97e441f216bba267d3b354906656e1461e62f7"
+    },
+    {
+      "path": "pkg/runtimeconfig/file_config_confinement_test.go",
+      "bytes": 4595,
+      "upstreamSHA256": "3829e6f0e3b7cd7ffc0522278303a44efa2d2e1109f947d9138af9cda1b76980"
+    },
+    {
+      "path": "pkg/runtimeconfig/file_config.go",
+      "bytes": 25543,
+      "upstreamSHA256": "7d4c15a56a1b925a8e075800388bde9648c7ab97d2f4f8f23346bdf1241ff583"
+    },
+    {
+      "path": "pkg/runtimeconfig/header_rules_config_test.go",
+      "bytes": 15732,
+      "upstreamSHA256": "f333217aab27e240cb7ef641ed6c2722f3b259cb60e856802be30c35cc341ff4"
+    },
+    {
+      "path": "pkg/runtimeconfig/header_rules_config.go",
+      "bytes": 13072,
+      "upstreamSHA256": "ca40e159a6d9ac4d6152e31e856e8ffbfa4faa877003cca3eeb89a058559048a"
+    },
+    {
+      "path": "pkg/runtimeconfig/health_test.go",
+      "bytes": 2396,
+      "upstreamSHA256": "b637467039d2aecbb4290da4d7079576bcf9777aeedd7dcc914f9e240ce360e0"
+    },
+    {
+      "path": "pkg/runtimeconfig/http_headers_test.go",
+      "bytes": 860,
+      "upstreamSHA256": "4cfb0129ecff7b86a36056c2146322a7711a9d87d72227199488be5e7e31eba0"
+    },
+    {
+      "path": "pkg/runtimeconfig/http_headers.go",
+      "bytes": 3848,
+      "upstreamSHA256": "4df467cba4b601e552807fadc9aba73395c68f1fd2862d652f0c3e3c58f9d652"
+    },
+    {
+      "path": "pkg/runtimeconfig/oauth_origins_test.go",
+      "bytes": 7847,
+      "upstreamSHA256": "6486e3a07afd02ccdf0eafa583333d3ec4a73f292ce1783dba72f6eb550e4a52"
+    },
+    {
+      "path": "pkg/runtimeconfig/oauth_origins.go",
+      "bytes": 1776,
+      "upstreamSHA256": "ea5352aa4126d40dbbd838b4621a5b624fd998db4a63164322a903c4aa69b1bb"
+    },
+    {
+      "path": "pkg/runtimeconfig/profile.go",
+      "bytes": 16594,
+      "upstreamSHA256": "16960f3bc63712f9ad1b31dc7e3f5e62c341832b88d4fcd1f1bd859cbb81e8ba"
+    },
+    {
+      "path": "pkg/runtimeconfig/proxy_logging.go",
+      "bytes": 389,
+      "upstreamSHA256": "811c28da93e56aee2b3b5cc7eb3257fab0566145d70d4321afe28c578a65e023"
+    },
+    {
+      "path": "pkg/runtimeconfig/proxy.go",
+      "bytes": 2601,
+      "upstreamSHA256": "8b9dbe392ae468cdd3cdaecd9d1ad679e00126c401a0e2921ffc7a6537b9708e"
+    },
+    {
+      "path": "pkg/runtimeconfig/runtimeconfig_test.go",
+      "bytes": 12481,
+      "upstreamSHA256": "169514d37d5cccef393989e309c58fb4640111fa5c0541c7ba7be6bb1cd4dc17"
+    },
+    {
+      "path": "pkg/runtimeconfig/shared_config_test.go",
+      "bytes": 122651,
+      "upstreamSHA256": "a4d77321f2fb16d5d940ab98971039b9954c4fcb94c99a7f37e3886e272daae1"
+    },
+    {
+      "path": "pkg/runtimeconfig/template_config_test.go",
+      "bytes": 17799,
+      "upstreamSHA256": "2b2e2dd859124766579f93eee595e6d758eef3880e312159b62a3a12203a6cab"
+    },
+    {
+      "path": "pkg/runtimeharpoon/catalog_digest_test.go",
+      "bytes": 15931,
+      "upstreamSHA256": "6bca2440fd83e7ae4114c3de8ed4e9d22a3a9867083ffc16920c3b301ed6836d"
+    },
+    {
+      "path": "pkg/runtimeharpoon/catalog_digest.go",
+      "bytes": 11541,
+      "upstreamSHA256": "66dee227c631fe06cf0cc1d5fa15aa5e596dfe995c257ffc6819c96e4109fee7"
+    },
+    {
+      "path": "pkg/runtimeharpoon/discovery_budget_test.go",
+      "bytes": 10880,
+      "upstreamSHA256": "979febb17b21ca0d487cc79bb4bd74299bdb2e633fcd7b547cfdabb07c72fe39"
+    },
+    {
+      "path": "pkg/runtimeharpoon/discovery_budget.go",
+      "bytes": 2583,
+      "upstreamSHA256": "1c6e69f238a74871d82600d1e511c088f6dd62b23857284a6aef44a3935661c0"
+    },
+    {
+      "path": "pkg/runtimeharpoon/fxmodule.go",
+      "bytes": 3027,
+      "upstreamSHA256": "168fdc34799f7f6b9d09fd2ab3ccd2a0dbbbb9933eab7e7282a7bf98cab2aadb"
+    },
+    {
+      "path": "pkg/runtimeharpoon/header_rules_test.go",
+      "bytes": 29530,
+      "upstreamSHA256": "53dd7e8df6a037887872bac8cf4d00c43ac7ab5ecf024d59f22fbbc7f29a9bb8"
+    },
+    {
+      "path": "pkg/runtimeharpoon/header_rules.go",
+      "bytes": 11165,
+      "upstreamSHA256": "741068da8904584bff8db54d96c2972f81b8f56fc0dcc4e459ecd4a652dbb148"
+    },
+    {
+      "path": "pkg/runtimeharpoon/health_test.go",
+      "bytes": 1215,
+      "upstreamSHA256": "5b70c249cd2dcee837e6f78d56f4d93594651168e2ea7153a5c992010c849501"
+    },
+    {
+      "path": "pkg/runtimeharpoon/health.go",
+      "bytes": 1816,
+      "upstreamSHA256": "6458d211c9b69fa8f437a76d65d0c61f6bb34aa007284188ddfad7742899997e"
+    },
+    {
+      "path": "pkg/runtimeharpoon/host_registration_compat_test.go",
+      "bytes": 22461,
+      "upstreamSHA256": "5ec1a4846dd42aa113a461829238e79734c2555a7418feed89210e6fcafced99"
+    },
+    {
+      "path": "pkg/runtimeharpoon/host_registration_test.go",
+      "bytes": 5916,
+      "upstreamSHA256": "d6e293d1f65908d8f20cd59f9c6e610158e8efed4fa197c62c08fc2c9ab6b1bd"
+    },
+    {
+      "path": "pkg/runtimeharpoon/host_registration.go",
+      "bytes": 15550,
+      "upstreamSHA256": "8abe1a55e73a599dc5b0fd9445c16c86b8a1a3044bbe55ee6b0d07bdf11db71a"
+    },
+    {
+      "path": "pkg/runtimeharpoon/hostbus/hostbus_test.go",
+      "bytes": 4320,
+      "upstreamSHA256": "5d5678b848cbd9c8ace5b2038b599a16dd7e84d07c3d95f6628e88d7806ecefb"
+    },
+    {
+      "path": "pkg/runtimeharpoon/hostbus/hostbus.go",
+      "bytes": 8354,
+      "upstreamSHA256": "1331937a882a4ce586c1418e1ae269e4ff3e36baeb677131c85fec8ae0276b0f"
+    },
+    {
+      "path": "pkg/runtimeharpoon/inmemory_transport.go",
+      "bytes": 11784,
+      "upstreamSHA256": "7b1f97ae7b0bbef46ceb353eee8b3bf55708c50710d5824aa630babba0b9740a"
+    },
+    {
+      "path": "pkg/runtimeharpoon/internal/hostclassifier/classifier_test.go",
+      "bytes": 3989,
+      "upstreamSHA256": "68bda84503fba166c8b8ceb0a8a054344c839c17c160b5d5369f7ea5a1095df9"
+    },
+    {
+      "path": "pkg/runtimeharpoon/internal/hostclassifier/classifier.go",
+      "bytes": 2840,
+      "upstreamSHA256": "6bc6b87f738a6ddf4519264fef4810c6ad8a834d54f4718875b894e52c350b05"
+    },
+    {
+      "path": "pkg/runtimeharpoon/metadata.go",
+      "bytes": 2118,
+      "upstreamSHA256": "1f5eb87d37802f31b4ca5980b7cc1347ab5f9a0af80d5c1beaf2016bf5089c8c"
+    },
+    {
+      "path": "pkg/runtimeharpoon/metrics.go",
+      "bytes": 6231,
+      "upstreamSHA256": "13d64478258f8f841477f46aa5c47a106fa02ec73a430db677ae2ec319be4a86"
+    },
+    {
+      "path": "pkg/runtimeharpoon/policy_binding_test.go",
+      "bytes": 5081,
+      "upstreamSHA256": "410f2ec69a936c57ecf58c29cfbfb355bb7af1c4f02131dfbe1c4f70b783e754"
+    },
+    {
+      "path": "pkg/runtimeharpoon/policy_binding.go",
+      "bytes": 3192,
+      "upstreamSHA256": "5e3c79823490eb5c4fd2d1174a7219cbe4f523021d98e7420499cd20db07b700"
+    },
+    {
+      "path": "pkg/runtimeharpoon/registry_internal_test.go",
+      "bytes": 2550,
+      "upstreamSHA256": "0aeb9dfe4b9050ae1462a0c565ea3875a21561c165cd90e62a860ed7d2c43ffe"
+    },
+    {
+      "path": "pkg/runtimeharpoon/registry.go",
+      "bytes": 21343,
+      "upstreamSHA256": "586e957c85358c86eaeb97eff72ed580d2578d96e5f701d42a9a841dfc6ea7f8"
+    },
+    {
+      "path": "pkg/runtimeharpoon/server_security_test.go",
+      "bytes": 3975,
+      "upstreamSHA256": "26f0e4a021eee6f57a2b94e56a8e2bcdbbf28ce41e513c620d0a0fbb2991399c"
+    },
+    {
+      "path": "pkg/runtimeharpoon/server.go",
+      "bytes": 45811,
+      "upstreamSHA256": "0fa631851e17639473ed1ce93be107c2ecb40af93a4532651337e46ba7321819"
+    },
+    {
+      "path": "pkg/runtimeharpoon/shared_wiring_test.go",
+      "bytes": 19433,
+      "upstreamSHA256": "621f1578b79cf24d8241632d2ad9dd698a0e43692b0b8a65539184aad8fcb4de"
+    },
+    {
+      "path": "pkg/runtimeharpoon/shared_wiring.go",
+      "bytes": 12248,
+      "upstreamSHA256": "5393b16d27f61a2a3056aa7bd10c5c382ce7ee98f89bb61d5b3e2808c8507106"
+    },
+    {
+      "path": "pkg/runtimeharpoon/template_body_test.go",
+      "bytes": 22110,
+      "upstreamSHA256": "68fc053930f179f490d0483da901d95a926ad5a62975da0d13e24721a0e0f078"
+    },
+    {
+      "path": "pkg/runtimeharpoon/template_body.go",
+      "bytes": 10069,
+      "upstreamSHA256": "06ac3803215cb9a86c9bfb914c49f87849a235845172163326cafeb7ada77a7b"
+    },
+    {
+      "path": "pkg/runtimeharpoon/template_registry_test.go",
+      "bytes": 8351,
+      "upstreamSHA256": "5f45345fe73c78f705be4716063878914e4f40731b06e00c2e78583f8169977d"
+    },
+    {
+      "path": "pkg/runtimeharpoon/template_server_test.go",
+      "bytes": 22713,
+      "upstreamSHA256": "433a28f042c86cb622dd8aca81c962fb3e4b2f54015a53c553c628761a2940d9"
+    },
+    {
+      "path": "pkg/runtimeharpoon/template_server.go",
+      "bytes": 18280,
+      "upstreamSHA256": "42f3be2d438dedabe13806ad23d34385c3e5f4146f657601259376d4101c3a99"
+    },
+    {
+      "path": "pkg/runtimeharpoon/template_test.go",
+      "bytes": 36932,
+      "upstreamSHA256": "1bb22292e6387f61406ca20cb38bf16bcf161535349c150b4edc1b2f6b9e8c98"
+    },
+    {
+      "path": "pkg/runtimeharpoon/template.go",
+      "bytes": 26053,
+      "upstreamSHA256": "f797132d47c3e1a0295d7a382d9cb02b0a289815cc43dcdfc4fa1de1a7480d8c"
+    },
+    {
+      "path": "pkg/runtimeharpoon/transform.go",
+      "bytes": 6238,
+      "upstreamSHA256": "1207d355e63133be33ac647194bc259973ecb12142ae0f40b47b7a91c4c9c6ad"
+    },
+    {
+      "path": "pkg/runtimehealth/components_fx_test.go",
+      "bytes": 4002,
+      "upstreamSHA256": "f5443fa14417cfabd8cf2a578fe2503efbbbbe390392d20310f74c7ec3ae9788"
+    },
+    {
+      "path": "pkg/runtimehealth/components_test.go",
+      "bytes": 13104,
+      "upstreamSHA256": "2a0d8c68a91f5e7e6884ef18f4b62482513603e8d067b6c65d863faa152e7338"
+    },
+    {
+      "path": "pkg/runtimehealth/components.go",
+      "bytes": 6699,
+      "upstreamSHA256": "61d08550298d41be6fecb6a935552fc7543650cbe182a7b34480f929cdefd33e"
+    },
+    {
+      "path": "pkg/runtimehealth/health_test.go",
+      "bytes": 16292,
+      "upstreamSHA256": "450ea37a3be4381287a236c89b4f7444b658051936e4f2ffd65c99a330895fc0"
+    },
+    {
+      "path": "pkg/runtimehealth/health.go",
+      "bytes": 13521,
+      "upstreamSHA256": "6ed6384a0f0531cc151d8558187dbc900f3c78e467d1ed170650dfa808a1c53c"
+    },
+    {
+      "path": "pkg/tlsconfig/bundle.go",
+      "bytes": 1407,
+      "upstreamSHA256": "77cd90d4af289901562e6797a4d536f0450a111b33ed9fd9b91cec5a4c5a837e"
+    },
+    {
+      "path": "pkg/tlsconfig/client_certificate_test.go",
+      "bytes": 3108,
+      "upstreamSHA256": "e6948124120bdd4e057ee51d80ae02d6c20d6410bb62032b4014ebcc123d6f48"
+    },
+    {
+      "path": "pkg/tlsconfig/client_certificate.go",
+      "bytes": 1088,
+      "upstreamSHA256": "723240c23b6b6dcfc59e675ba9fdc6314a6e2e24a75b57017a16eeea3f05ee5a"
+    },
+    {
+      "path": "pkg/tlsconfig/trust_test.go",
+      "bytes": 2085,
+      "upstreamSHA256": "b612d62f633e309ba1e2f5462e4942b714f8c94beb84f4baf93c99b5fb0b0100"
+    },
+    {
+      "path": "pkg/tlsconfig/trust.go",
+      "bytes": 3905,
+      "upstreamSHA256": "bef7e00a02fc665ec1a1eba105bbc75e6ab3e1383aecab84e455ff05f8c48f8c"
+    },
+    {
+      "path": "pkg/transport/default_test.go",
+      "bytes": 2213,
+      "upstreamSHA256": "902da206b1397990cdb9b393d5726c8d864d7ac8a3f398fdc759b0f1ee8c1bb6"
+    },
+    {
+      "path": "pkg/transport/default.go",
+      "bytes": 2952,
+      "upstreamSHA256": "c24801adcb2d65e94b7f4495e5fcc5c57bfe6365c6186b6f0f55557ddab1132e"
+    },
+    {
+      "path": "pkg/transport/proxy.go",
+      "bytes": 672,
+      "upstreamSHA256": "95463e26f4ac4527739728e35428fcb6f8c58f58ad5248a8943ea53f5b34b602"
+    },
+    {
+      "path": "pkg/tunnelctx/ctx_test.go",
+      "bytes": 3799,
+      "upstreamSHA256": "a76cb396a525210472e01e1387b8f0f5d132f909ceb75f593e2b2afde9fa2e6b"
+    },
+    {
+      "path": "pkg/tunnelctx/ctx.go",
+      "bytes": 5802,
+      "upstreamSHA256": "a23696dc2f6c0045071c9c9d335577011d0de8aec80a94788651d1ea9d4bf54c"
+    },
+    {
+      "path": "pkg/types/channel_test.go",
+      "bytes": 1695,
+      "upstreamSHA256": "d6246aa5e118a6350fdaab5ff64a0c346e16c68f083464897a5722c14f5a8537"
+    },
+    {
+      "path": "pkg/types/channel.go",
+      "bytes": 939,
+      "upstreamSHA256": "a156df33d0b3d4fc84f295d8e92c29cf6b8fdbd5100acfe21965cc499d7af91a"
+    },
+    {
+      "path": "pkg/types/tunnel_response_test.go",
+      "bytes": 2742,
+      "upstreamSHA256": "f41ba40307aeb30d0dbc757c5db52567f816b1b0eb76106ea7a9e839d8524010"
+    },
+    {
+      "path": "pkg/types/tunnel_response.go",
+      "bytes": 5244,
+      "upstreamSHA256": "5436262d05396b71b5b418b35c5c22639863f80abf519da67636b87024675309"
+    },
+    {
+      "path": "pkg/types/types.go",
+      "bytes": 2486,
+      "upstreamSHA256": "cc16fb7412ddad47f2e658deb0d3bb0f768a9ce9d4b3acfd8d1e89e5ac27d0eb"
+    },
+    {
+      "path": "pkg/utils/stable_uuid_test.go",
+      "bytes": 1436,
+      "upstreamSHA256": "3e422e66fedd47cfef26395ae67ac6d7552f8af912eca325196b3c238df7bf57"
+    },
+    {
+      "path": "pkg/utils/stable_uuid.go",
+      "bytes": 1465,
+      "upstreamSHA256": "844127c84f2773a559a49f1780a63efd7d8abec458d7ed0cb565822b8e6eb751"
+    },
+    {
+      "path": "pkg/version/VERSION",
+      "bytes": 7,
+      "upstreamSHA256": "c7a7731a83ec67d107b65232828977adc4373af137dc22f278b59d6747b79ee2"
+    },
+    {
+      "path": "pkg/version/version_exec_unix_test.go",
+      "bytes": 1032,
+      "upstreamSHA256": "cde0ce10cefbd5302a6b7cd8ba7d064e2ee21eca977e683f4dce2947c66527d3"
+    },
+    {
+      "path": "pkg/version/version_test.go",
+      "bytes": 7792,
+      "upstreamSHA256": "4656c24a6439711ff3b4c1de8a7fc79c913dfa8fc69485bd3c28d68076bb3bf4"
+    },
+    {
+      "path": "pkg/version/version.go",
+      "bytes": 5658,
+      "upstreamSHA256": "1fcb2f5de0a953290bab9fb1d27c392012a22b541222f186c19fb3297c798c2b"
+    },
+    {
+      "path": "plugins/assistantkb.go",
+      "bytes": 9581,
+      "upstreamSHA256": "c4f691455cf490fea7438a712a9cee42773e24bae73a6e3dbf52dea334b792bf"
+    },
+    {
+      "path": "plugins/bundle_test.go",
+      "bytes": 14307,
+      "upstreamSHA256": "09f67d22b8bcb69e25166ce5f46a8c2b16fcd5fb41a3a4d17124d641b64b265c"
+    },
+    {
+      "path": "plugins/bundle.go",
+      "bytes": 4033,
+      "upstreamSHA256": "9c13609e5e9aba5e4f03f46b3fbd5b0b0d1504fe103195fc86411163396076b1"
+    },
+    {
+      "path": "plugins/tunnel-mcp/.codex-plugin/plugin.json",
+      "bytes": 1549,
+      "upstreamSHA256": "63d659c3d02a137adfbbb09abb9cf755be92c8b37d51af76c26665b221a9456d"
+    },
+    {
+      "path": "plugins/tunnel-mcp/.mcp.json",
+      "bytes": 164,
+      "upstreamSHA256": "ce893089f17bc6782271ed97a030c7444aed27d9fda279fced552f66d6c344c2"
+    },
+    {
+      "path": "plugins/tunnel-mcp/AGENTS.md",
+      "bytes": 2704,
+      "upstreamSHA256": "b9339dd4d27d25038c8e11dd247f778d4636a030f782cd552b2738bd686af9c6"
+    },
+    {
+      "path": "plugins/tunnel-mcp/assets/tunnel-mcp-logo.png",
+      "bytes": 118681,
+      "upstreamSHA256": "3c7bff9529aba1db452a0e9313204fc50d0bdfeebf551fda57c542d0e6f599d0"
+    },
+    {
+      "path": "plugins/tunnel-mcp/mcp/server.cjs",
+      "bytes": 75457,
+      "upstreamSHA256": "a1a953e871790c8a17ab5c1e967b7623d2b8d3e517e3231c729e2348ea636755"
+    },
+    {
+      "path": "plugins/tunnel-mcp/mcp/server.test.cjs",
+      "bytes": 63910,
+      "upstreamSHA256": "42526bef2865336ff8c2d5125bb5722e823a0db1378d2834bc0d3ffc91bc1a70"
+    },
+    {
+      "path": "plugins/tunnel-mcp/README.md",
+      "bytes": 9431,
+      "upstreamSHA256": "cc888347f00338d5717cb90596c5417001b5fa911423fb553c721773a1b3b137"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/install_plugin.py",
+      "bytes": 278,
+      "upstreamSHA256": "30a20d12e7e4bc4e00e88af180c28f2e042631c58398833ba849b5e9452ad3b6"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/install_plugin.sh",
+      "bytes": 4736,
+      "upstreamSHA256": "5f93946522b783dad61e49e76d37d3a99b2177fe7df450648a10896f39763f62"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/Install-Plugin.ps1",
+      "bytes": 4854,
+      "upstreamSHA256": "3e32282e58e27c328142a33a1b30d34650aba2e49d121f14a00458f521632e49"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp",
+      "bytes": 14335,
+      "upstreamSHA256": "f890ce5a9c3c04440448787b4cd61b1888dbb9466612e5900d61b253b51bfd38"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp_installer/__init__.py",
+      "bytes": 70,
+      "upstreamSHA256": "56d29c10495a5a789b1bbd13671311737832a3b7d328f502b171594d2b0920a1"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp_installer/bazel_binary.py",
+      "bytes": 548,
+      "upstreamSHA256": "467b5321e211e94c9c8e6a60d3d392ac8bd043fda5a97e315829812bc532f2b5"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp_installer/binary.py",
+      "bytes": 2709,
+      "upstreamSHA256": "10221b56fe9994eebf492ad6fc6997ef49036af0ab9744d44113646bbb2c0cac"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp_installer/cli.py",
+      "bytes": 2245,
+      "upstreamSHA256": "c018ce86961dcac5e5f03f3d6f021c61350cac3c0bfa781225025aeb46b6dc61"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp_installer/config.py",
+      "bytes": 1521,
+      "upstreamSHA256": "716f928692c6da53b91726506c09c3069dd10c21ea179650db0524dc9c60a6db"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp_installer/core.py",
+      "bytes": 1359,
+      "upstreamSHA256": "4a94f67a197c6c45c791d5a0c41c2c83b96c6b8c4ed272707d7db7738f9c5e4b"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp_installer/manifest.py",
+      "bytes": 2391,
+      "upstreamSHA256": "313d7c9dfe57d0b923f87e8066df5ab79610613c97baded342f8ffbb05935ef4"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp.cmd",
+      "bytes": 147,
+      "upstreamSHA256": "e2cff94582566bc6f089227a74128b9fe37c0cb0a48acb12b114b5f1f9b9eec2"
+    },
+    {
+      "path": "plugins/tunnel-mcp/scripts/tunnel_mcp.ps1",
+      "bytes": 6800,
+      "upstreamSHA256": "6425e85f4ef6d473b47d876c7ee53263f21b2a328c1edc6d1d0001bfbba9f9dc"
+    },
+    {
+      "path": "plugins/tunnel-mcp/skills/tunnel-mcp/references/binary.md",
+      "bytes": 1897,
+      "upstreamSHA256": "43b1e89391341e3bce9c9fd2ee533b732c27ec1c0c784e545d0b4965e74980a9"
+    },
+    {
+      "path": "plugins/tunnel-mcp/skills/tunnel-mcp/references/profiles-state-and-keys.md",
+      "bytes": 1198,
+      "upstreamSHA256": "f59af4e9a213d2c7fd1e03b0d237ed433967b3570b43d2d89bc09563485cb2fd"
+    },
+    {
+      "path": "plugins/tunnel-mcp/skills/tunnel-mcp/references/runtime-flows.md",
+      "bytes": 2752,
+      "upstreamSHA256": "a43ac72940f924863f844a2e2e5dd1109c61b4effdbea4141c71acb1b8f2a4ee"
+    },
+    {
+      "path": "plugins/tunnel-mcp/skills/tunnel-mcp/references/setup-and-install.md",
+      "bytes": 2677,
+      "upstreamSHA256": "c87d089fa464f750e0344d20fd973eb253cd34a73defbe34d4ef2843edc5d469"
+    },
+    {
+      "path": "plugins/tunnel-mcp/skills/tunnel-mcp/references/troubleshooting.md",
+      "bytes": 3324,
+      "upstreamSHA256": "af4d2961a3fe51141025d3a7de133a0485c88c7283c69b014b8616e21f3a6589"
+    },
+    {
+      "path": "plugins/tunnel-mcp/skills/tunnel-mcp/SKILL.md",
+      "bytes": 3572,
+      "upstreamSHA256": "6b3da5547e6cc03ae8311099cb7eff70517874814fe3c8561ba2db513c3946c1"
+    },
+    {
+      "path": "testsupport/e2e/harness.go",
+      "bytes": 24642,
+      "upstreamSHA256": "dca93425ee50f975b440898b1dfd2e2503c18389818cef7acb57a31268eac91f"
+    },
+    {
+      "path": "testsupport/itest/dev_proxy_health_check.py",
+      "bytes": 2727,
+      "upstreamSHA256": "496128ce5bf43aaf2038423bf42618acc790b5459a7e8e72bcea1be2ac4629dd"
+    },
+    {
+      "path": "testsupport/itest/run_tunnel_client_profile_itest_service.sh",
+      "bytes": 3671,
+      "upstreamSHA256": "cf1c1efe250ae9b897b61aed950ac01a354ea8377077799616ed698a2e15ce2b"
+    },
+    {
+      "path": "testsupport/itest/tunnel_client_profile_preflight_probe.sh",
+      "bytes": 7763,
+      "upstreamSHA256": "79bacecd130843dd7f7f3d9ea6bdfaa941ce162618a0cb7573912854045fceb1"
+    },
+    {
+      "path": "testsupport/mockmcpserver/doc.go",
+      "bytes": 1656,
+      "upstreamSHA256": "d611c37fa9023c8d6e22c350b0b9802d28c5de7134e12dcf575dc9513e2bf7e0"
+    },
+    {
+      "path": "testsupport/mockmcpserver/mock_mcp_server_test.go",
+      "bytes": 13571,
+      "upstreamSHA256": "9d28d443129659e9b2ef610b4da17f5a7e7d22f67ab6b68dececf726e4bdb3de"
+    },
+    {
+      "path": "testsupport/mockmcpserver/mock_mcp_server.go",
+      "bytes": 26613,
+      "upstreamSHA256": "9b47bb22f7b4895a29a8f399e6198f9af76bbd9ef7b8a1384b5fbd83d6cb6c22"
+    },
+    {
+      "path": "testsupport/mockmcpserver/parallel_limit_test.go",
+      "bytes": 505,
+      "upstreamSHA256": "cbdbc2792eda5c86686ec8d1ec87508e534620e95554e503a9dedfac8cc4b6b3"
+    },
+    {
+      "path": "testsupport/mockmcpserver/stdio_server.go",
+      "bytes": 1418,
+      "upstreamSHA256": "4a481150acbed5cb5ed364e81fe7892b5f431c8378026d5d4527ce477b4dfb4a"
+    },
+    {
+      "path": "testsupport/mockmcpserver/stdio_server.sh",
+      "bytes": 2573,
+      "upstreamSHA256": "9e7284ae4b501edcd43a09e6ade69aba3af2a7941495bc2dd430e1c1fbe6c3fe"
+    },
+    {
+      "path": "testsupport/mockproxy/mock_proxy.go",
+      "bytes": 4227,
+      "upstreamSHA256": "c5ee8b7dffb44d58799feb7cecddd0345b62b8efc507b11c114773680fc150fb"
+    },
+    {
+      "path": "testsupport/mocktunnelservice/doc.go",
+      "bytes": 1766,
+      "upstreamSHA256": "1b77bc4c03b99bb7d954c90de9af23883547507e69259e780caf367a3542c5fc"
+    },
+    {
+      "path": "testsupport/mocktunnelservice/mock_tunnel_service_test.go",
+      "bytes": 29352,
+      "upstreamSHA256": "535cffac44a70641096d78e220446c5c6c4931b44059b193c8d0db478159d608"
+    },
+    {
+      "path": "testsupport/mocktunnelservice/mock_tunnel_service.go",
+      "bytes": 37540,
+      "upstreamSHA256": "06558fa375df51c0a80d75eccefe2e924af9c713eded59315ea731fe5c3a7554"
+    },
+    {
+      "path": "testsupport/mocktunnelservice/parallel_limit_test.go",
+      "bytes": 513,
+      "upstreamSHA256": "38ace2285958a8a801bf0c6b4561c503927abf32b69c906ad2bf21312def872c"
+    },
+    {
+      "path": "testsupport/testctx/deadline_test.go",
+      "bytes": 1358,
+      "upstreamSHA256": "badd820ae65e62a2c4552d03504c93b4fb4701b421c877d3d0c590440fdfbb28"
+    },
+    {
+      "path": "testsupport/testctx/deadline.go",
+      "bytes": 827,
+      "upstreamSHA256": "f47d74cce9db7c5de063c2d360c19a0e5aac39cc6f475c53ff9d404f7d962253"
+    }
+  ]
+}

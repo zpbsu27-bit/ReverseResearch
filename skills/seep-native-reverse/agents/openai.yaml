@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seep Native Reverse"
+  short_description: "Evidence-first Linux ELF and native reverse workflow."

@@ -1,0 +1,17 @@
+: synthetic offline protocol capture
+id: exchange-1
+event: message.snapshot
+data: {"message":
+data: "ab中🙂"}
+
+event: message.delta
+data: {"delta":"c"}
+
+id:
+data: [DONE]
+
+event: message.delta
+data: {"delta":"still a recorded event after marker"}
+
+event: incomplete
+data: pending data with no blank-line dispatch

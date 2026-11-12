@@ -1,0 +1,1806 @@
+{
+  "schema_version": 1,
+  "observed_date_utc": "2026-10-01",
+  "source": "ChatGPT connected RR/RT tool metadata",
+  "rr_tool_count": 124,
+  "rt_tool_count": 124,
+  "rr_rt_normalized_equal": true,
+  "tools": [
+    {
+      "name": "ghidra_add_struct_member",
+      "description": "ghidra backend tool add_struct_member. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "member_name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "member_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "size",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "struct_name",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_apply_type_at_address",
+      "description": "ghidra backend tool apply_type_at_address. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "type_name",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_batch",
+      "description": "ghidra backend tool batch. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "operations",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "name": "stop_on_error",
+          "required": false,
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_call",
+      "description": "ghidra backend tool call. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "arguments",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "name": "database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "tool",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_close_database",
+      "description": "ghidra backend tool close_database. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "force",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "save",
+          "required": false,
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_create_structure",
+      "description": "ghidra backend tool create_structure. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "is_union",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "size",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_decompile_function",
+      "description": "ghidra backend tool decompile_function. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_disassemble_function",
+      "description": "ghidra backend tool disassemble_function. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_execute",
+      "description": "ghidra backend tool execute. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_find_code_by_string",
+      "description": "ghidra backend tool find_code_by_string. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "pattern",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_get_database_info",
+      "description": "ghidra backend tool get_database_info. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_get_schema",
+      "description": "ghidra backend tool get_schema. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "detail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "tools",
+          "required": true,
+          "type": "array"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_get_strings",
+      "description": "ghidra backend tool get_strings. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "filter_pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "min_length",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_get_structure",
+      "description": "ghidra backend tool get_structure. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_get_type_info",
+      "description": "ghidra backend tool get_type_info. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_get_xrefs_from",
+      "description": "ghidra backend tool get_xrefs_from. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_get_xrefs_to",
+      "description": "ghidra backend tool get_xrefs_to. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_list_databases",
+      "description": "ghidra backend tool list_databases. The ghidra module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "ghidra_list_functions",
+      "description": "ghidra backend tool list_functions. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "filter_pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_list_local_types",
+      "description": "ghidra backend tool list_local_types. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "filter_pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_list_names",
+      "description": "ghidra backend tool list_names. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "filter_pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_list_structures",
+      "description": "ghidra backend tool list_structures. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "filter_pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_list_targets",
+      "description": "ghidra backend tool list_targets. The ghidra module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "ghidra_open_database",
+      "description": "ghidra backend tool open_database. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "compiler_spec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "database_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "file_path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "force_new",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "keep_open",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "language",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "run_auto_analysis",
+          "required": false,
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_parse_type_declaration",
+      "description": "ghidra backend tool parse_type_declaration. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "declaration",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_rename_function",
+      "description": "ghidra backend tool rename_function. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "new_name",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_retype_struct_member",
+      "description": "ghidra backend tool retype_struct_member. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "member_name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "new_type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "struct_name",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_save_database",
+      "description": "ghidra backend tool save_database. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "flags",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "force",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "outfile",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_search_tools",
+      "description": "ghidra backend tool search_tools. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "detail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "pattern",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_set_comment",
+      "description": "ghidra backend tool set_comment. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "comment",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "comment_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_set_decompiler_comment",
+      "description": "ghidra backend tool set_decompiler_comment. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "comment",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_set_type",
+      "description": "ghidra backend tool set_type. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "type_string",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ghidra_wait_for_analysis",
+      "description": "ghidra backend tool wait_for_analysis. The ghidra module starts lazily on first call.",
+      "params": [
+        {
+          "name": "database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "databases",
+          "required": false,
+          "type": "array"
+        }
+      ]
+    },
+    {
+      "name": "r2_analyze",
+      "description": "r2 backend tool analyze. The r2 module starts lazily on first call.",
+      "params": [
+        {
+          "name": "level",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "timeout_seconds",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "r2_close_file",
+      "description": "r2 backend tool close_file. The r2 module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "r2_decompile_function",
+      "description": "r2 backend tool decompile_function. The r2 module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "page_size",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "r2_disassemble",
+      "description": "r2 backend tool disassemble. The r2 module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "num_instructions",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "r2_list_exports",
+      "description": "r2 backend tool list_exports. The r2 module starts lazily on first call.",
+      "params": [
+        {
+          "name": "count",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "page_size",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "r2_list_functions",
+      "description": "r2 backend tool list_functions. The r2 module starts lazily on first call.",
+      "params": [
+        {
+          "name": "count",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "max_length",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "only_named",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "start",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "r2_list_strings",
+      "description": "r2 backend tool list_strings. The r2 module starts lazily on first call.",
+      "params": [
+        {
+          "name": "count",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "page_size",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "r2_open_file",
+      "description": "r2 backend tool open_file. The r2 module starts lazily on first call.",
+      "params": [
+        {
+          "name": "arch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "baddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "bits",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "cpu",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "file_path",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "r2_show_info",
+      "description": "r2 backend tool show_info. The r2 module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "r2_xrefs_to",
+      "description": "r2 backend tool xrefs_to. The r2 module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "reverse_status",
+      "description": "Show x32dbg, Ghidra, and radare2 module state without starting a backend.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_AllocateMemory",
+      "description": "x32dbg backend tool AllocateMemory. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "protection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "size",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_AnalyzeCode",
+      "description": "x32dbg backend tool AnalyzeCode. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_AnalyzeModule",
+      "description": "x32dbg backend tool AnalyzeModule. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "module",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_Assemble",
+      "description": "x32dbg backend tool Assemble. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "instruction",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_AttachProcess",
+      "description": "x32dbg backend tool AttachProcess. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "pid",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_ClearEventLog",
+      "description": "x32dbg backend tool ClearEventLog. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_CommentOrLabelAtAddress",
+      "description": "x32dbg backend tool CommentOrLabelAtAddress. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_DeleteAllBreakpoints",
+      "description": "x32dbg backend tool DeleteAllBreakpoints. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_DeleteBookmark",
+      "description": "x32dbg backend tool DeleteBookmark. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_DeleteBreakpoint",
+      "description": "x32dbg backend tool DeleteBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "target",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_DeleteExceptionBreakpoint",
+      "description": "x32dbg backend tool DeleteExceptionBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "exceptionCode",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_DetectOEP",
+      "description": "x32dbg backend tool DetectOEP. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "module",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_DisableBreakpoint",
+      "description": "x32dbg backend tool DisableBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_Disassemble",
+      "description": "x32dbg backend tool Disassemble. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_DisassembleFunction",
+      "description": "x32dbg backend tool DisassembleFunction. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_DumpMemory",
+      "description": "x32dbg backend tool DumpMemory. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "filePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "size",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_DumpModule",
+      "description": "x32dbg backend tool DumpModule. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "filePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "module",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_Echo",
+      "description": "x32dbg backend tool Echo. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "message",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_EnableBreakpoint",
+      "description": "x32dbg backend tool EnableBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_EvalExpression",
+      "description": "x32dbg backend tool EvalExpression. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "expression",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_ExecuteDebuggerCommand",
+      "description": "x32dbg backend tool ExecuteDebuggerCommand. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "command",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_FindPattern",
+      "description": "x32dbg backend tool FindPattern. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "maxResults",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "module",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "pattern",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_FollowPointer",
+      "description": "x32dbg backend tool FollowPointer. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "depth",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_FreeMemory",
+      "description": "x32dbg backend tool FreeMemory. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_GetAllRegisters",
+      "description": "x32dbg backend tool GetAllRegisters. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetArguments",
+      "description": "x32dbg backend tool GetArguments. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "count",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_GetCallStack",
+      "description": "x32dbg backend tool GetCallStack. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetCurrentAddress",
+      "description": "x32dbg backend tool GetCurrentAddress. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetDebugState",
+      "description": "x32dbg backend tool GetDebugState. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetDumpableRegions",
+      "description": "x32dbg backend tool GetDumpableRegions. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetEventLog",
+      "description": "x32dbg backend tool GetEventLog. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "count",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_GetExports",
+      "description": "x32dbg backend tool GetExports. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "module",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_GetFunctions",
+      "description": "x32dbg backend tool GetFunctions. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "module",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_GetImports",
+      "description": "x32dbg backend tool GetImports. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "module",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_GetMemoryMap",
+      "description": "x32dbg backend tool GetMemoryMap. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetPatches",
+      "description": "x32dbg backend tool GetPatches. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetPEB",
+      "description": "x32dbg backend tool GetPEB. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetReferences",
+      "description": "x32dbg backend tool GetReferences. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "module",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_GetSEHChain",
+      "description": "x32dbg backend tool GetSEHChain. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_GetStrings",
+      "description": "x32dbg backend tool GetStrings. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "minLength",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "module",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_GetThreads",
+      "description": "x32dbg backend tool GetThreads. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_ListBookmarks",
+      "description": "x32dbg backend tool ListBookmarks. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_ListBreakpoints",
+      "description": "x32dbg backend tool ListBreakpoints. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_ListCommandsByCategory",
+      "description": "x32dbg backend tool ListCommandsByCategory. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "category",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_ListModules",
+      "description": "x32dbg backend tool ListModules. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_ListSymbols",
+      "description": "x32dbg backend tool ListSymbols. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "module",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_LoadBinary",
+      "description": "x32dbg backend tool LoadBinary. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "arguments",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "filePath",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_PauseDebug",
+      "description": "x32dbg backend tool PauseDebug. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_ReadMemory",
+      "description": "x32dbg backend tool ReadMemory. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "size",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_ResetHitCount",
+      "description": "x32dbg backend tool ResetHitCount. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_RestartDebug",
+      "description": "x32dbg backend tool RestartDebug. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_RestorePatches",
+      "description": "x32dbg backend tool RestorePatches. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_ResumeThread",
+      "description": "x32dbg backend tool ResumeThread. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "threadId",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_run",
+      "description": "x32dbg backend tool run. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "timeoutMs",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_RunToAddress",
+      "description": "x32dbg backend tool RunToAddress. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "timeoutMs",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SaveDatabase",
+      "description": "x32dbg backend tool SaveDatabase. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_SearchForStrings",
+      "description": "x32dbg backend tool SearchForStrings. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "encoding",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "searchText",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SearchSymbols",
+      "description": "x32dbg backend tool SearchSymbols. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "module",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "pattern",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetBookmark",
+      "description": "x32dbg backend tool SetBookmark. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetBreakpoint",
+      "description": "x32dbg backend tool SetBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "target",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetBreakpointCommand",
+      "description": "x32dbg backend tool SetBreakpointCommand. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "command",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetBreakpointFastResume",
+      "description": "x32dbg backend tool SetBreakpointFastResume. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "enable",
+          "required": false,
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetConditionalBreakpoint",
+      "description": "x32dbg backend tool SetConditionalBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "condition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "log",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetExceptionBreakpoint",
+      "description": "x32dbg backend tool SetExceptionBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "action",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "chance",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "exceptionCode",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetHardwareBreakpoint",
+      "description": "x32dbg backend tool SetHardwareBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "size",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "name": "type",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetMemoryBreakpoint",
+      "description": "x32dbg backend tool SetMemoryBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "singleshoot",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "type",
+          "required": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SetRegister",
+      "description": "x32dbg backend tool SetRegister. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "register",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_StepInto",
+      "description": "x32dbg backend tool StepInto. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_StepOut",
+      "description": "x32dbg backend tool StepOut. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_StepOver",
+      "description": "x32dbg backend tool StepOver. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_StopDebug",
+      "description": "x32dbg backend tool StopDebug. The x32dbg module starts lazily on first call.",
+      "params": []
+    },
+    {
+      "name": "x32dbg_SuspendThread",
+      "description": "x32dbg backend tool SuspendThread. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "threadId",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_SwitchThread",
+      "description": "x32dbg backend tool SwitchThread. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "threadId",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_ToggleBreakpoint",
+      "description": "x32dbg backend tool ToggleBreakpoint. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_TraceInto",
+      "description": "x32dbg backend tool TraceInto. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "count",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_TraceOver",
+      "description": "x32dbg backend tool TraceOver. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "count",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_WaitForEvent",
+      "description": "x32dbg backend tool WaitForEvent. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "timeoutMs",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_WaitForPause",
+      "description": "x32dbg backend tool WaitForPause. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "timeoutMs",
+          "required": false,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_WatchExpressions",
+      "description": "x32dbg backend tool WatchExpressions. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "expressions",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "x32dbg_WriteMemToAddress",
+      "description": "x32dbg backend tool WriteMemToAddress. The x32dbg module starts lazily on first call.",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "byteString",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

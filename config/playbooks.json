@@ -1,0 +1,846 @@
+{
+  "version": 2,
+  "playbooks": [
+    {
+      "id": "windows-native",
+      "platform": "windows",
+      "routes": [
+        "pe-static",
+        "native-static",
+        "dynamic-debug",
+        "memory-search",
+        "binary-diff",
+        "patch",
+        "game-resource",
+        "dotnet",
+        "crypto-obfuscation"
+      ],
+      "skill_path": "skills/seep-reverse-lab/SKILL.md",
+      "summary": "Windows native/game reverse workflow with frozen target identity, architecture-aware tooling, isolated mutation paths, rollback, and evidence currentness.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Classify the target and requested deliverable",
+          "pass_criterion": "Exact target file/process/resource type, user goal, and mutation vs observation boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Freeze environment truth",
+          "pass_criterion": "Target SHA/process identity plus required tool availability and architecture route are current; no guessed tool path."
+        },
+        {
+          "id": "G3",
+          "title": "Establish a control copy/session",
+          "pass_criterion": "A read-only baseline or isolated copy/session exists before any patch, hook, or debugger-side mutation."
+        },
+        {
+          "id": "G4",
+          "title": "Prove effect and recovery",
+          "pass_criterion": "The smallest intended effect is verified against the current target and rollback/cleanup is independently checked."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Evidence binds the exact target identity and current revision/process instance.",
+        "No unrelated debugger/Ghidra/browser session was hijacked.",
+        "Any mutation has an explicit operation identity and verified rollback or immutable copy output.",
+        "Findings distinguish observed, inferred, and runtime-verified conclusions.",
+        "Temporary processes, ports, and task-owned resources are released."
+      ],
+      "reference_path": "skills/seep-reverse-lab/references/windows.md"
+    },
+    {
+      "id": "android-code",
+      "platform": "android",
+      "routes": ["android-code"],
+      "skill_path": "skills/seep-reverse-lab/SKILL.md",
+      "summary": "Offline pinned JADX recovery preserves original DEX observations, parsed identities, explicit overloads, static-only references and lifecycle evidence.",
+      "gates": [
+        {"id":"G1", "title":"Bind artifact and runtime", "pass_criterion":"Original APK/DEX SHA, pinned engine, bridge/java/compiler identities and supported native process-tree profile are recorded; file presence does not prove an actual worker run."},
+        {"id":"G2", "title":"Preserve original bytes and producer identity", "pass_criterion":"DEX method index/descriptor/raw bytes and structural CFG stay separate from derived Java/smali and producer-local overload ordinals; wide literals retain exact decimal text."},
+        {"id":"G3", "title":"Recover exact selected observations", "pass_criterion":"Ambiguous methods require an explicit ordinal, native code absence and static initializer fallback are retained; byte pages bind artifact/result SHA and static references do not claim runtime calls or JNI bindings."},
+        {"id":"G4", "title":"Close and review", "pass_criterion":"The original backend owner confirms cleanup before private workspace removal; uncertain startup cleanup retains evidence and fails. Canonical Case/Review/Report/Journal record limits and original input currentness."}
+      ],
+      "symptom_reference":"skills/seep-reverse-lab/references/failure-catalog.md",
+      "done":["Exact immutable artifact/runtime identities are retained.", "Actual producer results and original DEX bytes are distinguished.", "Failure/cancellation cleanup is verified and unresolved scope remains explicit.", "Canonical research evidence is reviewed; no target execution, installation or device proof is inferred."],
+      "reference_path":"skills/seep-reverse-lab/references/android.md"
+    },
+    {
+      "id": "android-static",
+      "platform": "android",
+      "routes": ["android-static"],
+      "skill_path": "skills/seep-reverse-lab/SKILL.md",
+      "summary": "Offline Android research binds APK/member hashes, inspects manifest/resource/DEX declarations with built-in readers, and records reviewed static evidence without requiring a device.",
+      "gates": [
+        {"id": "G1", "title": "Bind the original package", "pass_criterion": "Original APK/DEX and selected member SHA256, package shape and split-set limitations are recorded; all pages and build-local indices use the same original hash."},
+        {"id": "G2", "title": "Inspect admitted declarations", "pass_criterion": "Components, manifest attributes, resource configurations and DEX definitions/references are distinguished; unsupported formats and unresolved effective values are reported."},
+        {"id": "G3", "title": "Correlate static evidence", "pass_criterion": "Every finding links exact immutable member results and byte ranges; declared permissions/native methods/resource IDs do not imply runtime binding, reachability, signer validity or device behavior."},
+        {"id": "G4", "title": "Review and preserve the research", "pass_criterion": "Canonical Case evidence, finding, path, strict Review, report and Journal preserve the conclusion and explicit runtime gaps; the input remains unchanged and no target is executed."}
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Source and selected member hashes are pinned and input currentness is checked.",
+        "Built-in offline readers require no ADB, Frida, APK installation or device session.",
+        "DEX references, definitions and native declarations remain separate observations.",
+        "Resource configurations, typed raw values and manifest declarations retain their evidence limits.",
+        "Reviewed Case/report/Journal records preserve reproducible static evidence and unresolved runtime work."
+      ],
+      "reference_path": "skills/seep-reverse-lab/references/android.md"
+    },
+    {
+      "id": "android",
+      "platform": "android",
+      "routes": [
+        "android"
+      ],
+      "skill_path": "skills/seep-reverse-lab/SKILL.md",
+      "summary": "Android APK/DEX/native/runtime workflow that classifies delivery form, device truth, signing/install baseline, smallest patch layer, and real-device verification before calling work complete.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Classify APK shape and deliverable",
+          "pass_criterion": "Single/split APK, Java/Kotlin vs native/Flutter, packed state, and desired output form are identified before patching."
+        },
+        {
+          "id": "G2",
+          "title": "Freeze device and tool truth",
+          "pass_criterion": "ADB authorization, device/API/ABI/root state, package identity, signatures, and required tool paths/versions are recorded."
+        },
+        {
+          "id": "G3",
+          "title": "Prove an untouched control build",
+          "pass_criterion": "Original artifact can be decoded/installed/launched or the exact pre-existing failure is recorded before modifications."
+        },
+        {
+          "id": "G4",
+          "title": "Apply the smallest viable layer and verify",
+          "pass_criterion": "Patch/hook/repack uses the narrowest layer and is validated on the intended device/runtime including signing/network-sensitive paths."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Artifact and device/package identities are pinned and reproducible.",
+        "Static success is not treated as runtime success; launch and changed feature are independently verified when runtime is in scope.",
+        "Signing/split-APK/native ABI consequences are recorded.",
+        "A failed route after two same-shape attempts is reclassified instead of parameter-tweaked indefinitely.",
+        "Evidence states whether a claim is measured, inferred, blocked, or not exercised."
+      ],
+      "reference_path": "skills/seep-reverse-lab/references/android.md"
+    },
+    {
+      "id": "js-web",
+      "platform": "web",
+      "routes": [
+        "js-web",
+        "web-security"
+      ],
+      "skill_path": "skills/seep-reverse-lab/SKILL.md",
+      "summary": "Browser/JavaScript/WASM reverse workflow using an isolated profile, source/network/runtime evidence, signature-chain tracing, and local equivalence checks without touching the daily browser session.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Isolate target browser state",
+          "pass_criterion": "Dedicated profile/session, target origin, task scope, and read-only vs active instrumentation boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Freeze source and network truth",
+          "pass_criterion": "Loaded scripts/chunks/source maps/WASM and the relevant request/response samples are captured with stable identities where obtainable."
+        },
+        {
+          "id": "G3",
+          "title": "Locate the runtime chain before rebuilding",
+          "pass_criterion": "The producing function/call path and required browser state are observed before creating a Node/local reproduction."
+        },
+        {
+          "id": "G4",
+          "title": "Prove local/runtime equivalence",
+          "pass_criterion": "Rebuilt or instrumented logic reproduces the same outputs for bounded fixtures, or the missing environment dependency is explicitly identified."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Daily browser profile and unrelated sessions remain untouched.",
+        "Evidence links network values to the exact runtime producer or explicitly states the unresolved gap.",
+        "Source-map/minified/generated code provenance is preserved.",
+        "Local rebuild declares every patched environment dependency and has bounded equivalence fixtures.",
+        "WASM/native boundaries are not mislabeled as ordinary JavaScript."
+      ],
+      "reference_path": "skills/seep-reverse-lab/references/web.md"
+    },
+    {
+      "id": "malware-analysis",
+      "platform": "security-lab",
+      "routes": [
+        "malware-analysis"
+      ],
+      "skill_path": "skills/seep-malware/SKILL.md",
+      "summary": "Evidence-first malware workflow from immutable sample identity through static/dynamic analysis, config/C2, IOC/TTP, detections, remediation and retest.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze sample identity and scope",
+          "pass_criterion": "Sample SHA/provenance, Case, Engagement scope, requested deliverable and observation-vs-execution boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and lab truth",
+          "pass_criterion": "Required tool identities are current and any execution environment is task-owned, isolated, and has an explicit network mode."
+        },
+        {
+          "id": "G3",
+          "title": "Build evidence-backed behavior hypotheses",
+          "pass_criterion": "Static claims, runtime observations, configuration/C2 and IOC/TTP mappings remain provenance-linked and hypotheses retain conflicting evidence/retractions."
+        },
+        {
+          "id": "G4",
+          "title": "Validate detections and cleanup",
+          "pass_criterion": "Detection candidates have syntax/schema plus positive/negative fixture evidence, applicable retest is recorded, and lab cleanup is verified."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Sample identity and provenance are frozen.",
+        "Static inference is not mislabeled as runtime behavior.",
+        "IOC/TTP/Findings are evidence-linked.",
+        "Validated detections have positive and negative fixtures plus revision.",
+        "Task-owned lab state and network simulation are cleaned or reset."
+      ],
+      "reference_path": "skills/seep-malware/references/workflow.md"
+    },
+    {
+      "id": "blue-detection",
+      "platform": "defense",
+      "routes": [
+        "blue-detection"
+      ],
+      "skill_path": "skills/seep-blueteam/SKILL.md",
+      "summary": "Detection-engineering workflow that binds evidence and telemetry requirements to versioned rules, fixture validation, false-positive notes, coverage and retest.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Bind behavior to evidence",
+          "pass_criterion": "The Finding/TTP or behavior hypothesis and supporting Evidence are identified before rule authoring."
+        },
+        {
+          "id": "G2",
+          "title": "Freeze telemetry contract",
+          "pass_criterion": "Required telemetry source, fields, normalization assumptions and availability are explicit."
+        },
+        {
+          "id": "G3",
+          "title": "Validate rule mechanics",
+          "pass_criterion": "Rule syntax/schema and revision are recorded with positive and negative fixtures and expected outcomes."
+        },
+        {
+          "id": "G4",
+          "title": "Measure coverage and retest",
+          "pass_criterion": "False positives, coverage gaps, deployment assumptions and evidence-backed retest are recorded."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Detection is a first-class Case artifact.",
+        "Raw telemetry evidence remains preserved.",
+        "validated=true is impossible without evidence and positive/negative fixtures.",
+        "Coverage gaps remain explicit.",
+        "Rule revision and retest are recorded."
+      ],
+      "reference_path": "skills/seep-blueteam/references/detection.md"
+    },
+    {
+      "id": "purple-validation",
+      "platform": "purple",
+      "routes": [
+        "purple-validation"
+      ],
+      "skill_path": "skills/seep-purple-team/SKILL.md",
+      "summary": "Purple validation from ATT&CK technique and scoped emulation Job through telemetry, detection gap, mitigation/countermeasure and retest evidence.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Select technique and expected telemetry",
+          "pass_criterion": "ATT&CK technique/behavior hypothesis and expected telemetry are explicit and evidence-backed."
+        },
+        {
+          "id": "G2",
+          "title": "Authorize the effect",
+          "pass_criterion": "Engagement/Scope allows the exact target/action and a Generic Job with operation_id is prepared before emulation."
+        },
+        {
+          "id": "G3",
+          "title": "Capture telemetry and classify the gap",
+          "pass_criterion": "Actual telemetry and Detection revision are captured; miss causes distinguish collection, normalization, logic, deployment and expected non-coverage."
+        },
+        {
+          "id": "G4",
+          "title": "Mitigate and retest",
+          "pass_criterion": "Mitigation/countermeasure is linked to the technique/control and a new evidence revision proves the retest result."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Emulation stayed inside Engagement scope.",
+        "Effectful action has a durable Job receipt.",
+        "Uncertain effect was not auto-replayed.",
+        "Telemetry and detection result are evidence-backed.",
+        "Mitigation and retest close the TTP-to-control loop."
+      ],
+      "reference_path": "skills/seep-purple-team/references/validation.md"
+    },
+    {
+      "id": "linux-native",
+      "platform": "linux",
+      "routes": [
+        "linux-native"
+      ],
+      "skill_path": "skills/seep-native-reverse/SKILL.md",
+      "summary": "Linux ELF/native workflow with frozen ELF/build identity, static-first analysis, core-dump provenance and explicit debugger/emulation effect boundaries.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze ELF identity and architecture",
+          "pass_criterion": "Exact ELF SHA, class/data/machine/type/entry and GNU build-id when present are recorded before analysis."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool/runtime truth",
+          "pass_criterion": "Ghidra/radare2/GDB/LLDB/rr availability and architecture compatibility are current; no guessed tool path."
+        },
+        {
+          "id": "G3",
+          "title": "Separate static proof from runtime proof",
+          "pass_criterion": "Symbols/xrefs/core artifacts remain observations; debugger or trace execution is represented as an authorized Job when used."
+        },
+        {
+          "id": "G4",
+          "title": "Close evidence and cleanup",
+          "pass_criterion": "Findings link exact ELF/core evidence and any task-owned debugger/runtime resources are released."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "ELF identity and provenance are pinned.",
+        "Static conclusions are not called runtime proof.",
+        "Any runtime execution has an Engagement/Job boundary.",
+        "Architecture/tool mismatch is explicit.",
+        "Temporary runtime state is cleaned."
+      ],
+      "reference_path": "skills/seep-native-reverse/references/linux.md"
+    },
+    {
+      "id": "vuln-research",
+      "platform": "security-lab",
+      "routes": [
+        "nday-research",
+        "vuln-research"
+      ],
+      "skill_path": "skills/seep-vuln-research/SKILL.md",
+      "summary": "Vulnerability workflow from surface/harness through fuzz/repro, crash fingerprint, minimization, root cause, mitigation and regression evidence.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze target, harness and corpus",
+          "pass_criterion": "Target identity, harness identity, corpus scope, engine/sanitizers and execution boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Produce reproducible crash evidence",
+          "pass_criterion": "Crash input identity plus module/exception/fault instruction/normalized stack fingerprint are durable and duplicates are grouped."
+        },
+        {
+          "id": "G3",
+          "title": "Establish root cause without overclaiming",
+          "pass_criterion": "Root cause and security primitive remain hypotheses/findings with evidence; exploitability is not inferred from a crash alone."
+        },
+        {
+          "id": "G4",
+          "title": "Mitigate and regress",
+          "pass_criterion": "Patch/mitigation is linked to the Finding and minimized fixture plus negative regression evidence is recorded."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Fuzz execution is explicitly authorized and isolated.",
+        "Crash dedupe uses structural fingerprints, not exception code alone.",
+        "Minimized inputs keep hashes/provenance.",
+        "Candidate exploitability is not called validated without evidence.",
+        "Regression/retest is recorded."
+      ],
+      "reference_path": "skills/seep-vuln-research/references/workflow.md"
+    },
+    {
+      "id": "dfir-forensics",
+      "platform": "forensics",
+      "routes": [
+        "dfir-forensics"
+      ],
+      "skill_path": "skills/seep-dfir/SKILL.md",
+      "summary": "DFIR workflow that preserves raw evidence identities and builds provenance-linked normalized timelines without replacing source artifacts.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze forensic evidence",
+          "pass_criterion": "Each memory/disk/event/registry/network artifact has immutable identity and acquisition provenance before parsing."
+        },
+        {
+          "id": "G2",
+          "title": "Select parser by artifact truth",
+          "pass_criterion": "Native/adapted parser and tool identity are explicit; unsupported formats are not guessed."
+        },
+        {
+          "id": "G3",
+          "title": "Normalize without erasing provenance",
+          "pass_criterion": "Timeline/process/network facts link source artifact SHA and source record/line while raw evidence remains unchanged."
+        },
+        {
+          "id": "G4",
+          "title": "Build incident findings",
+          "pass_criterion": "Suspicious chains, persistence and user/session/network correlations are evidence-linked and uncertainty remains visible."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Raw evidence remains immutable.",
+        "Normalized events retain source provenance.",
+        "Bad/unparsed records are counted, not silently dropped.",
+        "Timeline is deterministically ordered/deduplicated.",
+        "Findings reference raw evidence."
+      ],
+      "reference_path": "skills/seep-dfir/references/workflow.md"
+    },
+    {
+      "id": "protocol-reverse",
+      "platform": "protocol",
+      "routes": [
+        "traffic-protocol"
+      ],
+      "skill_path": "skills/seep-protocol/SKILL.md",
+      "summary": "Protocol reverse workflow from PCAP/raw messages to candidate framing/fields/state model/parser and round-trip validation.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze message corpus",
+          "pass_criterion": "Raw PCAP/byte/message identities and direction/session metadata are preserved before inference."
+        },
+        {
+          "id": "G2",
+          "title": "Infer candidates conservatively",
+          "pass_criterion": "Stable/variable offsets, endian/length/checksum candidates are marked candidate and tied to the sample set."
+        },
+        {
+          "id": "G3",
+          "title": "Validate framing and semantics",
+          "pass_criterion": "Candidate parser/serializer survives positive fixtures and round-trip tests before being promoted."
+        },
+        {
+          "id": "G4",
+          "title": "Publish reproducible schema",
+          "pass_criterion": "Frame definition/state relationships and generated parser/dissector artifacts pin source corpus/revision."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Raw bytes remain evidence.",
+        "Candidate fields are not labeled validated without fixtures.",
+        "Round-trip validation is explicit.",
+        "Encryption/compression unknowns remain hypotheses.",
+        "Generated schema pins corpus identity."
+      ],
+      "reference_path": "skills/seep-protocol/references/workflow.md"
+    },
+    {
+      "id": "source-code-audit",
+      "platform": "source",
+      "routes": [
+        "source-code-audit",
+        "supply-chain"
+      ],
+      "skill_path": "skills/seep-code-audit/SKILL.md",
+      "summary": "Source/AppSec and supply-chain workflow with bounded inventory, dependency/SBOM/secret candidates, SAST/SARIF adapters and canonical Case Findings.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze repository and scan boundary",
+          "pass_criterion": "Repository root/revision, exclusions and scan byte/file bounds are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Inventory manifests and tool truth",
+          "pass_criterion": "Language/dependency/SBOM inputs plus SAST/SCA tool identities are recorded; generated folders are intentionally scoped."
+        },
+        {
+          "id": "G3",
+          "title": "Validate findings",
+          "pass_criterion": "Scanner output is normalized into Case Evidence/Finding and candidate secrets remain fingerprinted/redacted until reviewed."
+        },
+        {
+          "id": "G4",
+          "title": "Remediate and retest",
+          "pass_criterion": "Source/dependency remediation maps to the original finding and retest/SARIF revision proves current status."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Repository scan is bounded and reproducible.",
+        "Secrets are never emitted in plaintext by inventory output.",
+        "Third-party stdout is not a final Finding.",
+        "SBOM/dependency provenance is preserved.",
+        "Retest links the remediated revision."
+      ],
+      "reference_path": "skills/seep-code-audit/references/workflow.md"
+    },
+    {
+      "id": "network-assessment",
+      "platform": "network",
+      "routes": [
+        "network-assessment",
+        "pentest-network"
+      ],
+      "skill_path": "skills/seep-redteam/SKILL.md",
+      "summary": "Scope-first authorized network assessment; imported evidence first, active traffic only through Engagement/Job boundaries.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Engagement target/action are explicit before active traffic.",
+        "Imported service evidence retains source identity.",
+        "Scanner stdout is not a final Finding.",
+        "Rate limits and cleanup are recorded."
+      ],
+      "reference_path": "skills/seep-redteam/references/workflow.md"
+    },
+    {
+      "id": "identity-ad",
+      "platform": "identity",
+      "routes": [
+        "identity-ad"
+      ],
+      "skill_path": "skills/seep-identity/SKILL.md",
+      "summary": "Identity/AD graph workflow for principals, groups, sessions, trusts, certificate templates and evidence-backed attack paths.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Credentials remain opaque references.",
+        "Attack paths are analysis candidates, not proof of compromise.",
+        "Source and graph revision are recorded.",
+        "Credential-bearing actions require explicit scope."
+      ],
+      "reference_path": "skills/seep-identity/references/workflow.md"
+    },
+    {
+      "id": "cloud-security",
+      "platform": "cloud",
+      "routes": [
+        "cloud-security"
+      ],
+      "skill_path": "skills/seep-cloud/SKILL.md",
+      "summary": "Cloud IAM/resource graph workflow using read-only snapshots first; provider mutations stay separate scoped Jobs.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Provider/account scope is explicit.",
+        "Inventory is content-addressed.",
+        "IAM/exposure claims link exact evidence.",
+        "Inventory import performs no live mutation."
+      ],
+      "reference_path": "skills/seep-cloud/references/workflow.md"
+    },
+    {
+      "id": "container-k8s",
+      "platform": "kubernetes",
+      "routes": [
+        "container-k8s"
+      ],
+      "skill_path": "skills/seep-cloud/SKILL.md",
+      "summary": "Container/Kubernetes inventory, RBAC/exposure graph and evidence-backed remediation/retest.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Cluster/snapshot scope is explicit.",
+        "Import does not use live credentials implicitly.",
+        "RBAC/exposure edges are provenance-linked.",
+        "Remediation and retest are separate revisions."
+      ],
+      "reference_path": "skills/seep-cloud/references/kubernetes.md"
+    },
+    {
+      "id": "adversary-emulation",
+      "platform": "security-lab",
+      "routes": [
+        "adversary-emulation"
+      ],
+      "skill_path": "skills/seep-redteam/SKILL.md",
+      "summary": "ATT&CK-oriented emulation planning that connects scoped actions to telemetry, detections and retest without implicit execution.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Technique and target are in scope.",
+        "A Generic Job operation identity exists before execution.",
+        "Uncertain effects are never replayed.",
+        "Telemetry/detection/retest closes the loop."
+      ],
+      "reference_path": "skills/seep-redteam/references/emulation.md"
+    },
+    {
+      "id": "ios-security",
+      "platform": "ios",
+      "routes": [
+        "ios"
+      ],
+      "skill_path": "skills/seep-mobile/SKILL.md",
+      "summary": "iOS IPA/Mach-O workflow with immutable package identity and explicit device/runtime authorization boundaries.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "IPA/Mach-O identity is frozen.",
+        "Static inventory is separate from runtime proof.",
+        "Device trust/Frida/LLDB is never silently established.",
+        "Task-owned runtime resources are cleaned."
+      ],
+      "reference_path": "skills/seep-mobile/references/ios.md"
+    },
+    {
+      "id": "firmware-iot",
+      "platform": "embedded",
+      "routes": [
+        "firmware-iot"
+      ],
+      "skill_path": "skills/seep-firmware/SKILL.md",
+      "summary": "Firmware/IoT workflow from immutable image triage through filesystem/boot/emulation planning while preserving raw evidence.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Firmware identity is frozen.",
+        "Derived extraction never replaces raw evidence.",
+        "Emulation/flashing is isolated and explicit.",
+        "Architecture/boot assumptions remain hypotheses until verified."
+      ],
+      "reference_path": "skills/seep-firmware/references/workflow.md"
+    },
+    {
+      "id": "cti-analysis",
+      "platform": "intel",
+      "routes": [
+        "cti-analysis"
+      ],
+      "skill_path": "skills/seep-cti/SKILL.md",
+      "summary": "CTI workflow for STIX objects, IOC/TTP/campaign relationships and revision-pinned provenance without automatic private-data upload.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Imported intelligence retains source identity.",
+        "Unsupported objects are explicit.",
+        "Private Case data is not auto-exported.",
+        "Attribution remains sourced and qualified."
+      ],
+      "reference_path": "skills/seep-cti/references/workflow.md"
+    },
+    {
+      "id": "threat-hunting",
+      "platform": "telemetry",
+      "routes": [
+        "threat-hunting"
+      ],
+      "skill_path": "skills/seep-threat-hunting/SKILL.md",
+      "summary": "Hypothesis-driven hunting connecting ATT&CK, required telemetry, adapters, evidence and retest.",
+      "gates": [
+        {
+          "id": "G1",
+          "title": "Freeze scope and source identity",
+          "pass_criterion": "Case, Engagement scope when applicable, target/snapshot identity, requested deliverable and observation/effect boundary are explicit."
+        },
+        {
+          "id": "G2",
+          "title": "Establish tool and data truth",
+          "pass_criterion": "Tool identities, source revisions and provenance are current; no guessed path, credential or authority."
+        },
+        {
+          "id": "G3",
+          "title": "Build typed evidence",
+          "pass_criterion": "Graph/object/inventory conclusions remain linked to source Evidence; candidates are not promoted to observed effects."
+        },
+        {
+          "id": "G4",
+          "title": "Validate closure and cleanup",
+          "pass_criterion": "Any effectful continuation uses a scoped Generic Job; observation-only work proves currentness and leaves production state unchanged."
+        }
+      ],
+      "symptom_reference": "skills/seep-reverse-lab/references/failure-catalog.md",
+      "done": [
+        "Hypothesis and telemetry are explicit.",
+        "Plan creation executes no queries.",
+        "Hits need evidence and benign context.",
+        "Detections/retests use current revisions."
+      ],
+      "reference_path": "skills/seep-threat-hunting/references/workflow.md"
+    }
+  ]
+}

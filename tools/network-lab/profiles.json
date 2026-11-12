@@ -1,0 +1,22 @@
+{
+  "schema": "RR_KERNEL_NETWORK_PROFILES_V1",
+  "defaults": {"packets": 48, "payloadBytes": 256, "intervalMS": 20, "receiveWindowMS": 1600, "seed": 31010, "nat": "single"},
+  "profiles": {
+    "normal": {"description": "单层NAT，正常网络", "expect": "healthy"},
+    "latency": {"description": "双方出口各增加75ms，往返至少约150ms", "links": {"na": {"delayMS": 75}, "nb": {"delayMS": 75}}, "expect": "delay"},
+    "jitter": {"description": "双方出口60ms延迟与20ms正态抖动", "links": {"na": {"delayMS": 60, "jitterMS": 20}, "nb": {"delayMS": 60, "jitterMS": 20}}, "expect": "impaired"},
+    "random-loss": {"description": "双方出口各20%随机丢包", "packets": 64, "links": {"na": {"lossPercent": 20}, "nb": {"lossPercent": 20}}, "expect": "loss"},
+    "burst-loss": {"description": "Gilbert-Elliott连续丢包模型", "packets": 64, "links": {"na": {"burst": [8, 25, 90, 1]}, "nb": {"burst": [8, 25, 90, 1]}}, "expect": "loss"},
+    "reorder": {"description": "延迟40ms，25%报文绕过延迟产生乱序", "links": {"na": {"delayMS": 40, "reorderPercent": 25}, "nb": {"delayMS": 40, "reorderPercent": 25}}, "expect": "reorder"},
+    "duplicate": {"description": "双方出口各20%重复报文", "links": {"na": {"duplicatePercent": 20}, "nb": {"duplicatePercent": 20}}, "expect": "duplicate"},
+    "low-bandwidth": {"description": "双方出口256kbit/s，受限带宽", "payloadBytes": 1500, "packets": 24, "links": {"na": {"rateKbit": 256}, "nb": {"rateKbit": 256}}, "expect": "impaired"},
+    "small-mtu": {"description": "路径MTU576，4096B UDP由内核分片", "mtu": 576, "payloadBytes": 4096, "packets": 12, "expect": "healthy"},
+    "udp-blocked": {"description": "A路由器阻断全部UDP，TCP控制仍可达", "block": "udp", "expect": "blocked"},
+    "peer-port-blocked": {"description": "仿真WAN阻断目标B的UDP，TCP控制仍可达", "block": "peer", "expect": "blocked"},
+    "one-way-blocked": {"description": "只阻断A到B的UDP，反方向保留", "block": "one-way", "expect": "blocked"},
+    "connection-flap": {"description": "同一UDP socket在链路断开600ms后恢复", "packets": 96, "event": "link-flap", "expect": "recovery"},
+    "nat-state-clear": {"description": "清除自有NAT conntrack后继续发送", "packets": 96, "event": "conntrack-clear", "expect": "recovery"},
+    "nat-port-change": {"description": "A的SNAT端口改为41551后继续发送", "packets": 96, "event": "port-change", "expect": "recovery"},
+    "double-nat": {"description": "A经过两层实际内核SNAT，B经过一层", "nat": "double", "expect": "healthy"}
+  }
+}

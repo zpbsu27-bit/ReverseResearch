@@ -1,0 +1,32 @@
+{
+  "id": "builtin_supply_chain_evidence",
+  "title": "Keep SBOM and SAST interchange subordinate to source evidence",
+  "body": "Treat SARIF, SPDX and CycloneDX as versioned interchange projections. Findings must retain repository/revision, scanner/tool identity and source location. Secret candidates remain redacted and are not automatically Findings.",
+  "route": "source-code-audit",
+  "tags": [
+    "sarif",
+    "spdx",
+    "cyclonedx",
+    "sbom",
+    "sast"
+  ],
+  "origin": "builtin",
+  "domain": "code",
+  "architectures": [
+    "x86",
+    "x86-64",
+    "arm64"
+  ],
+  "tools": [
+    "casebook"
+  ],
+  "created_utc": "2026-10-02T00:00:00Z",
+  "source": {
+    "reference": "standards:SARIF/SPDX/CycloneDX; project:skills/seep-code-audit/references/source.md",
+    "license": "unspecified",
+    "upstream_revision": "reviewed-2026-10-02",
+    "engine": "ReverseResearch",
+    "version": "2026-10-02",
+    "evidence_status": "reviewed"
+  }
+}

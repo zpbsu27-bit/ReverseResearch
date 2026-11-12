@@ -1,0 +1,764 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "malware",
+      "domain": "malware",
+      "routes": [
+        "malware-analysis"
+      ],
+      "skill": {
+        "path": "skills/seep-malware/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "malware-analysis"
+      ],
+      "tools": [
+        "ghidra",
+        "x64dbg",
+        "yara",
+        "procmon",
+        "wireshark"
+      ],
+      "capabilities": [
+        "sample-identity",
+        "static-triage",
+        "isolated-behavior",
+        "config-recovery",
+        "ioc-ttp",
+        "detection"
+      ],
+      "knowledge_packs": [
+        "threat-ttp",
+        "vulnerability-taxonomy",
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/casebook/v2_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "blue-detection",
+      "domain": "defense",
+      "routes": [
+        "blue-detection"
+      ],
+      "skill": {
+        "path": "skills/seep-blueteam/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "blue-detection"
+      ],
+      "tools": [
+        "sigma",
+        "yara",
+        "suricata",
+        "zeek"
+      ],
+      "capabilities": [
+        "telemetry-contract",
+        "rule-authoring",
+        "fixture-validation",
+        "coverage",
+        "retest"
+      ],
+      "knowledge_packs": [
+        "threat-ttp",
+        "detection-engineering",
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/casebook/v2_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "purple-validation",
+      "domain": "defense",
+      "routes": [
+        "purple-validation"
+      ],
+      "skill": {
+        "path": "skills/seep-purple-team/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "purple-validation"
+      ],
+      "tools": [
+        "atomic-red-team",
+        "sigma"
+      ],
+      "capabilities": [
+        "ttp-emulation",
+        "telemetry-capture",
+        "detection-gap",
+        "mitigation",
+        "retest"
+      ],
+      "knowledge_packs": [
+        "threat-ttp",
+        "detection-engineering",
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/job/job_test.go",
+        "internal/casebook/v2_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "linux-native",
+      "domain": "native",
+      "routes": [
+        "linux-native"
+      ],
+      "skill": {
+        "path": "skills/seep-native-reverse/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "linux-native"
+      ],
+      "tools": [
+        "ghidra",
+        "radare2",
+        "gdb",
+        "lldb",
+        "rr",
+        "bpftrace"
+      ],
+      "capabilities": [
+        "elf-identity",
+        "static-analysis",
+        "core-provenance",
+        "debug-plan"
+      ],
+      "knowledge_packs": [
+        "vulnerability-taxonomy",
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/targetidentity/identity_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "vuln-research",
+      "domain": "vulnerability",
+      "routes": [
+        "nday-research",
+        "vuln-research"
+      ],
+      "skill": {
+        "path": "skills/seep-vuln-research/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "vuln-research"
+      ],
+      "tools": [
+        "afl++",
+        "gdb",
+        "ghidra",
+        "jazzer",
+        "libfuzzer",
+        "lldb",
+        "winafl",
+        "windbg"
+      ],
+      "capabilities": [
+        "fuzz-plan",
+        "crash-fingerprint",
+        "crash-dedupe",
+        "root-cause",
+        "regression"
+      ],
+      "knowledge_packs": [
+        "vulnerability-taxonomy",
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/fuzz/fuzz_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "dfir",
+      "domain": "dfir",
+      "routes": [
+        "dfir-forensics"
+      ],
+      "skill": {
+        "path": "skills/seep-dfir/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "dfir-forensics"
+      ],
+      "tools": [
+        "chainsaw",
+        "hayabusa",
+        "kape",
+        "memprocfs",
+        "plaso",
+        "tshark",
+        "volatility3",
+        "zeek"
+      ],
+      "capabilities": [
+        "artifact-ingest",
+        "timeline-normalization",
+        "provenance",
+        "incident-correlation"
+      ],
+      "knowledge_packs": [
+        "report-interchange",
+        "telemetry-normalization",
+        "threat-ttp"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/dfir/dfir_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "protocol",
+      "domain": "network",
+      "routes": [
+        "traffic-protocol"
+      ],
+      "skill": {
+        "path": "skills/seep-protocol/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "protocol-reverse"
+      ],
+      "tools": [
+        "tshark",
+        "wireshark",
+        "scapy",
+        "kaitai"
+      ],
+      "capabilities": [
+        "message-corpus",
+        "field-inference",
+        "length-checksum-candidate",
+        "round-trip",
+        "schema-generation"
+      ],
+      "knowledge_packs": [
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/protocolinfer/infer_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "code-audit",
+      "domain": "code",
+      "routes": [
+        "source-code-audit",
+        "supply-chain"
+      ],
+      "skill": {
+        "path": "skills/seep-code-audit/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "source-code-audit"
+      ],
+      "tools": [
+        "semgrep",
+        "codeql",
+        "joern",
+        "syft",
+        "grype",
+        "trivy",
+        "osv-scanner",
+        "gitleaks"
+      ],
+      "capabilities": [
+        "repo-inventory",
+        "dependency-inventory",
+        "secret-fingerprint",
+        "sast-adapter",
+        "sbom"
+      ],
+      "knowledge_packs": [
+        "report-interchange",
+        "software-supply-chain",
+        "vulnerability-taxonomy"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/sourceaudit/audit_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-02"
+    },
+    {
+      "id": "redteam",
+      "domain": "network",
+      "routes": [
+        "network-assessment",
+        "pentest-network"
+      ],
+      "skill": {
+        "path": "skills/seep-redteam/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "network-assessment"
+      ],
+      "tools": [
+        "nmap",
+        "masscan"
+      ],
+      "capabilities": [
+        "scope",
+        "network-inventory",
+        "attack-path"
+      ],
+      "knowledge_packs": [
+        "threat-ttp",
+        "vulnerability-taxonomy"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/domainpack/domainpack_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-03"
+    },
+    {
+      "id": "identity-ad",
+      "domain": "identity",
+      "routes": [
+        "identity-ad"
+      ],
+      "skill": {
+        "path": "skills/seep-identity/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "identity-ad"
+      ],
+      "tools": [
+        "bloodhound",
+        "sharphound",
+        "impacket",
+        "netexec",
+        "certipy"
+      ],
+      "capabilities": [
+        "identity-graph",
+        "attack-path",
+        "credential-reference"
+      ],
+      "knowledge_packs": [
+        "threat-ttp",
+        "vulnerability-taxonomy"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/domainpack/domainpack_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-03"
+    },
+    {
+      "id": "cloud",
+      "domain": "cloud",
+      "routes": [
+        "cloud-security"
+      ],
+      "skill": {
+        "path": "skills/seep-cloud/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "cloud-security"
+      ],
+      "tools": [
+        "aws",
+        "az",
+        "gcloud",
+        "prowler",
+        "scoutsuite",
+        "steampipe"
+      ],
+      "capabilities": [
+        "resource-graph",
+        "iam-graph",
+        "exposure",
+        "retest"
+      ],
+      "knowledge_packs": [
+        "threat-ttp",
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/domainpack/domainpack_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-03"
+    },
+    {
+      "id": "container-k8s",
+      "domain": "cloud",
+      "routes": [
+        "container-k8s"
+      ],
+      "skill": {
+        "path": "skills/seep-cloud/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "container-k8s"
+      ],
+      "tools": [
+        "kubectl",
+        "trivy",
+        "kubescape",
+        "kube-bench"
+      ],
+      "capabilities": [
+        "inventory",
+        "rbac-graph",
+        "image-security",
+        "retest"
+      ],
+      "knowledge_packs": [
+        "vulnerability-taxonomy",
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/domainpack/domainpack_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-03"
+    },
+    {
+      "id": "ios",
+      "domain": "mobile",
+      "routes": [
+        "ios"
+      ],
+      "skill": {
+        "path": "skills/seep-mobile/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "ios-security"
+      ],
+      "tools": [
+        "ghidra",
+        "lldb",
+        "frida"
+      ],
+      "capabilities": [
+        "ipa-inventory",
+        "macho-identity",
+        "runtime-boundary"
+      ],
+      "knowledge_packs": [
+        "vulnerability-taxonomy"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/domainpack/domainpack_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-03"
+    },
+    {
+      "id": "firmware",
+      "domain": "firmware",
+      "routes": [
+        "firmware-iot"
+      ],
+      "skill": {
+        "path": "skills/seep-firmware/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "firmware-iot"
+      ],
+      "tools": [
+        "binwalk",
+        "emba",
+        "qemu",
+        "firmae"
+      ],
+      "capabilities": [
+        "firmware-identity",
+        "filesystem-triage",
+        "emulation-plan"
+      ],
+      "knowledge_packs": [
+        "vulnerability-taxonomy"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/domainpack/domainpack_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-03"
+    },
+    {
+      "id": "cti-hunting",
+      "domain": "threat-intel",
+      "routes": [
+        "cti-analysis",
+        "threat-hunting"
+      ],
+      "skill": {
+        "path": "skills/seep-cti/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "cti-analysis",
+        "threat-hunting"
+      ],
+      "tools": [
+        "misp",
+        "opencti",
+        "taxii",
+        "sigma",
+        "osquery",
+        "zeek"
+      ],
+      "capabilities": [
+        "stix",
+        "ioc-ttp",
+        "hunt-plan",
+        "telemetry"
+      ],
+      "knowledge_packs": [
+        "threat-ttp",
+        "report-interchange"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/domainpack/domainpack_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-03"
+    },
+    {
+      "id": "adversary-emulation",
+      "domain": "security",
+      "routes": [
+        "adversary-emulation"
+      ],
+      "skill": {
+        "path": "skills/seep-redteam/SKILL.md",
+        "role": "specialist",
+        "owns_routing": false
+      },
+      "playbooks": [
+        "adversary-emulation"
+      ],
+      "tools": [
+        "atomic-red-team",
+        "caldera"
+      ],
+      "capabilities": [
+        "emulation-plan",
+        "job-receipt",
+        "telemetry",
+        "retest"
+      ],
+      "knowledge_packs": [
+        "threat-ttp"
+      ],
+      "schemas": [
+        "config/routes.json",
+        "config/playbooks.json"
+      ],
+      "fixtures": [
+        "testdata/routing-benchmark.json"
+      ],
+      "tests": [
+        "internal/domainpack/domainpack_test.go",
+        "internal/playbook/playbook_test.go"
+      ],
+      "source": "builtin",
+      "license": "project",
+      "trust_status": "reviewed",
+      "reviewed_at": "2026-10-03"
+    }
+  ]
+}

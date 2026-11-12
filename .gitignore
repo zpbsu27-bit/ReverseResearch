@@ -1,0 +1,32 @@
+/tmp/
+/.tmp/
+/state/
+/evidence/*
+!/evidence/.gitkeep
+/ReverseResearch.exe
+/ReverseResearch-MCP.exe
+/dist/
+/backups/
+/ReverseResearch-source-*.zip
+/ReverseResearch-source-*.zip.partial
+/*.log
+/runtime/*
+!/runtime/README.md
+/*.exe~
+__pycache__/
+*.py[cod]
+
+# Local machine config and secrets (never commit)
+config/tunnel.json
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.token
+
+# Private research trees and internal evidence (not part of this repository)
+/H3-ImageAI/
+/docs/H3HD4-*.md
+/docs/verification/

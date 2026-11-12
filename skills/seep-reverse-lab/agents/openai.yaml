@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seep Reverse Lab"
+  short_description: "Master orchestrator for evidence-first security research workflows."
